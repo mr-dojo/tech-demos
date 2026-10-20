@@ -1,5 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { EXPIRED_WARRANTY, GAMING_BUILD, GAMING_PICKUP_SKUS, OUT_OF_STOCK_STORE_ID, PICKUP_STORE_ID } from "@/lib/builds";
+import { getPart } from "@/lib/catalog";
 import { placePickupOrder, quoteWarrantyExtension } from "@/lib/shopper";
 import { checkCompatibility, executeTool, priceBuild, runTool, searchPartsSchema } from "@/lib/tools";
 
@@ -27,6 +28,20 @@ describe("Voltline tools", () => {
     const psu = result.checks.find((check) => check.id === "psu");
     expect(psu?.status).toBe("fail");
     expect(psu?.title).toBe("PSU underpowered");
+  });
+
+  test("search and price_build return catalog ratings", () => {
+    const part = getPart("VL-GPU-4070S");
+    expect(part).toBeDefined();
+    const search = runTool("search_parts", { category: "gpu", limit: 12 }) as {
+      parts: Array<{ sku: string; rating: number; reviewCount: number }>;
+    };
+    const found = search.parts.find((entry) => entry.sku === "VL-GPU-4070S");
+    expect(found?.rating).toBe(part?.rating);
+    expect(found?.reviewCount).toBe(part?.reviewCount);
+    const line = priceBuild(GAMING_BUILD).lines.find((entry) => entry.sku === "VL-GPU-4070S");
+    expect(line?.rating).toBe(part?.rating);
+    expect(line?.reviewCount).toBe(part?.reviewCount);
   });
 
   test("owned parts are excluded from the build total", () => {

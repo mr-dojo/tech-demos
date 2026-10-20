@@ -11,6 +11,7 @@ import {
   upgradeProgram,
   warrantyProgram,
 } from "@/lib/mock-lang";
+import { getPart, ratingLabel } from "@/lib/catalog";
 import { STARTERS } from "@/lib/starters";
 
 const parser = createParser(spec.schema as LibraryJSONSchema, spec.root);
@@ -70,6 +71,21 @@ describe("canned OpenUI Lang", () => {
     expectValid(pickup);
 
     expectValid(fallbackProgram());
+  });
+
+  test("card ratings come from the catalog", () => {
+    const gpu = getPart("VL-GPU-4070S");
+    const ram = getPart("VL-RAM-32D5");
+    const keyboard = getPart("VL-KEY-TKL");
+    expect(gpu).toBeDefined();
+    expect(ram).toBeDefined();
+    expect(keyboard).toBeDefined();
+    const gaming = gamingProgram();
+    expect(gaming).toContain(ratingLabel(gpu!));
+    expect(gaming).toContain(ratingLabel(ram!));
+    expect(upgradeProgram()).toContain(ratingLabel(gpu!));
+    expect(warrantyProgram()).toContain(ratingLabel(getPart("VL-MON-27")!));
+    expect(supportProgram()).toContain(ratingLabel(keyboard!));
   });
 
   test("each starter prompt maps to a program", () => {

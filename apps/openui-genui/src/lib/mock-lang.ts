@@ -1,5 +1,5 @@
 import { GAMING_BUILD, GAMING_PICKUP_SKUS, GPU_COMPARE_SKUS, MONITOR_WARRANTY, PICKUP_STORE_ID, RETURN_ITEM } from "@/lib/builds";
-import { formatMoney, getPart, stockLabel, type Part } from "@/lib/catalog";
+import { formatMoney, getPart, ratingLabel, stockLabel, type Part } from "@/lib/catalog";
 import { STARTERS, type Starter } from "@/lib/starters";
 import {
   checkStoreStock,
@@ -39,14 +39,6 @@ function slug(value: string): string {
 
 function stringList(values: string[]): string {
   return `[${values.map((value) => openuiString(value)).join(", ")}]`;
-}
-
-/** Stable sample rating so cards can show one without a catalog field. */
-function sampleRating(sku: string): string {
-  let hash = 0;
-  for (const char of sku) hash = (hash * 33 + char.charCodeAt(0)) >>> 0;
-  const tenths = 40 + (hash % 11);
-  return `${(tenths / 10).toFixed(1)} sample rating`;
 }
 
 function specChips(part: Part): string[] {
@@ -178,8 +170,8 @@ export function gamingProgram(): string {
       subtitle: `${SLOT_LABEL[line.slot]} · ${part.brand}`,
       priceLabel: owned ? "Owned" : formatMoney(line.price),
       badges: owned
-        ? ["In your rig", "Not in the total", sampleRating(part.sku)]
-        : [stockLabel(part.stock), storeAvailability(part.sku), sampleRating(part.sku)],
+        ? ["In your rig", "Not in the total", ratingLabel(part)]
+        : [stockLabel(part.stock), storeAvailability(part.sku), ratingLabel(part)],
       ownedPhrase: owned ? line.note : undefined,
       primary: { label: "Reserve for pickup", prompt: PICKUP_PROMPT },
       secondary: owned
@@ -269,7 +261,7 @@ export function upgradeProgram(): string {
       id: `gpu${slug(card.sku)}`,
       part: card,
       subtitle: card.brand,
-      badges: [stockLabel(card.stock), storeAvailability(card.sku), sampleRating(card.sku)],
+      badges: [stockLabel(card.stock), storeAvailability(card.sku), ratingLabel(card)],
       primary: { label: "Reserve for pickup", prompt: `Reserve the ${card.name} for in-store pickup` },
       secondary: { label: "Add to build", prompt: `Add the ${card.name} to my 1440p Voltline build` },
     }),
@@ -414,7 +406,7 @@ export function warrantyProgram(): string {
     id: "monitorCard",
     part: monitor,
     subtitle: `Order ${MONITOR_WARRANTY.orderId}`,
-    badges: [`Expires ${formatLongDate(quote.expiresOn)}`, "Shipped", sampleRating(monitor.sku)],
+    badges: [`Expires ${formatLongDate(quote.expiresOn)}`, "Shipped", ratingLabel(monitor)],
     primary: {
       label: "Extend warranty",
       prompt: "Extend the Kiln View 27 protection plan by 2 years",
@@ -457,7 +449,7 @@ export function supportProgram(): string {
       id: "itemCard",
       part: keyboard,
       subtitle: "Order VL-ORD-2140 · shipped",
-      badges: ["Return window open", stockLabel(keyboard.stock), sampleRating(keyboard.sku)],
+      badges: ["Return window open", stockLabel(keyboard.stock), ratingLabel(keyboard)],
       ownedPhrase: undefined,
       primary: { label: "Reserve for pickup", prompt: "Reserve a Drift Key TKL for in-store pickup" },
       secondary: { label: "Add to build", prompt: "Add the Drift Key TKL to my 1440p Voltline build" },

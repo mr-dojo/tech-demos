@@ -6,6 +6,8 @@ describe("buildSystemPrompt", () => {
     const prompt = buildSystemPrompt();
     expect(prompt).toContain("Table");
     expect(prompt).toContain("product Card");
+    expect(prompt).toContain("reviewCount");
+    expect(prompt).toContain("Never invent SKUs, prices, stock, wattage, ratings, review counts");
     expect(prompt).toContain("BarChart");
     expect(prompt).toContain("search_parts");
     expect(prompt).toContain("check_compatibility");

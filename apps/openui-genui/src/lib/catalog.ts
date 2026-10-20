@@ -39,6 +39,8 @@ const partSchema = z.object({
   fits: z.array(z.enum(FORM_FACTORS)).optional(),
   capacityGb: z.number().optional(),
   fps1440p: z.number().optional(),
+  rating: z.number().min(0).max(5),
+  reviewCount: z.number().int().nonnegative(),
 });
 
 export type Part = z.infer<typeof partSchema>;
@@ -56,6 +58,10 @@ export function getPart(sku: string): Part | undefined {
 
 export function formatMoney(amount: number): string {
   return `$${amount.toLocaleString("en-US")}`;
+}
+
+export function ratingLabel(part: Pick<Part, "rating" | "reviewCount">): string {
+  return `${part.rating.toFixed(1)} · ${part.reviewCount.toLocaleString("en-US")} reviews`;
 }
 
 export function stockLabel(stock: Part["stock"]): string {

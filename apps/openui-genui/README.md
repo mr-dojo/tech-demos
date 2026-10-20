@@ -2,7 +2,7 @@
 
 A sample shopper chat for a fictional computer store. The model replies in [OpenUI Lang](https://github.com/thesysdev/openui) and [AgentInterface](https://www.openui.com/docs/api-reference/react-ui) renders it as live components: product cards, a build summary with a budget bar and a wattage gauge, a GPU comparison chart, a refine form, order cards, a warranty callout with plan cards, a return form, and an in-store pickup confirmation. The **Source** sheet shows the raw language for the last reply.
 
-Voltline PC is not a real retailer. `src/data/catalog.json` is about 58 made-up SKUs and prices. `src/data/shopper.json` is one sample customer (Alex Rivera), eight past orders, and four fictional stores. Warranty and return dates are computed from a fixed sample today of **20 Oct 2026**.
+Voltline PC is not a real retailer. `src/data/catalog.json` is about 58 made-up SKUs, prices, ratings, and review counts. `src/data/shopper.json` is one sample customer (Alex Rivera), eight past orders, and four fictional stores. Warranty and return dates are computed from a fixed sample today of **20 Oct 2026**.
 
 The component list the model may use comes from OpenUI's built-in `openuiLibrary`. `bun run dev` regenerates `src/generated/spec.json` from `src/lib/library.ts` before the server starts. That file is committed so a fresh clone typechecks before the first generate.
 

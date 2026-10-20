@@ -291,6 +291,8 @@ export type PricedLine = {
   countedInTotal: boolean;
   purchasedOn?: string;
   note: string;
+  rating: number;
+  reviewCount: number;
 };
 
 export function priceBuild(input: BuildInput): {
@@ -316,6 +318,8 @@ export function priceBuild(input: BuildInput): {
       name: part.name,
       price: part.price,
       stock: part.stock,
+      rating: part.rating,
+      reviewCount: part.reviewCount,
       owned: Boolean(owned),
       countedInTotal,
       purchasedOn: owned?.purchasedOn,
@@ -339,7 +343,7 @@ const TOOL_DEFS: Array<{ name: string; description: string; schema: z.ZodType }>
   {
     name: "search_parts",
     description:
-      "Search the Voltline sample catalog. Category is required. Out-of-stock parts are hidden unless inStockOnly is false. Never invent SKUs.",
+      "Search the Voltline sample catalog. Category is required. Out-of-stock parts are hidden unless inStockOnly is false. Each part includes its sample rating and reviewCount. Never invent SKUs, ratings, or review counts.",
     schema: searchPartsSchema,
   },
   {
@@ -356,7 +360,7 @@ const TOOL_DEFS: Array<{ name: string; description: string; schema: z.ZodType }>
   {
     name: "price_build",
     description:
-      "Price a build from catalog SKUs. Parts the sample shopper already owns are excluded from the total unless includeOwned is true. Flag owned lines and do not invent prices.",
+      "Price a build from catalog SKUs. Parts the sample shopper already owns are excluded from the total unless includeOwned is true. Each line includes the catalog rating and reviewCount. Flag owned lines and do not invent prices or ratings.",
     schema: buildSchema,
   },
   {
