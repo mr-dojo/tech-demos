@@ -1,0 +1,140 @@
+{
+  "note": "Sample shopper for the Voltline PC demo. One fictional customer. Dates are relative to the sample today of 2026-10-20.",
+  "asOf": "2026-10-20",
+  "profile": {
+    "id": "cust-1042",
+    "name": "Alex Rivera",
+    "email": "alex.rivera@example.com",
+    "memberSince": "2023-04-12",
+    "preferredStoreId": "store-harbor"
+  },
+  "ownedParts": [
+    {"sku": "VL-GPU-1070", "orderId": "VL-ORD-1008", "purchasedOn": "2018-11-02"},
+    {"sku": "VL-CASE-ATX", "orderId": "VL-ORD-1842", "purchasedOn": "2025-03-14"},
+    {"sku": "VL-PSU-750", "orderId": "VL-ORD-1842", "purchasedOn": "2025-03-14"},
+    {"sku": "VL-SSD-2T", "orderId": "VL-ORD-1842", "purchasedOn": "2025-03-14"},
+    {"sku": "VL-RAM-32D5", "orderId": "VL-ORD-1842", "purchasedOn": "2025-03-14"}
+  ],
+  "orders": [
+    {
+      "id": "VL-ORD-1008",
+      "date": "2018-11-02",
+      "fulfillment": "shipped",
+      "storeId": null,
+      "items": [
+        {"sku": "VL-GPU-1070", "qty": 1, "price": 379, "warrantyExpiresOn": "2020-11-02"}
+      ]
+    },
+    {
+      "id": "VL-ORD-1550",
+      "date": "2023-12-11",
+      "fulfillment": "pickup",
+      "storeId": "store-harbor",
+      "items": [
+        {"sku": "VL-MOUSE-CLK", "qty": 1, "price": 49, "warrantyExpiresOn": "2024-12-11"}
+      ]
+    },
+    {
+      "id": "VL-ORD-1622",
+      "date": "2024-05-19",
+      "fulfillment": "shipped",
+      "storeId": null,
+      "items": [
+        {"sku": "VL-AUD-HS", "qty": 1, "price": 79, "warrantyExpiresOn": "2025-05-19"}
+      ]
+    },
+    {
+      "id": "VL-ORD-1760",
+      "date": "2024-11-20",
+      "fulfillment": "shipped",
+      "storeId": null,
+      "items": [
+        {"sku": "VL-PAD-LG", "qty": 1, "price": 19, "warrantyExpiresOn": "2025-11-20"}
+      ]
+    },
+    {
+      "id": "VL-ORD-1842",
+      "date": "2025-03-14",
+      "fulfillment": "pickup",
+      "storeId": "store-harbor",
+      "items": [
+        {"sku": "VL-CASE-ATX", "qty": 1, "price": 99, "warrantyExpiresOn": "2027-03-14"},
+        {"sku": "VL-PSU-750", "qty": 1, "price": 109, "warrantyExpiresOn": "2027-03-14"},
+        {"sku": "VL-SSD-2T", "qty": 1, "price": 134, "warrantyExpiresOn": "2027-03-14"},
+        {"sku": "VL-RAM-32D5", "qty": 1, "price": 104, "warrantyExpiresOn": "2027-03-14"}
+      ]
+    },
+    {
+      "id": "VL-ORD-1901",
+      "date": "2025-06-02",
+      "fulfillment": "shipped",
+      "storeId": null,
+      "items": [
+        {"sku": "VL-MON-27", "qty": 1, "price": 279, "warrantyExpiresOn": "2026-11-05"}
+      ]
+    },
+    {
+      "id": "VL-ORD-2088",
+      "date": "2026-08-30",
+      "fulfillment": "pickup",
+      "storeId": "store-northspan",
+      "items": [
+        {"sku": "VL-CAM-KC", "qty": 1, "price": 69, "warrantyExpiresOn": "2028-08-30"}
+      ]
+    },
+    {
+      "id": "VL-ORD-2140",
+      "date": "2026-10-02",
+      "fulfillment": "shipped",
+      "storeId": null,
+      "items": [
+        {"sku": "VL-KEY-TKL", "qty": 1, "price": 89, "warrantyExpiresOn": "2027-10-02"}
+      ]
+    }
+  ],
+  "stores": [
+    {
+      "id": "store-harbor",
+      "name": "Voltline Harbor",
+      "address": "120 Market Street, Harbor City",
+      "window": "Today 5–7 PM",
+      "readyBy": "Today, 6:30 PM",
+      "code": "HBR-7741"
+    },
+    {
+      "id": "store-keel",
+      "name": "Voltline Keel Yard",
+      "address": "18 Dock Road, Keel Yard",
+      "window": "Tomorrow 12–2 PM",
+      "readyBy": "Tomorrow, 1:00 PM",
+      "code": "KEL-2204"
+    },
+    {
+      "id": "store-northspan",
+      "name": "Voltline Northspan",
+      "address": "400 Ridge Avenue, Northspan",
+      "window": "Today 7–9 PM",
+      "readyBy": "Today, 8:00 PM",
+      "code": "NSP-1180"
+    },
+    {
+      "id": "store-draft",
+      "name": "Voltline Draft",
+      "address": "9 Lamp Lane, Draft",
+      "window": "Tomorrow 10 AM–12 PM",
+      "readyBy": "Tomorrow, 11:00 AM",
+      "code": "DRF-6630"
+    }
+  ],
+  "storeStock": {
+    "store-harbor": {"VL-CPU-7600": 4, "VL-GPU-4070S": 3, "VL-MB-B650": 5, "VL-COOL-AIR": 6, "VL-GPU-4060": 4, "VL-GPU-7800XT": 2, "VL-MON-27": 3, "VL-KEY-TKL": 4},
+    "store-keel": {"VL-CPU-7600": 2, "VL-GPU-4070S": 0, "VL-MB-B650": 2, "VL-COOL-AIR": 3, "VL-GPU-4060": 2, "VL-GPU-7800XT": 1, "VL-MON-27": 1, "VL-KEY-TKL": 2},
+    "store-northspan": {"VL-CPU-7600": 2, "VL-GPU-4070S": 2, "VL-MB-B650": 1, "VL-COOL-AIR": 0, "VL-GPU-4060": 3, "VL-GPU-7800XT": 0, "VL-MON-27": 2, "VL-KEY-TKL": 1},
+    "store-draft": {"VL-CPU-7600": 2, "VL-GPU-4070S": 2, "VL-MB-B650": 2, "VL-COOL-AIR": 2, "VL-GPU-4060": 2, "VL-GPU-7800XT": 2, "VL-MON-27": 1, "VL-KEY-TKL": 3}
+  },
+  "warrantyPlans": [
+    {"id": "ext-1y", "label": "1 more year", "price": 39},
+    {"id": "ext-2y", "label": "2 more years", "price": 69},
+    {"id": "ext-3y", "label": "3 more years", "price": 89}
+  ]
+}

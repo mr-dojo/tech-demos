@@ -1,11 +1,11 @@
 import { getChatRuntime } from "@/lib/chat-runtime";
 import { isDemoMode, mockStreamDelayMs, openAIConfig } from "@/lib/env";
 import { parseChatBody } from "@/lib/messages";
-import { matchDemo, weatherProgram } from "@/lib/mock-lang";
+import { matchDemo } from "@/lib/mock-lang";
 import { buildSystemPrompt } from "@/lib/prompt";
 import { chunksFrom, demoChunks, sseResponse } from "@/lib/sse";
 import { runToolLoop } from "@/lib/tool-loop";
-import { executeTool, getWeather } from "@/lib/tools";
+import { executeTool } from "@/lib/tools";
 import type { ChatCompletionChunk } from "openai/resources/chat/completions";
 
 const MAX_BODY_CHARS = 1_000_000;
@@ -67,15 +67,7 @@ export async function POST(request: Request): Promise<Response> {
   if (!body.ok) return jsonError(body.error.status, body.error.error);
 
   if (isDemoMode()) {
-    const match = matchDemo(body.userText);
-    const source =
-      match.kind === "weather"
-        ? weatherProgram(
-            match.location
-              ? await getWeather(match.location, { signal: request.signal })
-              : { error: "location is required" },
-          )
-        : match.source;
+    const source = matchDemo(body.userText).source;
     return responseFromChunks(chunksFrom(demoChunks(source)), request.signal, mockStreamDelayMs(), "demo");
   }
 

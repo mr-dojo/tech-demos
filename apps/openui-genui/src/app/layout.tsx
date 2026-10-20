@@ -11,8 +11,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OpenUI — generative UI",
-  description: "A chat that streams OpenUI Lang and renders it as live components.",
+  title: "Voltline PC — build desk",
+  description: "A sample shopper chat that streams PC builds, orders, and in-store pickup as OpenUI Lang.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

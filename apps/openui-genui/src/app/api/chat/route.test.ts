@@ -40,13 +40,19 @@ describe("POST /api/chat", () => {
     delete process.env.MOCK_LLM;
     process.env.MOCK_STREAM_DELAY_MS = "0";
     const response = await post({
-      messages: [{ role: "user", content: "Show a table of 3 planets with mass and moons" }],
+      messages: [
+        {
+          role: "user",
+          content: "Build me a $1,500 1440p gaming PC. Reuse parts I already own.",
+        },
+      ],
     });
     expect(response.status).toBe(200);
     expect(response.headers.get("X-OpenUI-Mode")).toBe("demo");
     const text = await response.text();
     expect(text.startsWith("data: ")).toBe(true);
     expect(text).toContain("Table(");
+    expect(text).toContain("You own this");
     expect(text.trimEnd().endsWith("data: [DONE]")).toBe(true);
   });
 

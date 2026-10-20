@@ -28,7 +28,7 @@ describe("runToolLoop", () => {
                     index: 0,
                     id: "call_1",
                     type: "function",
-                    function: { name: "get_weather", arguments: "" },
+                    function: { name: "search_parts", arguments: "" },
                   },
                 ],
               },
@@ -39,7 +39,7 @@ describe("runToolLoop", () => {
                 tool_calls: [
                   {
                     index: 0,
-                    function: { arguments: '{"location":"Berlin"}' },
+                    function: { arguments: '{"category":"gpu"}' },
                   },
                 ],
               },
@@ -58,18 +58,18 @@ describe("runToolLoop", () => {
     for await (const chunk of runToolLoop({
       runtime,
       model: "test",
-      messages: [{ role: "user", content: "weather in Berlin" }],
+      messages: [{ role: "user", content: "compare GPUs" }],
       signal: new AbortController().signal,
       executeTool: async (name, args) => {
         calls.push({ name, args });
-        return JSON.stringify({ place: "Berlin", temperature_c: 12 });
+        return JSON.stringify({ parts: [] });
       },
       maxSteps: 5,
     })) {
       chunks.push(chunk);
     }
 
-    expect(calls).toEqual([{ name: "get_weather", args: { location: "Berlin" } }]);
+    expect(calls).toEqual([{ name: "search_parts", args: { category: "gpu" } }]);
     const text = chunks.map((chunk) => chunk.choices[0]?.delta?.content ?? "").join("");
     expect(text).toContain('TextContent("Hi")');
     expect(chunks.some((chunk) => chunk.choices[0]?.delta?.tool_calls)).toBe(false);

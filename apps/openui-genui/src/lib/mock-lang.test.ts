@@ -1,7 +1,16 @@
 import { describe, expect, test } from "bun:test";
 import { createParser, type LibraryJSONSchema } from "@openuidev/lang-core";
 import spec from "@/generated/spec.json";
-import { DEMO_PROGRAMS, fallbackProgram, matchDemo, weatherProgram } from "@/lib/mock-lang";
+import {
+  fallbackProgram,
+  gamingProgram,
+  matchDemo,
+  ordersProgram,
+  pickupProgram,
+  supportProgram,
+  upgradeProgram,
+  warrantyProgram,
+} from "@/lib/mock-lang";
 import { STARTERS } from "@/lib/starters";
 
 const parser = createParser(spec.schema as LibraryJSONSchema, spec.root);
@@ -16,35 +25,43 @@ function expectValid(source: string) {
 }
 
 describe("canned OpenUI Lang", () => {
-  test("table, chart, and form programs parse", () => {
-    expect(DEMO_PROGRAMS.planets).toContain("Table(");
-    expect(DEMO_PROGRAMS.dashboard).toContain("BarChart(");
-    expect(DEMO_PROGRAMS.signup).toContain("Form(");
-    expectValid(DEMO_PROGRAMS.planets);
-    expectValid(DEMO_PROGRAMS.dashboard);
-    expectValid(DEMO_PROGRAMS.signup);
-    expectValid(DEMO_PROGRAMS.laptops);
-    expectValid(DEMO_PROGRAMS.interest);
+  test("the gaming build, chart, form, orders, warranty, and pickup parse", () => {
+    const gaming = gamingProgram();
+    expect(gaming).toContain("Table(");
+    expect(gaming).toContain("You own this — purchased Mar 2025");
+    expect(gaming).toContain("Form(");
+    expect(gaming).toContain("Slider(");
+    expectValid(gaming);
+
+    const upgrade = upgradeProgram();
+    expect(upgrade).toContain("BarChart(");
+    expectValid(upgrade);
+
+    expect(ordersProgram()).toContain("VL-ORD-1901");
+    expectValid(ordersProgram());
+
+    const warranty = warrantyProgram();
+    expect(warranty).toContain("Your protection plan on Kiln View 27 expires Nov 5, 2026");
+    expectValid(warranty);
+
+    const support = supportProgram();
+    expect(support).toContain("Form(");
+    expect(support).toContain("VL-RMA-2140");
+    expectValid(support);
+
+    const pickup = pickupProgram();
+    expect(pickup).toContain("HBR-7741");
+    expect(pickup).toContain("Form(");
+    expectValid(pickup);
+
     expectValid(fallbackProgram());
-    expectValid(
-      weatherProgram({
-        place: "Berlin, Germany",
-        temperature_c: 12.5,
-        conditions: "partly cloudy",
-        wind_kmh: 14,
-      }),
-    );
   });
 
-  test("each starter prompt maps to a program or a weather lookup", () => {
+  test("each starter prompt maps to a program", () => {
     for (const starter of STARTERS) {
       const match = matchDemo(starter.prompt);
-      if (starter.id === "weather") {
-        expect(match.kind).toBe("weather");
-      } else {
-        expect(match.kind).toBe("program");
-        if (match.kind === "program") expectValid(match.source);
-      }
+      expect(match.kind).toBe("program");
+      expectValid(match.source);
     }
   });
 });

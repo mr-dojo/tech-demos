@@ -56,7 +56,7 @@ export function SourceSheet() {
           </pre>
         ) : (
           <p className="px-4 text-sm text-muted-foreground">
-            Send a prompt to see the OpenUI Lang behind the reply.
+            Ask Voltline for a build to see the OpenUI Lang behind the reply.
           </p>
         )}
       </SheetContent>

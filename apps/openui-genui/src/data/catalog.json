@@ -1,0 +1,71 @@
+{
+  "note": "Sample catalog for the Voltline PC demo. Made-up SKUs and prices. Not a real assortment, and not affiliated with any retailer or manufacturer.",
+  "parts": [
+    {"sku": "VL-CPU-7600", "name": "Ryzen 5 7600", "category": "cpu", "brand": "AMD", "price": 189, "stock": "in_stock", "socket": "AM5", "tdpWatts": 65},
+    {"sku": "VL-CPU-7700", "name": "Ryzen 7 7700", "category": "cpu", "brand": "AMD", "price": 289, "stock": "in_stock", "socket": "AM5", "tdpWatts": 65},
+    {"sku": "VL-CPU-7800X3D", "name": "Ryzen 7 7800X3D", "category": "cpu", "brand": "AMD", "price": 399, "stock": "low", "socket": "AM5", "tdpWatts": 120},
+    {"sku": "VL-CPU-9600X", "name": "Ryzen 5 9600X", "category": "cpu", "brand": "AMD", "price": 229, "stock": "in_stock", "socket": "AM5", "tdpWatts": 65},
+    {"sku": "VL-CPU-14600K", "name": "Core i5-14600K", "category": "cpu", "brand": "Intel", "price": 249, "stock": "in_stock", "socket": "LGA1700", "tdpWatts": 125},
+    {"sku": "VL-CPU-14700K", "name": "Core i7-14700K", "category": "cpu", "brand": "Intel", "price": 369, "stock": "in_stock", "socket": "LGA1700", "tdpWatts": 253},
+    {"sku": "VL-CPU-245K", "name": "Core Ultra 5 245K", "category": "cpu", "brand": "Intel", "price": 289, "stock": "in_stock", "socket": "LGA1851", "tdpWatts": 125},
+    {"sku": "VL-CPU-265K", "name": "Core Ultra 7 265K", "category": "cpu", "brand": "Intel", "price": 399, "stock": "low", "socket": "LGA1851", "tdpWatts": 250},
+
+    {"sku": "VL-MB-B650", "name": "Harbor B650 ATX", "category": "motherboard", "brand": "Harbor", "price": 149, "stock": "in_stock", "socket": "AM5", "chipset": "B650", "ramType": "DDR5", "formFactor": "ATX"},
+    {"sku": "VL-MB-B650M", "name": "Harbor B650M", "category": "motherboard", "brand": "Harbor", "price": 129, "stock": "in_stock", "socket": "AM5", "chipset": "B650", "ramType": "DDR5", "formFactor": "mATX"},
+    {"sku": "VL-MB-X670E", "name": "Harbor X670E ATX", "category": "motherboard", "brand": "Harbor", "price": 259, "stock": "in_stock", "socket": "AM5", "chipset": "X670E", "ramType": "DDR5", "formFactor": "ATX"},
+    {"sku": "VL-MB-A620I", "name": "Harbor A620 ITX", "category": "motherboard", "brand": "Harbor", "price": 139, "stock": "low", "socket": "AM5", "chipset": "A620", "ramType": "DDR5", "formFactor": "ITX"},
+    {"sku": "VL-MB-B760", "name": "Harbor B760 ATX", "category": "motherboard", "brand": "Harbor", "price": 139, "stock": "in_stock", "socket": "LGA1700", "chipset": "B760", "ramType": "DDR5", "formFactor": "ATX"},
+    {"sku": "VL-MB-B760D4", "name": "Harbor B760 DDR4", "category": "motherboard", "brand": "Harbor", "price": 119, "stock": "in_stock", "socket": "LGA1700", "chipset": "B760", "ramType": "DDR4", "formFactor": "ATX"},
+    {"sku": "VL-MB-Z790", "name": "Harbor Z790 ATX", "category": "motherboard", "brand": "Harbor", "price": 229, "stock": "in_stock", "socket": "LGA1700", "chipset": "Z790", "ramType": "DDR5", "formFactor": "ATX"},
+    {"sku": "VL-MB-B860", "name": "Harbor B860 ATX", "category": "motherboard", "brand": "Harbor", "price": 179, "stock": "in_stock", "socket": "LGA1851", "chipset": "B860", "ramType": "DDR5", "formFactor": "ATX"},
+
+    {"sku": "VL-GPU-4060", "name": "GeForce RTX 4060", "category": "gpu", "brand": "NVIDIA", "price": 299, "stock": "in_stock", "tdpWatts": 115, "lengthMm": 240, "fps1440p": 78},
+    {"sku": "VL-GPU-4060TI", "name": "GeForce RTX 4060 Ti 16GB", "category": "gpu", "brand": "NVIDIA", "price": 439, "stock": "in_stock", "tdpWatts": 165, "lengthMm": 260, "fps1440p": 98},
+    {"sku": "VL-GPU-4070", "name": "GeForce RTX 4070", "category": "gpu", "brand": "NVIDIA", "price": 549, "stock": "low", "tdpWatts": 200, "lengthMm": 285, "fps1440p": 118},
+    {"sku": "VL-GPU-4070S", "name": "GeForce RTX 4070 Super", "category": "gpu", "brand": "NVIDIA", "price": 599, "stock": "in_stock", "tdpWatts": 220, "lengthMm": 304, "fps1440p": 132},
+    {"sku": "VL-GPU-4080S", "name": "GeForce RTX 4080 Super", "category": "gpu", "brand": "NVIDIA", "price": 999, "stock": "in_stock", "tdpWatts": 320, "lengthMm": 330, "fps1440p": 168},
+    {"sku": "VL-GPU-7600", "name": "Radeon RX 7600", "category": "gpu", "brand": "AMD", "price": 259, "stock": "in_stock", "tdpWatts": 165, "lengthMm": 230, "fps1440p": 70},
+    {"sku": "VL-GPU-7800XT", "name": "Radeon RX 7800 XT", "category": "gpu", "brand": "AMD", "price": 489, "stock": "in_stock", "tdpWatts": 263, "lengthMm": 287, "fps1440p": 124},
+    {"sku": "VL-GPU-7900GRE", "name": "Radeon RX 7900 GRE", "category": "gpu", "brand": "AMD", "price": 549, "stock": "low", "tdpWatts": 260, "lengthMm": 300, "fps1440p": 130},
+    {"sku": "VL-GPU-1070", "name": "GeForce GTX 1070", "category": "gpu", "brand": "NVIDIA", "price": 199, "stock": "out_of_stock", "tdpWatts": 150, "lengthMm": 267, "fps1440p": 35},
+
+    {"sku": "VL-RAM-16D5", "name": "Kiln 16GB DDR5-5600", "category": "ram", "brand": "Kiln", "price": 54, "stock": "in_stock", "ramType": "DDR5", "capacityGb": 16},
+    {"sku": "VL-RAM-32D5", "name": "Kiln 32GB DDR5-6000", "category": "ram", "brand": "Kiln", "price": 104, "stock": "in_stock", "ramType": "DDR5", "capacityGb": 32},
+    {"sku": "VL-RAM-64D5", "name": "Kiln 64GB DDR5-6000", "category": "ram", "brand": "Kiln", "price": 214, "stock": "in_stock", "ramType": "DDR5", "capacityGb": 64},
+    {"sku": "VL-RAM-32D5X", "name": "Kiln 32GB DDR5-6400", "category": "ram", "brand": "Kiln", "price": 129, "stock": "low", "ramType": "DDR5", "capacityGb": 32},
+    {"sku": "VL-RAM-16D4", "name": "Kiln 16GB DDR4-3200", "category": "ram", "brand": "Kiln", "price": 39, "stock": "in_stock", "ramType": "DDR4", "capacityGb": 16},
+    {"sku": "VL-RAM-32D4", "name": "Kiln 32GB DDR4-3600", "category": "ram", "brand": "Kiln", "price": 69, "stock": "in_stock", "ramType": "DDR4", "capacityGb": 32},
+
+    {"sku": "VL-SSD-512", "name": "Drift 512GB NVMe", "category": "storage", "brand": "Drift", "price": 49, "stock": "in_stock", "capacityGb": 512},
+    {"sku": "VL-SSD-1T", "name": "Drift 1TB NVMe", "category": "storage", "brand": "Drift", "price": 79, "stock": "in_stock", "capacityGb": 1000},
+    {"sku": "VL-SSD-2T", "name": "Drift 2TB NVMe", "category": "storage", "brand": "Drift", "price": 134, "stock": "in_stock", "capacityGb": 2000},
+    {"sku": "VL-SSD-4T", "name": "Drift 4TB NVMe", "category": "storage", "brand": "Drift", "price": 269, "stock": "low", "capacityGb": 4000},
+    {"sku": "VL-HDD-2T", "name": "Drift 2TB HDD", "category": "storage", "brand": "Drift", "price": 59, "stock": "in_stock", "capacityGb": 2000},
+
+    {"sku": "VL-PSU-450", "name": "Northspan 450W", "category": "psu", "brand": "Northspan", "price": 59, "stock": "in_stock", "wattage": 450},
+    {"sku": "VL-PSU-650", "name": "Northspan 650W", "category": "psu", "brand": "Northspan", "price": 89, "stock": "in_stock", "wattage": 650},
+    {"sku": "VL-PSU-750", "name": "Northspan 750W", "category": "psu", "brand": "Northspan", "price": 109, "stock": "in_stock", "wattage": 750},
+    {"sku": "VL-PSU-850", "name": "Northspan 850W Gold", "category": "psu", "brand": "Northspan", "price": 139, "stock": "in_stock", "wattage": 850},
+    {"sku": "VL-PSU-1000", "name": "Northspan 1000W", "category": "psu", "brand": "Northspan", "price": 189, "stock": "low", "wattage": 1000},
+
+    {"sku": "VL-CASE-ATX", "name": "Keel Mid Tower", "category": "case", "brand": "Keel", "price": 99, "stock": "in_stock", "formFactor": "ATX", "fits": ["ATX", "mATX", "ITX"], "clearanceMm": 340, "maxCoolerMm": 170},
+    {"sku": "VL-CASE-AIR", "name": "Keel Quiet Air", "category": "case", "brand": "Keel", "price": 149, "stock": "in_stock", "formFactor": "ATX", "fits": ["ATX", "mATX", "ITX"], "clearanceMm": 380, "maxCoolerMm": 175},
+    {"sku": "VL-CASE-MATX", "name": "Keel Compact", "category": "case", "brand": "Keel", "price": 89, "stock": "in_stock", "formFactor": "mATX", "fits": ["mATX", "ITX"], "clearanceMm": 300, "maxCoolerMm": 155},
+    {"sku": "VL-CASE-ITX", "name": "Keel SFF", "category": "case", "brand": "Keel", "price": 129, "stock": "low", "formFactor": "ITX", "fits": ["ITX"], "clearanceMm": 250, "maxCoolerMm": 70},
+    {"sku": "VL-CASE-WIDE", "name": "Keel Full Tower", "category": "case", "brand": "Keel", "price": 169, "stock": "in_stock", "formFactor": "ATX", "fits": ["ATX", "mATX", "ITX"], "clearanceMm": 420, "maxCoolerMm": 190},
+
+    {"sku": "VL-COOL-AIR", "name": "Draft Tower 158", "category": "cooler", "brand": "Draft", "price": 39, "stock": "in_stock", "coolerHeightMm": 158, "sockets": ["AM5", "LGA1700", "LGA1851"]},
+    {"sku": "VL-COOL-TALL", "name": "Draft Tower 175", "category": "cooler", "brand": "Draft", "price": 59, "stock": "in_stock", "coolerHeightMm": 175, "sockets": ["AM5", "LGA1700", "LGA1851"]},
+    {"sku": "VL-COOL-LP", "name": "Draft Low Profile 47", "category": "cooler", "brand": "Draft", "price": 35, "stock": "in_stock", "coolerHeightMm": 47, "sockets": ["AM5", "LGA1700", "LGA1851"]},
+    {"sku": "VL-COOL-AIO", "name": "Draft 240 AIO", "category": "cooler", "brand": "Draft", "price": 99, "stock": "in_stock", "coolerHeightMm": 55, "sockets": ["AM5", "LGA1700", "LGA1851"]},
+    {"sku": "VL-COOL-AIO360", "name": "Draft 360 AIO", "category": "cooler", "brand": "Draft", "price": 129, "stock": "low", "coolerHeightMm": 55, "sockets": ["AM5", "LGA1700", "LGA1851"]},
+
+    {"sku": "VL-MON-27", "name": "Kiln View 27", "category": "monitor", "brand": "Kiln", "price": 279, "stock": "in_stock"},
+    {"sku": "VL-MON-32", "name": "Kiln View 32", "category": "monitor", "brand": "Kiln", "price": 449, "stock": "low"},
+    {"sku": "VL-KEY-TKL", "name": "Drift Key TKL", "category": "peripheral", "brand": "Drift", "price": 89, "stock": "in_stock"},
+    {"sku": "VL-MOUSE-CLK", "name": "Drift Click", "category": "peripheral", "brand": "Drift", "price": 49, "stock": "in_stock"},
+    {"sku": "VL-AUD-HS", "name": "Drift Cue Headset", "category": "peripheral", "brand": "Drift", "price": 79, "stock": "in_stock"},
+    {"sku": "VL-CAM-KC", "name": "Keel Cam", "category": "peripheral", "brand": "Keel", "price": 69, "stock": "in_stock"},
+    {"sku": "VL-PAD-LG", "name": "Kiln Pad", "category": "peripheral", "brand": "Kiln", "price": 19, "stock": "in_stock"}
+  ]
+}

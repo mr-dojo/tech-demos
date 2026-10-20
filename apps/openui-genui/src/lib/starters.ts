@@ -1,40 +1,39 @@
 export type Starter = {
-  id: "planets" | "laptops" | "dashboard" | "signup" | "interest" | "weather";
+  id: "gaming" | "upgrade" | "orders" | "warranty" | "support" | "pickup";
   displayText: string;
   prompt: string;
 };
 
-/** Welcome-screen prompts. Each one is aimed at a different component family. */
+/** Welcome-screen prompts. Each one opens a different Voltline flow. */
 export const STARTERS: Starter[] = [
   {
-    id: "planets",
-    displayText: "Compare 3 planets",
-    prompt: "Show a table of 3 planets with mass and moons",
+    id: "gaming",
+    displayText: "$1,500 1440p build",
+    prompt: "Build me a $1,500 1440p gaming PC. Reuse parts I already own.",
   },
   {
-    id: "laptops",
-    displayText: "Compare 3 laptops",
-    prompt:
-      "Compare 3 laptops for a developer: a lightweight ultrabook, a creator laptop, and a budget machine.",
+    id: "upgrade",
+    displayText: "Replace my GTX 1070",
+    prompt: "Upgrade my GTX 1070 rig for 1440p and compare 3 GPU options.",
   },
   {
-    id: "dashboard",
-    displayText: "Sales dashboard",
-    prompt: "Show a sales dashboard for the last 6 months with a bar chart and a short summary.",
+    id: "orders",
+    displayText: "Order history",
+    prompt: "Show my order history",
   },
   {
-    id: "signup",
-    displayText: "Signup form",
-    prompt: "Build me a signup form with name, email, and a plan selector.",
+    id: "warranty",
+    displayText: "Extend a warranty",
+    prompt: "My monitor protection plan is expiring. Show extension options.",
   },
   {
-    id: "interest",
-    displayText: "Compound interest",
-    prompt: "Explain how compound interest works using $10,000 invested at 7% for 10 years, with a chart.",
+    id: "support",
+    displayText: "Return an item",
+    prompt: "Help me with a return for the keyboard on my latest order.",
   },
   {
-    id: "weather",
-    displayText: "Weather in Berlin",
-    prompt: "What's the weather in Berlin right now?",
+    id: "pickup",
+    displayText: "Reserve for pickup",
+    prompt: "Reserve the $1,500 gaming build for in-store pickup.",
   },
 ];

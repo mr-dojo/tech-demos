@@ -120,10 +120,15 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* AgentInterface sizes itself to the viewport. Keep it inside the shell so the demo banner is not covered. */
+/* AgentInterface sizes itself to the viewport. Keep it inside the shell so the store header is not covered. */
 .openui-shell .openui-agent-container {
   height: 100%;
   width: 100%;
+}
+
+.voltline-mark {
+  background: oklch(0.78 0.15 78);
+  color: oklch(0.28 0.05 60);
 }
 
 @layer base {

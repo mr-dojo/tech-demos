@@ -5,7 +5,7 @@ import type {
   ChatCompletionTool,
 } from "openai/resources/chat/completions";
 import { openAIConfig } from "@/lib/env";
-import { weatherTool } from "@/lib/tools";
+import { catalogTools } from "@/lib/tools";
 
 export type ChatCompletionStream = AsyncIterable<ChatCompletionChunk>;
 
@@ -16,7 +16,7 @@ export type ChatRuntime = {
 
 function liveRuntime(): ChatRuntime {
   return {
-    tools: () => [weatherTool()],
+    tools: () => catalogTools(),
     async createStream(params, signal) {
       const { apiKey, baseURL } = openAIConfig();
       const client = new OpenAI({ apiKey, baseURL });
