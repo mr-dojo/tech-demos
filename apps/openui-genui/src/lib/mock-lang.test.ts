@@ -27,31 +27,46 @@ function expectValid(source: string) {
 describe("canned OpenUI Lang", () => {
   test("the gaming build, chart, form, orders, warranty, and pickup parse", () => {
     const gaming = gamingProgram();
-    expect(gaming).toContain("Table(");
+    expect(gaming).toContain("Card(");
+    expect(gaming).toContain("ImageBlock(");
     expect(gaming).toContain("You own this — purchased Mar 2025");
+    expect(gaming).toContain("SingleStackedBarChart(");
+    expect(gaming).toContain("RadialChart(");
     expect(gaming).toContain("Form(");
     expect(gaming).toContain("Slider(");
+    expect(gaming).not.toContain("Table(");
     expectValid(gaming);
 
     const upgrade = upgradeProgram();
+    expect(upgrade).toContain("Card(");
     expect(upgrade).toContain("BarChart(");
+    expect(upgrade).toContain("Table(");
     expectValid(upgrade);
 
-    expect(ordersProgram()).toContain("VL-ORD-1901");
-    expectValid(ordersProgram());
+    const orders = ordersProgram();
+    expect(orders).toContain("VL-ORD-1901");
+    expect(orders).toContain("Card(");
+    expect(orders).toContain("Steps(");
+    expect(orders).not.toContain("Table(");
+    expectValid(orders);
 
     const warranty = warrantyProgram();
     expect(warranty).toContain("Your protection plan on Kiln View 27 expires Nov 5, 2026");
+    expect(warranty).toContain("Card(");
+    expect(warranty).not.toContain("Table(");
     expectValid(warranty);
 
     const support = supportProgram();
     expect(support).toContain("Form(");
+    expect(support).toContain("Card(");
     expect(support).toContain("VL-RMA-2140");
     expectValid(support);
 
     const pickup = pickupProgram();
     expect(pickup).toContain("HBR-7741");
-    expect(pickup).toContain("Form(");
+    expect(pickup).toContain("Card(");
+    expect(pickup).toContain("/parts/pickup-mark.svg");
+    expect(pickup).not.toContain("Table(");
     expectValid(pickup);
 
     expectValid(fallbackProgram());

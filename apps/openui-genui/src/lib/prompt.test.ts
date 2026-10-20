@@ -5,6 +5,7 @@ describe("buildSystemPrompt", () => {
   test("mentions a library component and the catalog tools", () => {
     const prompt = buildSystemPrompt();
     expect(prompt).toContain("Table");
+    expect(prompt).toContain("product Card");
     expect(prompt).toContain("BarChart");
     expect(prompt).toContain("search_parts");
     expect(prompt).toContain("check_compatibility");

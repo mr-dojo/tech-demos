@@ -45,6 +45,8 @@ const shopperSchema = z.object({
       window: z.string(),
       readyBy: z.string(),
       code: z.string(),
+      distanceMiles: z.number().nonnegative(),
+      hours: z.string(),
     }),
   ),
   storeStock: z.record(z.string(), z.record(z.string(), z.number().int().nonnegative())),
@@ -316,6 +318,8 @@ export type StoreStockLine = {
   address: string;
   window: string;
   readyBy: string;
+  distanceMiles: number;
+  hours: string;
   inStock: boolean;
   missing: Array<{ sku: string; name: string }>;
 };
@@ -343,6 +347,8 @@ export function checkStoreStock(skus: string[], storeId?: string): { lines: Stor
       address: store.address,
       window: store.window,
       readyBy: store.readyBy,
+      distanceMiles: store.distanceMiles,
+      hours: store.hours,
       inStock: missing.length === 0,
       missing,
     };

@@ -19,7 +19,7 @@ A single-user Next.js chat where a shopper asks Voltline to build a PC, compare 
   - `get_customer_profile`, `get_order_history`, `get_warranty_status`, `quote_warranty_extension`, `start_support_request`, `check_store_stock`, `place_pickup_order`
 - Builds flag parts the shopper already owns (`You own this — purchased Mar 2025`) and leave them out of the total, with a way to include or replace them.
 - In-store pickup is the primary conversion. Shipping is secondary. Pickup fails when the chosen store is out of stock.
-- 6 starter prompts: gaming build that reuses owned parts (table, compatibility, refine form), GPU comparison chart, order history, warranty extension, return form plus sample RMA, pickup confirmation.
+- 6 starter prompts: gaming build that reuses owned parts (product cards, summary, refine form), GPU comparison cards plus chart, order cards, warranty extension, return form plus sample RMA, pickup confirmation.
 - Demo mode when `OPENAI_API_KEY` is missing (or `MOCK_LLM=1`): the same route streams canned OpenUI Lang for those starters. A visible demo-mode badge.
 - A shadcn Sheet for the raw OpenUI Lang of the last reply, plus a character count.
 - Light/dark theme following the system setting (`useSystemThemeMode`).
@@ -37,10 +37,10 @@ A single-user Next.js chat where a shopper asks Voltline to build a PC, compare 
 1. **Scaffold boots** — `apps/openui-genui/` runs at http://localhost:3000. Root and app `bunfig.toml` set `minimumReleaseAge = 259200` before the first install.
 2. **shadcn ready** — preset code `b0` (nova / neutral / CSS variables). The CLI has no preset named "minimalist". Components on demand: button, sheet, badge.
 3. **Catalog and shopper** — JSON sample data, priced and dated against 20 Oct 2026.
-4. **Build UI** — a $1,500 1440p request streams a parts table (owned rows excluded from the total), compatibility callouts, and a refine form. Pickup is the primary button.
-5. **Comparison** — a GTX 1070 upgrade streams a bar chart and a price table for three GPUs.
-6. **Shopper desk** — order history, an expiring warranty with extension prices, and a prefilled return form that ends in a sample RMA. An expired plan is not extendable.
-7. **Pickup** — store stock for four fictional stores, then a confirmation card (code, ready-by) for a store that has the parts. An out-of-stock store returns an error.
+4. **Build UI** — a $1,500 1440p request streams product cards (owned cards excluded from the total), a summary card with budget and wattage charts, compatibility callouts, and a refine form. Pickup is the primary button.
+5. **Comparison** — a GTX 1070 upgrade streams side-by-side GPU cards, a price-versus-performance bar chart, and a compact spec table.
+6. **Shopper desk** — order cards with status steps, an expiring warranty callout with plan cards, and a prefilled return form that ends in a sample RMA. An expired plan is not extendable.
+7. **Pickup** — store cards for four fictional stores, then a confirmation card (code, decorative mark, ready-by) for a store that has the parts. An out-of-stock store returns an error.
 8. **Source panel** — shadcn Sheet shows the last reply's OpenUI Lang.
 9. **Polish** — demo-mode badge, README, screenshot and screen recording on the PR.
 
@@ -103,7 +103,7 @@ bun install && bun run dev
 ## Minimal tests & git hooks
 - `bun test`:
   - System prompt mentions catalog tools and not `get_weather`.
-  - `POST /api/chat` rejects an empty `messages` array. Demo mode streams `data:` lines, a parts table, and `[DONE]`. A mocked OpenAI client does the same.
+  - `POST /api/chat` rejects an empty `messages` array. Demo mode streams `data:` lines, product cards, and `[DONE]`. A mocked OpenAI client does the same.
   - Socket mismatch fails. An underpowered PSU fails. Owned parts are excluded from the total. Pickup fails when the store is out of stock. An expired warranty is not extendable.
   - Canned programs for the six starters parse against the generated library spec.
 - `bun run typecheck` (`next typegen && tsc --noEmit`) and `bun run lint`.
@@ -111,7 +111,7 @@ bun install && bun run dev
 
 ## Validation / Definition of done
 - `bun install && bun run dev` works from a clean clone with no API key (demo mode) and with only `OPENAI_API_KEY` set (live mode).
-- Starters render a parts table (owned rows called out), a compatibility card, a GPU chart, a refine form, order history, a warranty quote, a return form, and a pickup confirmation, while the reply streams.
+- Starters render product cards (owned cards called out), a build summary, a GPU chart, a refine form, order cards, a warranty quote, a return form, and a pickup confirmation, while the reply streams.
 - The Source sheet shows the OpenUI Lang for the last reply.
 - Tests, typecheck, and lint pass.
 - The PR includes at least one screenshot and one video of the running app, covering the owned-parts build and the pickup confirmation.

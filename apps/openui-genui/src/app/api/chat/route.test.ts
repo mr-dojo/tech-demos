@@ -51,7 +51,7 @@ describe("POST /api/chat", () => {
     expect(response.headers.get("X-OpenUI-Mode")).toBe("demo");
     const text = await response.text();
     expect(text.startsWith("data: ")).toBe(true);
-    expect(text).toContain("Table(");
+    expect(text).toContain("Card(");
     expect(text).toContain("You own this");
     expect(text.trimEnd().endsWith("data: [DONE]")).toBe(true);
   });

@@ -99,7 +99,9 @@
       "address": "120 Market Street, Harbor City",
       "window": "Today 5–7 PM",
       "readyBy": "Today, 6:30 PM",
-      "code": "HBR-7741"
+      "code": "HBR-7741",
+      "distanceMiles": 1.4,
+      "hours": "10 AM–8 PM"
     },
     {
       "id": "store-keel",
@@ -107,7 +109,9 @@
       "address": "18 Dock Road, Keel Yard",
       "window": "Tomorrow 12–2 PM",
       "readyBy": "Tomorrow, 1:00 PM",
-      "code": "KEL-2204"
+      "code": "KEL-2204",
+      "distanceMiles": 3.8,
+      "hours": "11 AM–7 PM"
     },
     {
       "id": "store-northspan",
@@ -115,7 +119,9 @@
       "address": "400 Ridge Avenue, Northspan",
       "window": "Today 7–9 PM",
       "readyBy": "Today, 8:00 PM",
-      "code": "NSP-1180"
+      "code": "NSP-1180",
+      "distanceMiles": 6.1,
+      "hours": "10 AM–9 PM"
     },
     {
       "id": "store-draft",
@@ -123,7 +129,9 @@
       "address": "9 Lamp Lane, Draft",
       "window": "Tomorrow 10 AM–12 PM",
       "readyBy": "Tomorrow, 11:00 AM",
-      "code": "DRF-6630"
+      "code": "DRF-6630",
+      "distanceMiles": 8.5,
+      "hours": "9 AM–6 PM"
     }
   ],
   "storeStock": {
