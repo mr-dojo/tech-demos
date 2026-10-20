@@ -1,0 +1,12 @@
+{
+  "proposed": [],
+  "built": [
+    {
+      "slug": "openui-genui",
+      "name": "Thesys OpenUI",
+      "url": "https://github.com/thesysdev/openui",
+      "app": "apps/openui-genui",
+      "summary": "Generative UI via OpenUI Lang"
+    }
+  ]
+}
