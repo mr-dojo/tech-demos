@@ -23,6 +23,8 @@ bun install && bun run dev   # http://localhost:3000
 
 `OPENAI_BASE_URL` points the official `openai` SDK at any Chat Completions-compatible host. The server runs a tool loop (max 5 steps) before the final OpenUI Lang is streamed. Tool-call chunks stay on the server: the browser adapter cannot attach a tool result, so relaying a call with no result would leave the timeline stuck.
 
+`POST /api/chat` has no authentication and no rate limiting. Add both before any public deploy that uses a real `OPENAI_API_KEY`. As it stands, anyone who can reach the route can spend that key.
+
 Tools, all backed by the sample JSON:
 
 | Tool | What it returns |

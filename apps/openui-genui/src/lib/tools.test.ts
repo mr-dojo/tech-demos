@@ -1,7 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { EXPIRED_WARRANTY, GAMING_BUILD, GAMING_PICKUP_SKUS, OUT_OF_STOCK_STORE_ID, PICKUP_STORE_ID } from "@/lib/builds";
 import { placePickupOrder, quoteWarrantyExtension } from "@/lib/shopper";
-import { checkCompatibility, priceBuild, runTool, searchPartsSchema } from "@/lib/tools";
+import { checkCompatibility, executeTool, priceBuild, runTool, searchPartsSchema } from "@/lib/tools";
 
 describe("Voltline tools", () => {
   test("search_parts rejects a missing category", () => {
@@ -54,6 +54,12 @@ describe("Voltline tools", () => {
       expect(reserved.code).toMatch(/^HBR-/);
       expect(reserved.total).toBe(priceBuild(GAMING_BUILD).total);
     }
+  });
+
+  test("executeTool stops when the request is already aborted", async () => {
+    const controller = new AbortController();
+    controller.abort();
+    await expect(executeTool("get_customer_profile", {}, controller.signal)).rejects.toThrow(/aborted/i);
   });
 
   test("an expired warranty cannot be extended", () => {

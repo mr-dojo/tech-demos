@@ -415,8 +415,10 @@ function parseArgs<T>(schema: z.ZodType<T>, args: unknown): { ok: true; data: T 
   return { ok: true, data: parsed.data };
 }
 
-export async function executeTool(name: string, args: unknown): Promise<string> {
+export async function executeTool(name: string, args: unknown, signal?: AbortSignal): Promise<string> {
+  signal?.throwIfAborted();
   const payload = runTool(name, args);
+  signal?.throwIfAborted();
   return JSON.stringify(payload);
 }
 
