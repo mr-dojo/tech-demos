@@ -5,8 +5,9 @@ import { StatsPanel } from "@/components/stats-panel"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { atlas } from "@/data/atlas"
+import { loadAtlas } from "@/data/load-atlas"
 import { KIND_COLOR, KIND_LABEL } from "@/lib/kind"
+import type { Atlas } from "@/lib/model"
 import { searchGraph } from "@/lib/search"
 import type { Kind } from "@/lib/types"
 
@@ -20,6 +21,8 @@ const STARTERS = [
 const KINDS: Kind[] = ["module", "function", "class", "symbol", "concept", "external"]
 
 export function AtlasApp() {
+  const [atlas, setAtlas] = useState<Atlas | null>(null)
+  const [loadError, setLoadError] = useState<string | null>(null)
   const [draft, setDraft] = useState("")
   const [query, setQuery] = useState("")
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -32,7 +35,23 @@ export function AtlasApp() {
     return () => media.removeEventListener("change", apply)
   }, [])
 
-  const hit = useMemo(() => searchGraph(query, atlas), [query])
+  useEffect(() => {
+    let cancelled = false
+    loadAtlas()
+      .then((next) => {
+        if (!cancelled) setAtlas(next)
+      })
+      .catch((error: unknown) => {
+        if (!cancelled) {
+          setLoadError(error instanceof Error ? error.message : "Could not load the graph")
+        }
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const hit = useMemo(() => (atlas ? searchGraph(query, atlas) : null), [atlas, query])
   const highlight = useMemo(() => {
     if (!hit || hit.empty) return null
     return new Set(hit.nodeIds)
@@ -42,6 +61,22 @@ export function AtlasApp() {
     setDraft(next)
     setQuery(next)
     setSelectedId(null)
+  }
+
+  if (!atlas) {
+    return (
+      <div className="flex min-h-svh flex-col bg-background">
+        <header className="border-b px-4 py-3">
+          <p className="text-xs tracking-[0.18em] text-muted-foreground uppercase">Graphify</p>
+          <h1 className="font-heading text-3xl leading-none">Codebase Atlas</h1>
+        </header>
+        <div className="flex flex-1 items-center justify-center px-6">
+          <p className="font-heading text-2xl text-balance">
+            {loadError ?? "Loading the Voltline graph…"}
+          </p>
+        </div>
+      </div>
+    )
   }
 
   const shortCommit = atlas.meta.builtAtCommit.slice(0, 7)
@@ -103,7 +138,7 @@ export function AtlasApp() {
             ))}
           </div>
 
-          <SearchStatus query={query} hit={hit} onOpen={setSelectedId} />
+          <SearchStatus atlas={atlas} query={query} hit={hit} onOpen={setSelectedId} />
 
           <div>
             <p className="text-xs tracking-[0.16em] text-muted-foreground uppercase">Legend</p>
@@ -121,12 +156,17 @@ export function AtlasApp() {
         </aside>
 
         <main className="min-h-[480px] lg:min-h-0">
-          <GraphCanvas highlight={highlight} selectedId={selectedId} onSelect={setSelectedId} />
+          <GraphCanvas atlas={atlas} highlight={highlight} selectedId={selectedId} onSelect={setSelectedId} />
         </main>
 
         <aside className="min-h-0 overflow-auto border-t lg:border-t-0 lg:border-l">
           {selectedId ? (
-            <NodeCard nodeId={selectedId} onOpen={setSelectedId} onClose={() => setSelectedId(null)} />
+            <NodeCard
+              atlas={atlas}
+              nodeId={selectedId}
+              onOpen={setSelectedId}
+              onClose={() => setSelectedId(null)}
+            />
           ) : (
             <div>
               {hit?.empty ? (
@@ -137,7 +177,7 @@ export function AtlasApp() {
                     : " Try a function, file, or concept Graphify extracted."}
                 </div>
               ) : null}
-              <StatsPanel onOpen={setSelectedId} />
+              <StatsPanel atlas={atlas} onOpen={setSelectedId} />
             </div>
           )}
         </aside>
@@ -147,10 +187,12 @@ export function AtlasApp() {
 }
 
 function SearchStatus({
+  atlas,
   query,
   hit,
   onOpen,
 }: {
+  atlas: Atlas
   query: string
   hit: ReturnType<typeof searchGraph>
   onOpen: (id: string) => void

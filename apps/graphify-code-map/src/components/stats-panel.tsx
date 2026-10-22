@@ -1,8 +1,8 @@
 import { Bar, BarChart, XAxis, YAxis } from "recharts"
 import { Badge } from "@/components/ui/badge"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-import { atlas } from "@/data/atlas"
 import { KIND_COLOR, KIND_LABEL } from "@/lib/kind"
+import type { Atlas } from "@/lib/model"
 import { countsByConfidence, countsByKind, countsByRelation, moduleCoupling } from "@/lib/stats"
 import type { Kind } from "@/lib/types"
 
@@ -16,7 +16,7 @@ const CONFIDENCE_COLOR: Record<string, string> = {
   AMBIGUOUS: "#e11d48",
 }
 
-export function StatsPanel({ onOpen }: { onOpen: (id: string) => void }) {
+export function StatsPanel({ atlas, onOpen }: { atlas: Atlas; onOpen: (id: string) => void }) {
   const kinds = countsByKind(atlas)
   const relations = countsByRelation(atlas)
   const confidence = countsByConfidence(atlas)

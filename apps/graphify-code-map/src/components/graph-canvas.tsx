@@ -4,8 +4,8 @@ import ForceGraph2D, {
   type LinkObject,
   type NodeObject,
 } from "react-force-graph-2d"
-import { atlas } from "@/data/atlas"
 import { KIND_COLOR } from "@/lib/kind"
+import type { Atlas } from "@/lib/model"
 import type { Kind } from "@/lib/types"
 
 type ViewNode = {
@@ -19,6 +19,7 @@ type ViewLink = {
   source: string
   target: string
   relation: string
+  confidence: string
 }
 
 type GraphNode = NodeObject<ViewNode>
@@ -37,11 +38,17 @@ function radius(degree: number): number {
   return Math.max(3.4, Math.sqrt(degree + 1) * 1.7)
 }
 
+function inferred(link: { confidence?: string }): boolean {
+  return link.confidence === "INFERRED"
+}
+
 export function GraphCanvas({
+  atlas,
   highlight,
   selectedId,
   onSelect,
 }: {
+  atlas: Atlas
   highlight: ReadonlySet<string> | null
   selectedId: string | null
   onSelect: (id: string) => void
@@ -64,9 +71,10 @@ export function GraphCanvas({
         source: link.source,
         target: link.target,
         relation: link.relation ?? "",
+        confidence: link.confidence ?? "",
       })),
     }),
-    [],
+    [atlas],
   )
 
   useEffect(() => {
@@ -100,6 +108,20 @@ export function GraphCanvas({
           {atlas.meta.nodeCount} nodes · {atlas.meta.edgeCount} edges · communities{" "}
           {atlas.meta.communityCount}
         </p>
+      </div>
+      <div className="pointer-events-none absolute bottom-4 left-4 z-10 flex items-center gap-4 rounded-lg bg-[#10151c]/80 px-2.5 py-1.5 text-xs text-[#e7e5e4]">
+        <span className="flex items-center gap-2">
+          <svg width="28" height="8" aria-hidden="true">
+            <line x1="0" y1="4" x2="28" y2="4" stroke="#e7e5e4" strokeWidth="2" />
+          </svg>
+          Extracted
+        </span>
+        <span className="flex items-center gap-2">
+          <svg width="28" height="8" aria-hidden="true">
+            <line x1="0" y1="4" x2="28" y2="4" stroke="#fbbf24" strokeWidth="2" strokeDasharray="4 3" />
+          </svg>
+          Inferred
+        </span>
       </div>
       {size.width > 0 && size.height > 0 ? (
         <ForceGraph2D<ViewNode, ViewLink>
@@ -157,15 +179,18 @@ export function GraphCanvas({
             const source = endpointId(link.source)
             const target = endpointId(link.target)
             const active = !highlight || (highlight.has(source) && highlight.has(target))
+            if (inferred(link)) return active ? "rgba(251, 191, 36, 0.95)" : "rgba(251, 191, 36, 0.22)"
             if (!active) return "rgba(231, 229, 228, 0.045)"
             if (link.relation === "calls" || link.relation === "indirect_call") return "rgba(45, 212, 191, 0.7)"
             if (link.relation === "imports" || link.relation === "imports_from") return "rgba(56, 189, 248, 0.55)"
             return "rgba(245, 240, 230, 0.28)"
           }}
+          linkLineDash={(link: GraphLink) => (inferred(link) ? [4, 3] : null)}
           linkWidth={(link: GraphLink) => {
             const source = endpointId(link.source)
             const target = endpointId(link.target)
             const active = !highlight || (highlight.has(source) && highlight.has(target))
+            if (inferred(link)) return active ? 1.8 : 1.1
             if (selectedId && (source === selectedId || target === selectedId)) return 1.6
             return active ? 0.7 : 0.25
           }}

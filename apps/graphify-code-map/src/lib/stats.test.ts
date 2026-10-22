@@ -1,9 +1,11 @@
 /// <reference types="bun" />
 import { describe, expect, test } from "bun:test"
-import { atlas } from "@/data/atlas"
+import { readCommittedAtlas } from "@/data/committed-atlas"
 import { buildAtlas } from "@/lib/model"
 import { countsByKind, countsByRelation, moduleCoupling } from "@/lib/stats"
 import type { AnalysisFile, GraphFile, MetaFile } from "@/lib/types"
+
+const atlas = readCommittedAtlas()
 
 const meta: MetaFile = {
   graphifyVersion: "test",

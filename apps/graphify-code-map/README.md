@@ -15,7 +15,7 @@ bun install && bun run dev
 
 ## Regenerate the snapshot
 
-Requires Python 3.10+ and the Graphify CLI (`uv tool install graphifyy`, or `uvx`).
+Requires Python 3.10+ and the Graphify CLI (`uv tool install graphifyy==0.9.94`, or `uvx --from graphifyy==0.9.94 graphify`).
 
 ```bash
 cd apps/graphify-code-map
@@ -28,7 +28,7 @@ The script runs:
 graphify extract ../openui-genui --code-only --out .graphify-work
 ```
 
-It copies `graph.json` into `src/data/` unchanged and writes a trimmed `analysis.json` (god nodes and surprises) plus `meta.json`. `.graphify-work/` is gitignored.
+It copies `graph.json` into `public/` unchanged. The app fetches `/graph.json` when it loads, so the snapshot stays out of the JavaScript bundle. The script also writes a trimmed `analysis.json` (god nodes and surprises) plus `meta.json` under `src/data/`. `.graphify-work/` is gitignored.
 
 A semantic pass over `PLAN.md` and the READMEs needs one of Graphify's documented backend keys (`graphify extract` without `--code-only`). Do not commit a key.
 

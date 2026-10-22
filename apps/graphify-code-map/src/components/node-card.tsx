@@ -1,14 +1,15 @@
 import { EdgeCard } from "@/components/edge-card"
 import { Badge } from "@/components/ui/badge"
-import { atlas } from "@/data/atlas"
 import { KIND_COLOR, KIND_LABEL } from "@/lib/kind"
-import { nodeSummary } from "@/lib/model"
+import { nodeSummary, type Atlas } from "@/lib/model"
 
 export function NodeCard({
+  atlas,
   nodeId,
   onOpen,
   onClose,
 }: {
+  atlas: Atlas
   nodeId: string
   onOpen: (id: string) => void
   onClose: () => void
@@ -75,7 +76,13 @@ export function NodeCard({
           {edges.length} connection{edges.length === 1 ? "" : "s"}
         </p>
         {edges.map((edge) => (
-          <EdgeCard key={`${edge.index}-${edge.direction}`} edge={edge} ownerId={node.id} onOpen={onOpen} />
+          <EdgeCard
+            key={`${edge.index}-${edge.direction}`}
+            atlas={atlas}
+            edge={edge}
+            ownerId={node.id}
+            onOpen={onOpen}
+          />
         ))}
       </div>
     </div>

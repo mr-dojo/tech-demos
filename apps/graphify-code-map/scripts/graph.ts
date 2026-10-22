@@ -17,9 +17,9 @@ function findGraphify(): string[] {
   const uvxBins = ["uvx", path.join(home, ".local/bin/uvx")]
   for (const uvx of uvxBins) {
     const probe = spawnSync(uvx, ["--version"], { encoding: "utf8" })
-    if (probe.status === 0) return [uvx, "--from", "graphifyy", "graphify"]
+    if (probe.status === 0) return [uvx, "--from", "graphifyy==0.9.94", "graphify"]
   }
-  console.error("graphify is not on PATH. Install it with: uv tool install graphifyy")
+  console.error("graphify is not on PATH. Install it with: uv tool install graphifyy==0.9.94")
   process.exit(1)
 }
 
@@ -43,8 +43,10 @@ run(bin, ["extract", corpus, "--code-only", "--out", work])
 const graphPath = path.join(outDir, "graph.json")
 const analysisPath = path.join(outDir, ".graphify_analysis.json")
 const dataDir = path.join(appRoot, "src/data")
+const publicDir = path.join(appRoot, "public")
 mkdirSync(dataDir, { recursive: true })
-copyFileSync(graphPath, path.join(dataDir, "graph.json"))
+mkdirSync(publicDir, { recursive: true })
+copyFileSync(graphPath, path.join(publicDir, "graph.json"))
 
 type AnalysisShape = {
   gods?: unknown

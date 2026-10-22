@@ -29,7 +29,7 @@ Checked against `graphifyy` 0.9.94 (`graphify --version`) and a real extract of 
 **In**
 
 - `bun run graph` shells out to `graphify` (or `uvx --from graphifyy graphify` when the CLI is not on `PATH`) and refreshes the committed snapshot from `../openui-genui`.
-- Committed `src/data/graph.json` plus a trimmed analysis (`gods`, `surprises`) and `src/data/meta.json` (version, command, commit, code-only note). `bun install && bun run dev` needs neither Python nor a key.
+- Committed `public/graph.json` (fetched at runtime, not bundled) plus a trimmed analysis (`gods`, `surprises`) and `src/data/meta.json` (version, command, commit, code-only note). `bun install && bun run dev` needs neither Python nor a key.
 - One page. A force-directed map (`react-force-graph-2d`) of the snapshot. Node size follows degree. Color follows a local kind derived from Graphify fields: module, function, class, symbol, concept, external.
 - Click a node: a card with label, kind, `file_type`, source file, source location, community number, degree, and a one-line location summary. Edges of that node are cards, each with direction, the other label, relation, confidence, and the plain-language why described above.
 - A search box and a few starter chips (`pickup`, `warranty`, `catalog`, `what touches the cart?`). Matches stay bright; the rest dim. Empty questions say the graph has no such node.
@@ -73,9 +73,10 @@ apps/graphify-code-map/
 ├── PLAN.md
 ├── README.md
 ├── scripts/graph.ts            # shells out to graphify, copies the snapshot
+├── public/
+│   └── graph.json              # committed graphify-out/graph.json, fetched at runtime
 ├── src/
 │   ├── data/
-│   │   ├── graph.json          # committed graphify-out/graph.json
 │   │   ├── analysis.json       # gods + surprises (the why strings)
 │   │   └── meta.json
 │   ├── lib/

@@ -1,7 +1,6 @@
 import { Badge } from "@/components/ui/badge"
-import { atlas } from "@/data/atlas"
 import { explainEdge } from "@/lib/why"
-import { surpriseFor } from "@/lib/model"
+import { surpriseFor, type Atlas } from "@/lib/model"
 import type { IncidentEdge } from "@/lib/types"
 
 const CONFIDENCE_TONE: Record<string, string> = {
@@ -11,10 +10,12 @@ const CONFIDENCE_TONE: Record<string, string> = {
 }
 
 export function EdgeCard({
+  atlas,
   edge,
   ownerId,
   onOpen,
 }: {
+  atlas: Atlas
   edge: IncidentEdge
   ownerId: string
   onOpen: (id: string) => void

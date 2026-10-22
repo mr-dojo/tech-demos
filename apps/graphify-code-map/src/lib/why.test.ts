@@ -1,8 +1,10 @@
 /// <reference types="bun" />
 import { describe, expect, test } from "bun:test"
-import { atlas } from "@/data/atlas"
+import { readCommittedAtlas } from "@/data/committed-atlas"
 import { explainEdge } from "@/lib/why"
 import { surpriseFor } from "@/lib/model"
+
+const atlas = readCommittedAtlas()
 
 describe("edge explanation", () => {
   test("renders relation, confidence, and source file from Graphify fields", () => {

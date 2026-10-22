@@ -1,7 +1,9 @@
 /// <reference types="bun" />
 import { describe, expect, test } from "bun:test"
-import { atlas } from "@/data/atlas"
+import { readCommittedAtlas } from "@/data/committed-atlas"
 import { queryTerms, searchGraph } from "@/lib/search"
+
+const atlas = readCommittedAtlas()
 
 describe("query terms", () => {
   test("drops question words and keeps the subject", () => {
