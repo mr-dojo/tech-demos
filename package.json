@@ -1,0 +1,10 @@
+{
+  "name": "tech-demos",
+  "private": true,
+  "scripts": {
+    "prepare": "lefthook install || echo 'lefthook: skipped because core.hooksPath is custom. From a normal clone this installs the pre-commit and pre-push hooks.'"
+  },
+  "devDependencies": {
+    "lefthook": "^2.1.4"
+  }
+}

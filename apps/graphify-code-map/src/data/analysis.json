@@ -1,0 +1,111 @@
+{
+  "gods": [
+    {
+      "id": "src_lib_mock_lang_gamingprogram",
+      "label": "gamingProgram()",
+      "degree": 18
+    },
+    {
+      "id": "src_lib_tools_runtool",
+      "label": "runTool()",
+      "degree": 17
+    },
+    {
+      "id": "src_app_api_chat_route_post",
+      "label": "POST()",
+      "degree": 16
+    },
+    {
+      "id": "src_lib_catalog_getpart",
+      "label": "getPart()",
+      "degree": 16
+    },
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "src_lib_mock_lang_upgradeprogram",
+      "label": "upgradeProgram()",
+      "degree": 14
+    },
+    {
+      "id": "src_lib_utils_cn",
+      "label": "cn()",
+      "degree": 14
+    },
+    {
+      "id": "src_lib_mock_lang_warrantyprogram",
+      "label": "warrantyProgram()",
+      "degree": 13
+    },
+    {
+      "id": "src_components_source_sheet_sourcesheet",
+      "label": "SourceSheet()",
+      "degree": 12
+    },
+    {
+      "id": "src_lib_mock_lang_pickupprogram",
+      "label": "pickupProgram()",
+      "degree": 12
+    }
+  ],
+  "surprises": [
+    {
+      "source": "post()",
+      "target": "POST()",
+      "source_files": [
+        "src/app/api/chat/route.test.ts",
+        "src/app/api/chat/route.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `post()` unexpectedly reaches hub `POST()`"
+    },
+    {
+      "source": "createStream()",
+      "target": "demoChunk()",
+      "source_files": [
+        "src/app/api/chat/route.test.ts",
+        "src/lib/sse.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `createStream()` unexpectedly reaches hub `demoChunk()`"
+    },
+    {
+      "source": "POST()",
+      "target": "parseChatBody()",
+      "source_files": [
+        "src/app/api/chat/route.ts",
+        "src/lib/messages.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "POST()",
+      "target": "matchDemo()",
+      "source_files": [
+        "src/app/api/chat/route.ts",
+        "src/lib/mock-lang.ts"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "POST()",
+      "target": "executeTool()",
+      "source_files": [
+        "src/app/api/chat/route.ts",
+        "src/lib/tools.ts"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "why": "inferred connection - not explicitly stated in source"
+    }
+  ]
+}

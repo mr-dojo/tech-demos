@@ -1,0 +1,17 @@
+# Installed by `bun install` at the repo root (`prepare` → `lefthook install`).
+pre-commit:
+  commands:
+    openui-lint:
+      glob: "apps/openui-genui/**/*.{ts,tsx,js,mjs}"
+      root: "apps/openui-genui"
+      run: bun run lint
+    openui-typecheck:
+      glob: "apps/openui-genui/**/*.{ts,tsx}"
+      root: "apps/openui-genui"
+      run: bun run typecheck
+
+pre-push:
+  commands:
+    openui-test:
+      root: "apps/openui-genui"
+      run: bun test

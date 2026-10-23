@@ -1,0 +1,19 @@
+{
+  "proposed": [],
+  "built": [
+    {
+      "slug": "openui-genui",
+      "name": "Thesys OpenUI",
+      "url": "https://github.com/thesysdev/openui",
+      "app": "apps/openui-genui",
+      "summary": "Voltline PC shopper chat rendered with OpenUI Lang"
+    },
+    {
+      "slug": "graphify-code-map",
+      "name": "Graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "app": "apps/graphify-code-map",
+      "summary": "Codebase Atlas: force-directed explorer of the Voltline OpenUI graph"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 320 180" role="img">
+  <rect width="320" height="180" rx="18" fill="#1a140c"/>
+  <g fill="#f4efe6">
+    <rect x="86" y="36" width="16" height="16" rx="2"/>
+    <rect x="110" y="36" width="16" height="16" rx="2"/>
+    <rect x="158" y="36" width="16" height="16" rx="2"/>
+    <rect x="182" y="36" width="16" height="16" rx="2"/>
+    <rect x="206" y="36" width="16" height="16" rx="2"/>
+    <rect x="86" y="60" width="16" height="16" rx="2"/>
+    <rect x="134" y="60" width="16" height="16" rx="2"/>
+    <rect x="182" y="60" width="16" height="16" rx="2"/>
+    <rect x="218" y="60" width="16" height="16" rx="2"/>
+    <rect x="98" y="84" width="16" height="16" rx="2"/>
+    <rect x="146" y="84" width="16" height="16" rx="2"/>
+    <rect x="170" y="84" width="16" height="16" rx="2"/>
+    <rect x="206" y="84" width="16" height="16" rx="2"/>
+    <rect x="86" y="108" width="16" height="16" rx="2"/>
+    <rect x="122" y="108" width="16" height="16" rx="2"/>
+    <rect x="170" y="108" width="16" height="16" rx="2"/>
+    <rect x="218" y="108" width="16" height="16" rx="2"/>
+    <rect x="86" y="132" width="16" height="16" rx="2"/>
+    <rect x="110" y="132" width="16" height="16" rx="2"/>
+    <rect x="146" y="132" width="16" height="16" rx="2"/>
+    <rect x="194" y="132" width="16" height="16" rx="2"/>
+    <rect x="218" y="132" width="16" height="16" rx="2"/>
+  </g>
+  <path d="M132 78l28 48 28-48" fill="none" stroke="#e2b15a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
