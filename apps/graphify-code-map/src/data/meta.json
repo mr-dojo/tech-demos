@@ -1,0 +1,15 @@
+{
+  "graphifyVersion": "0.9.94",
+  "package": "graphifyy",
+  "command": "graphify extract ../openui-genui --code-only --out .graphify-work",
+  "corpus": "apps/openui-genui",
+  "builtAtCommit": "be8315dc756b78a4a82b8bc509b124ad3ca170c8",
+  "generatedAt": "2026-10-22T22:21:58.148Z",
+  "semantic": false,
+  "semanticNote": "Code-only extract. No LLM API key was available, so docs and images were skipped and communities stay numbered.",
+  "queryMode": "local-neighborhood",
+  "queryNote": "The in-app box scores labels locally and expands two hops. It is not a live graphify query process. graphify query reads this same graph.json when you regenerate.",
+  "nodeCount": 331,
+  "edgeCount": 683,
+  "communityCount": 11
+}
