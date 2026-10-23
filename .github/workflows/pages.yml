@@ -1,0 +1,92 @@
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/graphify-code-map/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+# Default for jobs that do not set their own permissions. The build job repeats
+# contents: read. pages: write and id-token: write are only on the deploy job.
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.4.4
+
+      - name: Install
+        working-directory: apps/graphify-code-map
+        run: bun install --frozen-lockfile
+
+      - name: Build
+        working-directory: apps/graphify-code-map
+        env:
+          # Project Pages origin is https://mr-dojo.github.io/tech-demos/
+          VITE_BASE_PATH: /tech-demos/graphify-code-map/
+        run: bun run build
+
+      - name: Assemble site
+        run: |
+          mkdir -p site
+          # Static demos are published at /<slug>/. Add another copy + list item
+          # for the next static app. Leave server apps (apps/openui-genui) out.
+          mkdir -p site/graphify-code-map
+          cp -a apps/graphify-code-map/dist/. site/graphify-code-map/
+          cat > site/index.html <<'EOF'
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <title>tech-demos</title>
+            </head>
+            <body>
+              <h1>tech-demos</h1>
+              <ul>
+                <li><a href="graphify-code-map/">Codebase Atlas</a></li>
+              </ul>
+            </body>
+          </html>
+          EOF
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # Calls the Pages API, so it runs with the deploy token, not beside bun install.
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

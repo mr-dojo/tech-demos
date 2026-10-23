@@ -6,6 +6,12 @@ The committed snapshot is real `graphify extract --code-only` output from `graph
 
 Search highlights a neighborhood in the browser (keyword seeds, then two undirected hops). That is a local stand-in for `graphify query`, which is a Python CLI over the same `graph.json`. `what touches the cart?` matches nothing: Voltline has no cart symbol.
 
+## Live demo
+
+https://mr-dojo.github.io/tech-demos/graphify-code-map/
+
+The Pages build sets `VITE_BASE_PATH=/tech-demos/graphify-code-map/`. Local `bun run dev` leaves that unset and stays at `/`.
+
 ## Run
 
 ```bash
@@ -28,7 +34,7 @@ The script runs:
 graphify extract ../openui-genui --code-only --out .graphify-work
 ```
 
-It copies `graph.json` into `public/` unchanged. The app fetches `/graph.json` when it loads, so the snapshot stays out of the JavaScript bundle. The script also writes a trimmed `analysis.json` (god nodes and surprises) plus `meta.json` under `src/data/`. `.graphify-work/` is gitignored.
+It copies `graph.json` into `public/` unchanged. The app fetches `graph.json` from `import.meta.env.BASE_URL` when it loads, so the snapshot stays out of the JavaScript bundle and still resolves under the Pages subpath. The script also writes a trimmed `analysis.json` (god nodes and surprises) plus `meta.json` under `src/data/`. `.graphify-work/` is gitignored.
 
 A semantic pass over `PLAN.md` and the READMEs needs one of Graphify's documented backend keys (`graphify extract` without `--code-only`). Do not commit a key.
 
