@@ -8,11 +8,10 @@ on:
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
-# contents: read is required for checkout. pages and id-token publish the site.
+# Default for jobs that do not set their own permissions. The build job repeats
+# contents: read. pages: write and id-token: write are only on the deploy job.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -21,12 +20,18 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          persist-credentials: false
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.4.4
 
       - name: Install
         working-directory: apps/graphify-code-map
@@ -63,21 +68,25 @@ jobs:
           </html>
           EOF
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v6
-
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: site
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Calls the Pages API, so it runs with the deploy token, not beside bun install.
+      - name: Configure Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
