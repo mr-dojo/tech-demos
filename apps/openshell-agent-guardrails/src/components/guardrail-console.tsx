@@ -98,7 +98,9 @@ export function GuardrailConsole() {
     }
     if (payload.live && payload.reports) {
       setTrace((current) => (current ? { ...current, reports: payload.reports! } : current))
-      setProverNote("Replaced the cards with a live openshell-prover 0.1.5 run on this machine.")
+      setProverNote(
+        "Re-ran openshell-prover 0.1.5 on this machine. The policy result is from that run. The activity cards are still sample data.",
+      )
       return
     }
     setProverNote(payload.reason ?? "Showing the recorded stdout.")
@@ -127,7 +129,7 @@ export function GuardrailConsole() {
         <p className="p-4 text-sm text-muted-foreground">Loading the recorded trace…</p>
       ) : (
         <div className="grid min-h-0 flex-1 gap-4 p-4 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
-          <section className="flex min-h-0 flex-col gap-3">
+          <section className="order-2 flex min-h-0 flex-col gap-3 lg:order-1">
             <div className="flex flex-wrap items-center gap-2">
               <h2 className="text-sm font-medium">Activity</h2>
               <Badge variant="outline">{counts.allowed} allowed</Badge>
@@ -137,7 +139,7 @@ export function GuardrailConsole() {
                 Replay
               </Button>
             </div>
-            <ScrollArea className="h-[calc(100dvh-11rem)] pr-3">
+            <ScrollArea className="h-80 pr-3 lg:h-[calc(100dvh-11rem)]">
               <div className="space-y-3 pb-4">
                 {visible.map((event) => (
                   <EventCard key={event.id} event={event} />
@@ -149,7 +151,7 @@ export function GuardrailConsole() {
             </ScrollArea>
           </section>
 
-          <div className="space-y-4">
+          <div className="order-1 space-y-4 lg:order-2">
             {proposalVisible ? (
               <PolicyDiff
                 proposalYaml={trace.policies.proposal}
