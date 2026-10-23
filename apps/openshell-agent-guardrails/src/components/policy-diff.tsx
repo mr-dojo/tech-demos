@@ -9,6 +9,7 @@ export function PolicyDiff({
   proposal,
   credential,
   decision,
+  live,
   onApprove,
   onDeny,
 }: {
@@ -16,9 +17,11 @@ export function PolicyDiff({
   proposal: ProverReport
   credential: ProverReport
   decision: PublishDecision
+  live: boolean
   onApprove: () => void
   onDeny: () => void
 }) {
+  const provenance = live ? "Live" : "Recorded"
   const line = counterexampleLine(proposal)
   const witness = solverWitnessNote(proposal)
   const waiting = decision === "pending"
@@ -27,7 +30,7 @@ export function PolicyDiff({
     <section className="rounded-xl bg-card p-4 ring-1 ring-foreground/10">
       <div className="flex flex-wrap items-center gap-2">
         <h2 className="text-base font-medium">Policy diff</h2>
-        <Badge variant="outline">Recorded</Badge>
+        <Badge variant="outline">{provenance}</Badge>
         <Badge variant={needsHumanApproval(proposal) ? "destructive" : "secondary"}>{proposal.result}</Badge>
       </div>
       <p className="mt-2 text-sm leading-relaxed text-pretty">
@@ -44,7 +47,7 @@ export function PolicyDiff({
       <div className="mt-3 rounded-lg border border-dashed p-3">
         <div className="flex flex-wrap items-center gap-2">
           <p className="text-sm font-medium">Credential binding, same host</p>
-          <Badge variant="outline">Recorded</Badge>
+          <Badge variant="outline">{provenance}</Badge>
           <Badge variant="destructive">{credential.result}</Badge>
         </div>
         <p className="mt-1 text-xs leading-relaxed text-muted-foreground">

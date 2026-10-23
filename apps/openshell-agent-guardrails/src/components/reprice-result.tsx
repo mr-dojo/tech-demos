@@ -40,7 +40,7 @@ export function RepriceResult({ lines, decision }: { lines: RepriceLine[]; decis
       <div className="flex flex-wrap items-center gap-2">
         <h2 className="text-base font-medium">GPU repricing</h2>
         <Badge variant={decision === "approved" ? "default" : "outline"}>
-          {decision === "approved" ? "Published" : decision === "denied" ? "Withheld" : "Waiting"}
+          {decision === "approved" ? "Published (replay)" : decision === "denied" ? "Withheld" : "Waiting"}
         </Badge>
       </div>
       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{status}</p>

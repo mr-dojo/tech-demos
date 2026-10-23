@@ -20,4 +20,4 @@ apps/<kebab-slug>/     # one demo
 tracking/              # bookmark ledger shared by demo PRs
 ```
 
-`tracking/seen-bookmarks.json` records proposals and demos that have already been built. Add a built entry when a demo lands; do not rebuild a slug that is already listed.
+`tracking/seen-bookmarks.json` records proposals and demos that have already been built. Add a built entry when a demo lands; do not rebuild a slug that is already listed. `skipped` records bookmarks that were considered and not built. Each skipped entry has `slug`, `name`, `url`, and `summary`. Add one when a proposal is passed over, and do not rebuild a slug listed there either.

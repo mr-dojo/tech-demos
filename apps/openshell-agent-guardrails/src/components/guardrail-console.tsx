@@ -35,6 +35,7 @@ export function GuardrailConsole() {
   const [tail, setTail] = useState(0)
   const [decision, setDecision] = useState<PublishDecision>("pending")
   const [proverNote, setProverNote] = useState<string | null>(null)
+  const [proverLive, setProverLive] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -98,6 +99,7 @@ export function GuardrailConsole() {
     }
     if (payload.live && payload.reports) {
       setTrace((current) => (current ? { ...current, reports: payload.reports! } : current))
+      setProverLive(true)
       setProverNote(
         "Re-ran openshell-prover 0.1.5 on this machine. The policy result is from that run. The activity cards are still sample data.",
       )
@@ -158,6 +160,7 @@ export function GuardrailConsole() {
                 proposal={trace.reports.proposal}
                 credential={trace.reports.credentialBinding}
                 decision={decision}
+                live={proverLive}
                 onApprove={() => setDecision("approved")}
                 onDeny={() => setDecision("denied")}
               />

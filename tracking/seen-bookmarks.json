@@ -16,7 +16,7 @@
       "summary": "Codebase Atlas: force-directed explorer of the Voltline OpenUI graph"
     },
     {
-      "slug": "openshell",
+      "slug": "openshell-agent-guardrails",
       "name": "NVIDIA OpenShell",
       "url": "https://github.com/NVIDIA/OpenShell",
       "app": "apps/openshell-agent-guardrails",
