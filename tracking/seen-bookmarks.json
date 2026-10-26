@@ -1,14 +1,5 @@
 {
-  "proposed": [
-    {
-      "id": "paperpilot",
-      "title": "PaperPilot (pure-Rust PDF engine with WASM + MCP)",
-      "url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
-      "source": "Hacker News front page (https://news.ycombinator.com/item?id=50238739)",
-      "date": "2026-10-26",
-      "slug": "paperpilot-spec-desk"
-    }
-  ],
+  "proposed": [],
   "built": [
     {
       "slug": "openui-genui",
@@ -23,6 +14,17 @@
       "url": "https://github.com/Graphify-Labs/graphify",
       "app": "apps/graphify-code-map",
       "summary": "Codebase Atlas: force-directed explorer of the Voltline OpenUI graph"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "paperpilot",
+      "title": "PaperPilot (pure-Rust PDF engine with WASM + MCP)",
+      "url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+      "source": "Hacker News front page (https://news.ycombinator.com/item?id=50238739)",
+      "date": "2026-10-26",
+      "slug": "paperpilot-spec-desk",
+      "skipped": "2026-10-26"
     }
   ]
 }
