@@ -1,5 +1,14 @@
 {
-  "proposed": [],
+  "proposed": [
+    {
+      "id": "paperpilot",
+      "title": "PaperPilot (pure-Rust PDF engine with WASM + MCP)",
+      "url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+      "source": "Hacker News front page (https://news.ycombinator.com/item?id=50238739)",
+      "date": "2026-10-26",
+      "slug": "paperpilot-spec-desk"
+    }
+  ],
   "built": [
     {
       "slug": "openui-genui",
