@@ -47,6 +47,7 @@ describe("audit file", () => {
 describe("provenance", () => {
   test("names Hallmark 2.0.0 and the three dealt slugs", () => {
     expect(provenance.hallmark).toBe("2.0.0")
+    expect(provenance.commit).toBe("6033bab2a8051b5454552d2e8e6cb8f27c483a42")
     expect(provenance.themes.map((theme) => theme.slug)).toEqual(["halftone", "arcade", "hum"])
     expect(provenance.finishReview).toBe("not run")
     expect(provenance.render).toBe("ran")
@@ -59,6 +60,15 @@ describe("pages", () => {
     for (const slug of ["halftone", "arcade", "hum"]) {
       expect(css(slug).startsWith("/* Hallmark")).toBe(true)
     }
+  })
+
+  test("Google fonts are files in this app, and Chillax stays on Fontshare", () => {
+    for (const slug of ["default", "halftone", "arcade"]) {
+      expect(page(slug)).not.toContain("fonts.googleapis.com")
+      expect(page(slug)).toContain("../../fonts/faces.css")
+    }
+    expect(page("hum")).toContain("api.fontshare.com")
+    expect(page("hum")).not.toContain("fonts.googleapis.com")
   })
 
   test("the redesigned pages do not contain the invented 50,000 line", () => {

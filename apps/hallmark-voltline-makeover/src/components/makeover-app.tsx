@@ -69,9 +69,9 @@ export function MakeoverApp() {
         </CardHeader>
         <CardContent className="grid gap-2 text-sm text-muted-foreground">
           <p>
-            Hallmark {provenance.hallmark} dealt this hand from a {provenance.catalogThemes}-theme
-            catalog. The seed is {provenance.seed}. The skill says to pick one theme. This demo
-            builds all three, and each stamp says so.
+            Hallmark {provenance.hallmark} at commit {provenance.commit} dealt this hand from a{" "}
+            {provenance.catalogThemes}-theme catalog. The seed is {provenance.seed}. The skill says
+            to pick one theme. This demo builds all three, and each stamp says so.
           </p>
           <p>
             The browser audit ran. The three redesigns then passed sloplint with 0 FAIL and 0

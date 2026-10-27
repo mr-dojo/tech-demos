@@ -24,7 +24,13 @@ function PageFrame({
 }) {
   return (
     <div className="relative h-full w-full bg-background">
-      <iframe ref={frameRef} src={src} title={title} className="h-full w-full border-0" />
+      <iframe
+        ref={frameRef}
+        src={src}
+        title={title}
+        className="h-full w-full border-0"
+        sandbox="allow-scripts allow-same-origin allow-forms"
+      />
       <span className="pointer-events-none absolute top-3 left-3 rounded-md bg-background/90 px-2 py-1 text-xs font-medium text-foreground ring-1 ring-foreground/10">
         {label}
       </span>
