@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "apps/graphify-code-map/**"
+      - "apps/hallmark-voltline-makeover/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -44,6 +45,16 @@ jobs:
           VITE_BASE_PATH: /tech-demos/graphify-code-map/
         run: bun run build
 
+      - name: Install Hallmark demo
+        working-directory: apps/hallmark-voltline-makeover
+        run: bun install --frozen-lockfile
+
+      - name: Build Hallmark demo
+        working-directory: apps/hallmark-voltline-makeover
+        env:
+          VITE_BASE_PATH: /tech-demos/hallmark-voltline-makeover/
+        run: bun run build
+
       - name: Assemble site
         run: |
           mkdir -p site
@@ -51,6 +62,8 @@ jobs:
           # for the next static app. Leave server apps (apps/openui-genui) out.
           mkdir -p site/graphify-code-map
           cp -a apps/graphify-code-map/dist/. site/graphify-code-map/
+          mkdir -p site/hallmark-voltline-makeover
+          cp -a apps/hallmark-voltline-makeover/dist/. site/hallmark-voltline-makeover/
           cat > site/index.html <<'EOF'
           <!doctype html>
           <html lang="en">
@@ -63,6 +76,7 @@ jobs:
               <h1>tech-demos</h1>
               <ul>
                 <li><a href="graphify-code-map/">Codebase Atlas</a></li>
+                <li><a href="hallmark-voltline-makeover/">Hallmark Voltline makeover</a></li>
               </ul>
             </body>
           </html>

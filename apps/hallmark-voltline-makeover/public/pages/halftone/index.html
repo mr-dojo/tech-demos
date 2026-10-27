@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voltline, a 1440p build for pickup</title>
+<meta name="description" content="Eight sample catalog parts, together at $1,422, for pickup at Voltline Harbor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700&family=Ultra&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <section class="hero" id="top">
+    <div class="container nav">
+      <a class="wordmark" href="#top">Voltline</a>
+      <nav aria-label="Page">
+        <a href="#specs">Specs</a>
+        <a href="#parts">Parts</a>
+        <a href="#pickup">Pickup</a>
+      </nav>
+    </div>
+    <div class="container hero__grid">
+      <div>
+        <h1>Pick up a 1440p build.</h1>
+        <p class="lead">Eight catalog parts, priced at $1,422.</p>
+        <div class="actions">
+          <a class="btn" href="#reserve">Reserve pickup</a>
+          <a class="btn btn--line" href="#parts">See the parts</a>
+        </div>
+      </div>
+      <p class="price">$1,422 <small>Sample catalog total. Harbor can hold four of the parts today.</small></p>
+    </div>
+    <div class="halftone" aria-hidden="true"></div>
+  </section>
+
+  <section class="block" id="specs" aria-labelledby="use-head">
+    <div class="container split">
+      <div>
+        <h2 id="use-head">On a bench, not a banner</h2>
+        <p class="lead">The graphics card is a GeForce RTX 4070 Super. The sample catalog lists 132 fps at 1440p and 220 W.</p>
+      </div>
+      <figure>
+        <div class="photo" data-slot="bench" data-alt="The Harbor 1440 build on a bench. This library photo stands in until a product shot exists.">
+          <img src="photos/bench.jpg" width="1280" height="853" alt="A hand holding a soldering iron over a wooden bench with pliers and parts">
+        </div>
+        <figcaption>Library stand-in, not this PC. <a href="https://commons.wikimedia.org/wiki/File:Scope_soldering_iron_(early_model).jpg">Doug butler</a>, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="parts" aria-labelledby="parts-head">
+    <div class="container">
+      <h2 id="parts-head">Eight parts in the box</h2>
+      <div class="ruled">
+        <div class="part" id="part-VL-CPU-7600"><a href="#part-VL-CPU-7600">Ryzen 5 7600</a><span>VL-CPU-7600, AMD, 65 W</span><span class="num">$189</span></div>
+        <div class="part" id="part-VL-GPU-4070S"><a href="#part-VL-GPU-4070S">GeForce RTX 4070 Super</a><span>VL-GPU-4070S, NVIDIA</span><span class="num">$599</span></div>
+        <div class="part" id="part-VL-MB-B650"><a href="#part-VL-MB-B650">Harbor B650 ATX</a><span>VL-MB-B650, Harbor</span><span class="num">$149</span></div>
+        <div class="part" id="part-VL-RAM-32D5"><a href="#part-VL-RAM-32D5">Kiln 32GB DDR5-6000</a><span>VL-RAM-32D5, Kiln</span><span class="num">$104</span></div>
+        <div class="part" id="part-VL-SSD-2T"><a href="#part-VL-SSD-2T">Drift 2TB NVMe</a><span>VL-SSD-2T, Drift</span><span class="num">$134</span></div>
+        <div class="part" id="part-VL-PSU-750"><a href="#part-VL-PSU-750">Northspan 750W</a><span>VL-PSU-750, Northspan</span><span class="num">$109</span></div>
+        <div class="part" id="part-VL-CASE-ATX"><a href="#part-VL-CASE-ATX">Keel Mid Tower</a><span>VL-CASE-ATX, Keel</span><span class="num">$99</span></div>
+        <div class="part" id="part-VL-COOL-AIR"><a href="#part-VL-COOL-AIR">Draft Tower 158</a><span>VL-COOL-AIR, Draft</span><span class="num">$39</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="pickup" aria-labelledby="pickup-head">
+    <div class="container">
+      <h2 id="pickup-head">Pick it up at Harbor</h2>
+      <p class="lead">120 Market Street, Harbor City. Open 10 AM to 8 PM.</p>
+      <p>Sample shelf counts at Harbor: processor 4, graphics card 3, board 5, cooler 6. Memory, the drive, the power supply, and the case are in stock in the catalog, with no store count on file.</p>
+      <div class="stores">
+        <p class="store"><strong>Harbor</strong> 120 Market Street</p>
+        <p class="store"><strong>Keel Yard</strong> 18 Dock Road</p>
+        <p class="store"><strong>Northspan</strong> 400 Ridge Avenue</p>
+        <p class="store"><strong>Draft</strong> 9 Lamp Lane</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="reserve" aria-labelledby="reserve-head">
+    <div class="container split">
+      <div>
+        <h2 id="reserve-head">Reserve the build</h2>
+        <p class="lead">The same $1,422. The form does not send.</p>
+      </div>
+      <form class="form" id="reserve-form" action="#reserve">
+        <label for="buyer-name">Name</label>
+        <input id="buyer-name" name="name" type="text" autocomplete="name" required>
+        <label for="store">Store</label>
+        <select id="store" name="store">
+          <option value="store-harbor">Voltline Harbor</option>
+          <option value="store-keel">Voltline Keel Yard</option>
+          <option value="store-northspan">Voltline Northspan</option>
+          <option value="store-draft">Voltline Draft</option>
+        </select>
+        <button class="btn" type="submit" data-testid="reserve-submit">Reserve pickup</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="statement" aria-labelledby="close-head">
+    <div class="container">
+      <h2 id="close-head">$1,422, ready to reserve.</h2>
+      <p><a href="#reserve">Reserve pickup</a></p>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="container">
+    <p>Voltline is a fictional shop. Prices and shelf counts are sample catalog data. Hallmark theme Halftone, deal 1 of 3.</p>
+  </div>
+</footer>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+</body>
+</html>

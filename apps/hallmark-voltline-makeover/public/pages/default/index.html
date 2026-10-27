@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voltline · the ultimate 1440p build</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital@1&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="wordmark" href="#top">Voltline</a>
+  <ul class="nav__links">
+    <li><a href="#specs">Specs</a></li>
+    <li><a href="#parts">Parts</a></li>
+    <li><a href="#pickup">Pickup</a></li>
+    <li><a class="cta" href="#reserve">Get started →</a></li>
+  </ul>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow">Gaming · built · different</p>
+    <h1>Build your <span class="pop">ultimate</span> 1440p rig</h1>
+    <p class="lede">Trusted by 50,000+ gamers. Seamlessly unleash next-generation frames, effortlessly.</p>
+    <a class="cta" href="#reserve">Get started →</a>
+    <div class="frame" aria-hidden="true"></div>
+  </section>
+
+  <section class="band" id="why">
+    <div class="head">
+      <p class="eyebrow">01 · Why Voltline</p>
+      <h2>Everything you need</h2>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="icon">⚡</div>
+        <h3>Blazing fast</h3>
+        <p>A card inside a card, as the template intended.</p>
+        <div class="card"><p>RTX 4070 Super, 132 fps at 1440p in the sample catalog.</p></div>
+      </article>
+      <article class="card">
+        <div class="icon">🎮</div>
+        <h3>Ready to play</h3>
+        <p>Eight parts from the sample catalog, priced together at $1,422.</p>
+      </article>
+      <article class="card">
+        <div class="icon">✨</div>
+        <h3>Pickup today</h3>
+        <p>Harbor holds the processor, the graphics card, the board, and the cooler.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="band" id="specs">
+    <div class="head">
+      <p class="eyebrow">02 · The spec sheet</p>
+      <h2>Built for modern play</h2>
+    </div>
+    <p>Ryzen 5 7600, GeForce RTX 4070 Super, Harbor B650 ATX, Kiln 32GB DDR5-6000, Drift 2TB NVMe, Northspan 750W, Keel Mid Tower, Draft Tower 158. Sample catalog total $1,422.</p>
+  </section>
+
+  <section class="band" id="parts">
+    <div class="head">
+      <p class="eyebrow">03 · The parts</p>
+      <h2>What is in the box</h2>
+    </div>
+    <table class="rows">
+      <thead>
+        <tr><th>Part</th><th>SKU</th><th>Price</th></tr>
+      </thead>
+      <tbody>
+        <tr id="part-VL-CPU-7600"><td><a href="#part-VL-CPU-7600">Ryzen 5 7600</a></td><td>VL-CPU-7600</td><td>$189</td></tr>
+        <tr id="part-VL-GPU-4070S"><td><a href="#part-VL-GPU-4070S">GeForce RTX 4070 Super</a></td><td>VL-GPU-4070S</td><td>$599</td></tr>
+        <tr id="part-VL-MB-B650"><td><a href="#part-VL-MB-B650">Harbor B650 ATX</a></td><td>VL-MB-B650</td><td>$149</td></tr>
+        <tr id="part-VL-RAM-32D5"><td><a href="#part-VL-RAM-32D5">Kiln 32GB DDR5-6000</a></td><td>VL-RAM-32D5</td><td>$104</td></tr>
+        <tr id="part-VL-SSD-2T"><td><a href="#part-VL-SSD-2T">Drift 2TB NVMe</a></td><td>VL-SSD-2T</td><td>$134</td></tr>
+        <tr id="part-VL-PSU-750"><td><a href="#part-VL-PSU-750">Northspan 750W</a></td><td>VL-PSU-750</td><td>$109</td></tr>
+        <tr id="part-VL-CASE-ATX"><td><a href="#part-VL-CASE-ATX">Keel Mid Tower</a></td><td>VL-CASE-ATX</td><td>$99</td></tr>
+        <tr id="part-VL-COOL-AIR"><td><a href="#part-VL-COOL-AIR">Draft Tower 158</a></td><td>VL-COOL-AIR</td><td>$39</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="band" id="pickup">
+    <div class="head">
+      <p class="eyebrow">04 · Pickup</p>
+      <h2>Come and get it</h2>
+    </div>
+    <p>Voltline Harbor, 120 Market Street, Harbor City, 10 AM to 8 PM. Sample shelf counts: processor 4, graphics card 3, board 5, cooler 6. Keel Yard, Northspan, and Draft are the other sample stores. Memory, the drive, the power supply, and the case are in stock in the catalog, with no store count on file.</p>
+  </section>
+
+  <section class="band" id="reserve">
+    <div class="head">
+      <p class="eyebrow">05 · Reserve</p>
+      <h2>Claim your build</h2>
+    </div>
+    <form class="reserve" id="reserve-form" action="#reserve">
+      <label for="buyer-name">Name</label>
+      <input id="buyer-name" name="name" type="text" autocomplete="name" required>
+      <label for="store">Store</label>
+      <select id="store" name="store">
+        <option value="store-harbor">Voltline Harbor</option>
+        <option value="store-keel">Voltline Keel Yard</option>
+        <option value="store-northspan">Voltline Northspan</option>
+        <option value="store-draft">Voltline Draft</option>
+      </select>
+      <button class="cta" type="submit" data-testid="reserve-submit">Reserve pickup</button>
+      <p>This form does not send. It is the buy action on the page.</p>
+    </form>
+  </section>
+
+  <section class="quote" id="voices">
+    <p class="eyebrow">Loved by builders</p>
+    <p>"It changed everything for our squad."</p>
+    <p>Jane Doe, Head of Gaming</p>
+  </section>
+
+  <section class="signup" id="newsletter">
+    <p class="eyebrow">Newsletter</p>
+    <h2>Stay in the loop</h2>
+    <p>Join the list for drops, deals, and nothing in particular.</p>
+    <form id="newsletter-form" action="#newsletter">
+      <label class="visually-hidden" for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com">
+      <button class="cta" type="submit">Subscribe</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>Voltline is a fictional shop. Prices, ratings, and shelf counts are sample catalog data. This page was not built with Hallmark.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voltline, a 1440p build for pickup</title>
+<meta name="description" content="Eight sample catalog parts, together at $1,422, for pickup at Voltline Harbor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Chivo:wght@400;700;900&family=Silkscreen:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <section class="hero" id="top">
+    <div class="container nav">
+      <a class="wordmark display" href="#top">Voltline</a>
+      <nav aria-label="Page">
+        <a href="#specs">Specs</a>
+        <a href="#parts">Parts</a>
+        <a href="#pickup">Pickup</a>
+      </nav>
+    </div>
+    <div class="container hero__grid">
+      <div>
+        <h1>A 1440p build.</h1>
+        <p class="lead">Eight catalog parts, priced at $1,422.</p>
+        <p class="figure">$1,422 <span>1422</span></p>
+        <div class="actions">
+          <a class="btn" href="#reserve">Reserve pickup</a>
+          <a class="btn btn--ghost" href="#parts">See the parts</a>
+        </div>
+      </div>
+      <figure>
+        <div class="crt" data-slot="stick" data-alt="Hands on this build. This library photo of an arcade stick stands in.">
+          <img src="photos/stick.jpg" width="1280" height="1280" alt="A black arcade joystick and red and white buttons on a dark cabinet">
+        </div>
+        <figcaption>Library stand-in. <a href="https://commons.wikimedia.org/wiki/File:Arcade_(8409657650).jpg">Faruk Ateş</a>, CC BY 2.0, Wikimedia Commons.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="parts" aria-labelledby="parts-head">
+    <div class="container">
+      <h2 id="parts-head">Eight parts in the box</h2>
+      <div class="bento">
+        <div class="well">
+          <div class="part" id="part-VL-CPU-7600"><a href="#part-VL-CPU-7600">Ryzen 5 7600</a><span class="num">$189</span></div>
+          <div class="part" id="part-VL-GPU-4070S"><a href="#part-VL-GPU-4070S">GeForce RTX 4070 Super</a><span class="num">$599</span></div>
+          <div class="part" id="part-VL-MB-B650"><a href="#part-VL-MB-B650">Harbor B650 ATX</a><span class="num">$149</span></div>
+          <div class="part" id="part-VL-RAM-32D5"><a href="#part-VL-RAM-32D5">Kiln 32GB DDR5-6000</a><span class="num">$104</span></div>
+        </div>
+        <div class="well">
+          <div class="part" id="part-VL-SSD-2T"><a href="#part-VL-SSD-2T">Drift 2TB NVMe</a><span class="num">$134</span></div>
+          <div class="part" id="part-VL-PSU-750"><a href="#part-VL-PSU-750">Northspan 750W</a><span class="num">$109</span></div>
+          <div class="part" id="part-VL-CASE-ATX"><a href="#part-VL-CASE-ATX">Keel Mid Tower</a><span class="num">$99</span></div>
+          <div class="part" id="part-VL-COOL-AIR"><a href="#part-VL-COOL-AIR">Draft Tower 158</a><span class="num">$39</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="specs" aria-labelledby="use-head">
+    <div class="container bento">
+      <figure>
+        <div class="crt" data-slot="keys" data-alt="The keyboard that sits with this build. This library photo stands in.">
+          <img src="photos/keys.jpg" width="1280" height="865" alt="Macro of translucent backlit keycaps on a dark keyboard">
+        </div>
+        <figcaption>Library stand-in. <a href="https://commons.wikimedia.org/wiki/File:ASUS_ROG_Strix_G15_(G513QY-HQ012T)-top_keyboard_WASD_PNr%C2%B00888.jpg">D-Kuru</a>, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
+      </figure>
+      <div class="well">
+        <h2 id="use-head">What the card does</h2>
+        <p class="lead">GeForce RTX 4070 Super. The sample catalog lists 132 fps at 1440p and 220 W.</p>
+        <p>Ryzen 5 7600 at 65 W on the Harbor B650. Kiln 32GB DDR5-6000. Drift 2TB. Northspan 750W in a Keel Mid Tower, cooled by a Draft Tower 158.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="pickup" aria-labelledby="pickup-head">
+    <div class="container bento">
+      <div>
+        <h2 id="pickup-head">Pick it up at Harbor</h2>
+        <p class="lead">120 Market Street, Harbor City. Open 10 AM to 8 PM.</p>
+        <p>Sample shelf counts: processor 4, graphics card 3, board 5, cooler 6. Memory, the drive, the power supply, and the case are in stock in the catalog, with no store count on file. Keel Yard, 18 Dock Road. Northspan, 400 Ridge Avenue. Draft, 9 Lamp Lane.</p>
+      </div>
+      <form class="form well" id="reserve-form" action="#reserve">
+        <h3 id="reserve">Reserve the build</h3>
+        <label for="buyer-name">Name</label>
+        <input id="buyer-name" name="name" type="text" autocomplete="name" required>
+        <label for="store">Store</label>
+        <select id="store" name="store">
+          <option value="store-harbor">Voltline Harbor</option>
+          <option value="store-keel">Voltline Keel Yard</option>
+          <option value="store-northspan">Voltline Northspan</option>
+          <option value="store-draft">Voltline Draft</option>
+        </select>
+        <button class="btn" type="submit" data-testid="reserve-submit">Reserve pickup</button>
+        <p>This form does not send.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<div class="buybar">
+  <p class="figure">$1,422</p>
+  <a class="btn" href="#reserve">Reserve pickup</a>
+</div>
+<footer class="foot">
+  <div class="container mast">
+    <a class="wordmark display" href="#top">Voltline</a>
+    <nav aria-label="Footer">
+      <a href="#parts">Parts</a>
+      <a href="#pickup">Pickup</a>
+      <a href="#reserve">Reserve</a>
+    </nav>
+  </div>
+  <div class="container">
+    <p>Voltline is a fictional shop. Prices and shelf counts are sample catalog data. Hallmark theme Arcade, deal 2 of 3.</p>
+  </div>
+</footer>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+</body>
+</html>

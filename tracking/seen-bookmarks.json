@@ -1,14 +1,5 @@
 {
-  "proposed": [
-    {
-      "id": "hallmark",
-      "title": "Hallmark (anti-AI-slop design skill for coding agents, by Together AI)",
-      "url": "https://github.com/Nutlope/hallmark",
-      "source": "GitHub trending daily #1 (https://github.com/trending)",
-      "date": "2026-10-27",
-      "slug": "hallmark-voltline-makeover"
-    }
-  ],
+  "proposed": [],
   "built": [
     {
       "slug": "openui-genui",
@@ -23,6 +14,13 @@
       "url": "https://github.com/Graphify-Labs/graphify",
       "app": "apps/graphify-code-map",
       "summary": "Codebase Atlas: force-directed explorer of the Voltline OpenUI graph"
+    },
+    {
+      "slug": "hallmark-voltline-makeover",
+      "name": "Hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "app": "apps/hallmark-voltline-makeover",
+      "summary": "Voltline gaming-PC page before and after Hallmark's deal, redesign, and browser audit"
     }
   ],
   "skipped": [
