@@ -21,6 +21,13 @@
       "url": "https://github.com/Nutlope/hallmark",
       "app": "apps/hallmark-voltline-makeover",
       "summary": "Voltline gaming-PC page before and after Hallmark's deal, redesign, and browser audit"
+    },
+    {
+      "slug": "openshell-agent-guardrails",
+      "name": "NVIDIA OpenShell",
+      "url": "https://github.com/NVIDIA/OpenShell",
+      "app": "apps/openshell-agent-guardrails",
+      "summary": "Voltline store-ops GPU repricing under an OpenShell policy boundary"
     }
   ],
   "skipped": [
@@ -32,6 +39,24 @@
       "date": "2026-10-26",
       "slug": "paperpilot-spec-desk",
       "skipped": "2026-10-26"
+    },
+    {
+      "slug": "headroom",
+      "name": "Headroom",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "summary": "Skipped. Local context compression for agents."
+    },
+    {
+      "slug": "voxtral-3",
+      "name": "Voxtral 3",
+      "url": "https://mistral.ai/news/voxtral-3/",
+      "summary": "Skipped. Mistral speech models and voice agent SDK."
+    },
+    {
+      "slug": "minimax-m3-1-flash",
+      "name": "MiniMax M3.1 Flash",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+      "summary": "Skipped. MiniMax multimodal mixture-of-experts model."
     }
   ]
 }

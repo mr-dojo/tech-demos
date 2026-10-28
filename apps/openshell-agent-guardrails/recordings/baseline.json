@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "prover_version": "0.1.5",
+  "check": "boundary",
+  "coverage": {
+    "domains": [
+      "filesystem",
+      "network_l4",
+      "network_rest",
+      "process",
+      "landlock"
+    ]
+  },
+  "result": "within_boundary",
+  "exit_code": 0,
+  "inputs": {
+    "candidate": "policies/baseline.yaml",
+    "boundary": "policies/boundary.yaml"
+  },
+  "counterexample": null,
+  "reason_code": null,
+  "reason": null
+}

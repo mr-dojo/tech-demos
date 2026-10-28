@@ -1,0 +1,13 @@
+{
+  "tool": "openshell-prover",
+  "version": "0.1.5",
+  "recordedOn": "2026-10-23",
+  "commands": [
+    "openshell-prover check policies/baseline.yaml --boundary policies/boundary.yaml --output json",
+    "openshell-prover check policies/proposal.yaml --boundary policies/boundary.yaml --output json",
+    "openshell-prover check policies/credential-binding.yaml --boundary policies/boundary.yaml --output json"
+  ],
+  "stdoutFiles": ["baseline.json", "proposal.json", "credential-binding.json"],
+  "sandbox": "not-run",
+  "note": "Stdout is verbatim from openshell-prover 0.1.5. No gateway was running, so these files are boundary checks only. They are not proposal-risk findings and they are not openshell logs."
+}

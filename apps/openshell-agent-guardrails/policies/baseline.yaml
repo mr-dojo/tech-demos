@@ -1,0 +1,23 @@
+version: 1
+filesystem_policy:
+  read_only:
+    - /usr
+    - /opt/voltline/catalog
+  read_write:
+    - /opt/voltline/proposals
+landlock:
+  compatibility: hard_requirement
+process:
+  run_as_user: "1500"
+  run_as_group: "1500"
+network_policies:
+  supplier_feed:
+    name: supplier-feed
+    endpoints:
+      - host: feed.northspan-supply.test
+        port: 443
+        protocol: rest
+        enforcement: enforce
+        access: read-only
+    binaries:
+      - path: /usr/bin/curl
