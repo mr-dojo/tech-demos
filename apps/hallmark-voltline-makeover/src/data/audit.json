@@ -1,0 +1,946 @@
+{
+  "hallmark": "2.0.0",
+  "command": "node sloplint.mjs public/pages/default --genre playful --render --before",
+  "render": "ran",
+  "summary": {
+    "fails": 57,
+    "reflex": 31,
+    "warns": 11,
+    "notes": 0,
+    "files": 2,
+    "render": "ran"
+  },
+  "findings": [
+    {
+      "gate": "2a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 56,
+      "evidence": "purple-to-blue gradient text on h1 .pop",
+      "fix": "One anchor hue, solid ink"
+    },
+    {
+      "gate": "2a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 64,
+      "evidence": "purple-to-blue gradient on .cta, .btn",
+      "fix": "One anchor hue; drop the gradient"
+    },
+    {
+      "gate": "2a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 126,
+      "evidence": "purple-to-blue gradient on .frame",
+      "fix": "One anchor hue; drop the gradient"
+    },
+    {
+      "gate": "4",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 41,
+      "evidence": "card nested in card: class=\"card\"",
+      "fix": "Keep one containment layer"
+    },
+    {
+      "gate": "7a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 29,
+      "evidence": "pure #fff: background: #ffffff (.nav)",
+      "fix": "Tint the base toward the anchor hue"
+    },
+    {
+      "gate": "7a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 65,
+      "evidence": "pure #fff: color: white (.cta, .btn)",
+      "fix": "Tint the base toward the anchor hue"
+    },
+    {
+      "gate": "7a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 107,
+      "evidence": "pure #fff: color: white (.signup)",
+      "fix": "Tint the base toward the anchor hue"
+    },
+    {
+      "gate": "7a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 111,
+      "evidence": "pure #fff: color: white (.signup h2)",
+      "fix": "Tint the base toward the anchor hue"
+    },
+    {
+      "gate": "10a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 71,
+      "evidence": "transition: all on .cta, .btn",
+      "fix": "List the transitioned properties explicitly"
+    },
+    {
+      "gate": "15",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 74,
+      "evidence": "focus ring transition on .cta:focus-visible",
+      "fix": "Remove the transition; rings appear instantly"
+    },
+    {
+      "gate": "19",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 26,
+      "evidence": "buzzword \"Seamlessly\"",
+      "fix": "Say what the product does, in its own nouns"
+    },
+    {
+      "gate": "19",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 26,
+      "evidence": "buzzword \"unleash\"",
+      "fix": "Say what the product does, in its own nouns"
+    },
+    {
+      "gate": "19",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 26,
+      "evidence": "buzzword \"next-generation\"",
+      "fix": "Say what the product does, in its own nouns"
+    },
+    {
+      "gate": "19",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 26,
+      "evidence": "buzzword \"effortlessly\"",
+      "fix": "Say what the product does, in its own nouns"
+    },
+    {
+      "gate": "19",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 117,
+      "evidence": "placeholder name: \"Jane Doe\"",
+      "fix": "Use plausible audience-fitting names"
+    },
+    {
+      "gate": "30a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 38,
+      "evidence": "emoji icon \"\u26a1\" in <div class=\"icon\">",
+      "fix": "One icon library or custom SVG"
+    },
+    {
+      "gate": "30a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 44,
+      "evidence": "emoji icon \"\ud83c\udfae\" in <div class=\"icon\">",
+      "fix": "One icon library or custom SVG"
+    },
+    {
+      "gate": "30a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 49,
+      "evidence": "emoji icon \"\u2728\" in <div class=\"icon\">",
+      "fix": "One icon library or custom SVG"
+    },
+    {
+      "gate": "34",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] horizontal scroll: scrollWidth 411 > viewport 320",
+      "fix": "overflow-x: clip on html and body; find the overflowing block"
+    },
+    {
+      "gate": "34",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[375px] horizontal scroll: scrollWidth 411 > viewport 375",
+      "fix": "overflow-x: clip on html and body; find the overflowing block"
+    },
+    {
+      "gate": "34",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 13,
+      "evidence": "overflow-x: hidden on html (breaks sticky)",
+      "fix": "Use overflow-x: clip on both html and body, never hidden"
+    },
+    {
+      "gate": "40",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1280px] contrast 4.23:1 at best over the gradient behind a.cta \"Get started \u2192\"",
+      "fix": "Raise the contrast to threshold, or give the text its own ground"
+    },
+    {
+      "gate": "40",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1280px] contrast 4.23:1 at best over the gradient behind button.cta \"Reserve pickup\"",
+      "fix": "Raise the contrast to threshold, or give the text its own ground"
+    },
+    {
+      "gate": "40",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1280px] contrast 3.13:1 against the pixels behind < 4.5:1 on p.eyebrow \"NEWSLETTER\"",
+      "fix": "Raise the contrast to threshold"
+    },
+    {
+      "gate": "40",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] a field's edge is under 3:1 against what surrounds it: input 1.23:1, select 1.23:1",
+      "fix": "Draw the field in --color-muted, or fill it a step off the surface it sits on"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 29,
+      "evidence": "colour literal #ffffff outside tokens (background on .nav)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 38,
+      "evidence": "colour literal #ede9fe outside tokens (background on .hero)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 38,
+      "evidence": "colour literal #ffffff outside tokens (background on .hero)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 55,
+      "evidence": "colour literal #8b5cf6 outside tokens (background on h1 .pop)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 55,
+      "evidence": "colour literal #3b82f6 outside tokens (background on h1 .pop)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 61,
+      "evidence": "colour literal #475569 outside tokens (color on .lede)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 64,
+      "evidence": "colour literal #8b5cf6 outside tokens (background on .cta, .btn)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 64,
+      "evidence": "colour literal #3b82f6 outside tokens (background on .cta, .btn)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 84,
+      "evidence": "colour literal rgba(15, 23, 42, 0.06) outside tokens (box-shadow on .card)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 86,
+      "evidence": "colour literal #f8fafc outside tokens (background on .card .card)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 99,
+      "evidence": "colour literal #f5f3ff outside tokens (background on .quote)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 99,
+      "evidence": "colour literal #eff6ff outside tokens (background on .quote)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 104,
+      "evidence": "font-family literal \"\"Playfair Display\", serif\" on .quote p",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 106,
+      "evidence": "colour literal #0f172a outside tokens (background on .signup)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 126,
+      "evidence": "colour literal #c4b5fd outside tokens (background on .frame)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 126,
+      "evidence": "colour literal #93c5fd outside tokens (background on .frame)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "48",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 127,
+      "evidence": "colour literal rgba(255,255,255,0.4) outside tokens (box-shadow on .frame)",
+      "fix": "Lift the value into the token block"
+    },
+    {
+      "gate": "49a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] control \"Get started \u2192\" wraps to 3 lines (a.cta)",
+      "fix": "Shorten the label or set nowrap"
+    },
+    {
+      "gate": "54",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 24,
+      "evidence": "eyebrow \"Gaming \u00b7 built \u00b7 different\" before <h1>",
+      "fix": "Cut it; the heading already says this (craft.md \u00a7 7 has twelve other openings)"
+    },
+    {
+      "gate": "54",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 33,
+      "evidence": "eyebrow \"01 \u00b7 Why Voltline\" before <h2>",
+      "fix": "Cut it; the heading already says this (craft.md \u00a7 7 has twelve other openings)"
+    },
+    {
+      "gate": "54",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 58,
+      "evidence": "eyebrow \"02 \u00b7 The spec sheet\" before <h2>",
+      "fix": "Cut it; the heading already says this (craft.md \u00a7 7 has twelve other openings)"
+    },
+    {
+      "gate": "54",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 66,
+      "evidence": "eyebrow \"03 \u00b7 The parts\" before <h2>",
+      "fix": "Cut it; the heading already says this (craft.md \u00a7 7 has twelve other openings)"
+    },
+    {
+      "gate": "54",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 88,
+      "evidence": "eyebrow \"04 \u00b7 Pickup\" before <h2>",
+      "fix": "Cut it; the heading already says this (craft.md \u00a7 7 has twelve other openings)"
+    },
+    {
+      "gate": "54",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 96,
+      "evidence": "eyebrow \"05 \u00b7 Reserve\" before <h2>",
+      "fix": "Cut it; the heading already says this (craft.md \u00a7 7 has twelve other openings)"
+    },
+    {
+      "gate": "54",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 121,
+      "evidence": "eyebrow \"Newsletter\" before <h2>",
+      "fix": "Cut it; the heading already says this (craft.md \u00a7 7 has twelve other openings)"
+    },
+    {
+      "gate": "55a",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 76,
+      "evidence": "uppercase + line-height 0.94 on .band h2 (cap collision)",
+      "fix": "Line-height 1.0 minimum for caps heads that can wrap"
+    },
+    {
+      "gate": "58",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] hero carries 3 text blocks before its actions",
+      "fix": "Headline, one sentence, actions; delete the rest"
+    },
+    {
+      "gate": "63",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 18,
+      "evidence": "arrow glued to the label \"Get started \u2192\"",
+      "fix": "A verb as the label; the link already says it goes somewhere"
+    },
+    {
+      "gate": "63",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 24,
+      "evidence": "middle-dot meta string \"Gaming \u00b7 built \u00b7 different\"",
+      "fix": "Line breaks, columns or hairlines; one dot in a byline at most"
+    },
+    {
+      "gate": "63",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 27,
+      "evidence": "arrow glued to the label \"Get started \u2192\"",
+      "fix": "A verb as the label; the link already says it goes somewhere"
+    },
+    {
+      "gate": "67",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 40,
+      "evidence": ".eyebrow: uppercase tracked 0.18em at 12px in a label role",
+      "fix": "Labels, captions, table heads, nav links and meta are the body face (or the theme's label face), a step smaller, sentence case, untracked"
+    },
+    {
+      "gate": "67",
+      "grade": "FAIL",
+      "tier": "floor",
+      "file": "public/pages/default/style.css",
+      "line": 89,
+      "evidence": ".rows th: uppercase tracked 0.16em at 12px in a label role",
+      "fix": "Labels, captions, table heads, nav links and meta are the body face (or the theme's label face), a step smaller, sentence case, untracked"
+    },
+    {
+      "gate": "1",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 9,
+      "evidence": "display font \"poppins\" (--font-display)",
+      "fix": "Pick a display face from the typography catalog"
+    },
+    {
+      "gate": "1",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 34,
+      "evidence": "display font \"poppins\" (.wordmark)",
+      "fix": "Pick a display face from the typography catalog"
+    },
+    {
+      "gate": "1",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 48,
+      "evidence": "display font \"poppins\" (h1)",
+      "fix": "Pick a display face from the typography catalog"
+    },
+    {
+      "gate": "1",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 76,
+      "evidence": "display font \"poppins\" (.band h2)",
+      "fix": "Pick a display face from the typography catalog"
+    },
+    {
+      "gate": "3",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] equal columns of icon-above-heading tiles (div.cards)",
+      "fix": "Vary the widths, set the icon inline with the heading, or drop the icons"
+    },
+    {
+      "gate": "7b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 16,
+      "evidence": "pure #fff: background: var(--paper) (body)",
+      "fix": "Tint the base toward the anchor hue"
+    },
+    {
+      "gate": "7b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 80,
+      "evidence": "pure #fff: background: var(--card) (.card)",
+      "fix": "Tint the base toward the anchor hue"
+    },
+    {
+      "gate": "24b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 28,
+      "evidence": "padding: 17px 28px (off the 4px scale) on .nav",
+      "fix": "Use the 4px spacing scale"
+    },
+    {
+      "gate": "24b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 33,
+      "evidence": "gap: 18px (off the 4px scale) on .nav__links",
+      "fix": "Use the 4px spacing scale"
+    },
+    {
+      "gate": "24b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 69,
+      "evidence": "padding: 14px 22px (off the 4px scale) on .cta, .btn",
+      "fix": "Use the 4px spacing scale"
+    },
+    {
+      "gate": "24b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 78,
+      "evidence": "gap: 18px (off the 4px scale) on .cards",
+      "fix": "Use the 4px spacing scale"
+    },
+    {
+      "gate": "24b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 83,
+      "evidence": "padding: 22px (off the 4px scale) on .card",
+      "fix": "Use the 4px spacing scale"
+    },
+    {
+      "gate": "24b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 95,
+      "evidence": "padding: 10px 8px (off the 4px scale) on .rows th",
+      "fix": "Use the 4px spacing scale"
+    },
+    {
+      "gate": "24b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 116,
+      "evidence": "padding: 12px 14px (off the 4px scale) on .signup input, .reserve input, .reserve select",
+      "fix": "Use the 4px spacing scale"
+    },
+    {
+      "gate": "25",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] running prose set too wide: p about 101 characters a line",
+      "fix": "Cap the measure at 45 to 75ch"
+    },
+    {
+      "gate": "26b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 1,
+      "evidence": "no :active styling anywhere",
+      "fix": "All eight states; guard: not a form control, no aria-disabled anywhere"
+    },
+    {
+      "gate": "26b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 1,
+      "evidence": "no :disabled styling anywhere",
+      "fix": "All eight states; guard: not a form control, no aria-disabled anywhere"
+    },
+    {
+      "gate": "38iii",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 54,
+      "evidence": "accented word inside a heading (h1 .pop)",
+      "fix": "Set the whole head one way: a line break, a second line at a second size, or the whole head in the accent. Guard: the theme names the coloured word as its signature and it appears once on the page, in the hero"
+    },
+    {
+      "gate": "38ii",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 59,
+      "evidence": "italic display type on h1 .pop",
+      "fix": "Roman headers; emphasis via weight or accent"
+    },
+    {
+      "gate": "49b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] link \"GeForce RTX 4070 Super\" wraps to 2 lines (a)",
+      "fix": "Shorten the label or set nowrap"
+    },
+    {
+      "gate": "49b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] link \"Harbor B650 ATX\" wraps to 2 lines (a)",
+      "fix": "Shorten the label or set nowrap"
+    },
+    {
+      "gate": "49b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] link \"Kiln 32GB DDR5-6000\" wraps to 2 lines (a)",
+      "fix": "Shorten the label or set nowrap"
+    },
+    {
+      "gate": "49b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] link \"Drift 2TB NVMe\" wraps to 2 lines (a)",
+      "fix": "Shorten the label or set nowrap"
+    },
+    {
+      "gate": "49b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] link \"Northspan 750W\" wraps to 2 lines (a)",
+      "fix": "Shorten the label or set nowrap"
+    },
+    {
+      "gate": "49b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] link \"Keel Mid Tower\" wraps to 2 lines (a)",
+      "fix": "Shorten the label or set nowrap"
+    },
+    {
+      "gate": "49b",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[320px] link \"Draft Tower 158\" wraps to 2 lines (a)",
+      "fix": "Shorten the label or set nowrap"
+    },
+    {
+      "gate": "71",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] heads nearer what precedes them than what they head: h2 \"EVERYTHING YOU NEE\" 12px over, 51px under; h2 \"BUILT \u2026",
+      "fix": "At least twice the space above a head as below it"
+    },
+    {
+      "gate": "77",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] 4 thin sections: \"BUILT FOR MODERN PLAY\" (99% wide, no mass); \"COME AND GET IT\" (97% wide, no mass); \"CLAIM YO\u2026",
+      "fix": "Widen the body to ten of twelve columns and give it mass: a visual 300px tall or more, a set of three across, rows, or a statement (layout.md \u00a7 4 and \u00a7 5)"
+    },
+    {
+      "gate": "78",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] section heads render at 36px under a 68px hero head",
+      "fix": "h2 at --text-section (about 52px at 1440), item titles at --text-title (layout.md \u00a7 2)"
+    },
+    {
+      "gate": "81",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] 1 empty picture: div.frame 720x280, a gradient with nothing in it",
+      "fix": "Put the picture in: the user's image, a library photograph (theme.mjs photos) or the product built at full fidelity; the wash is only a loading colour (imagery.md \u00a7 3)"
+    },
+    {
+      "gate": "85",
+      "grade": "REFLEX",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] the page closes on an email sign-up and the stamp names no job",
+      "fix": "End on what the visitor came to do (the booking, the buy box, the download, the next date, the latest issue) or on the last strong section; an email close is for a subscribe or join page, and the stamp says job: (anatomy.md)"
+    },
+    {
+      "gate": "3",
+      "grade": "WARN",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 78,
+      "evidence": "3 equal icon-tile columns on .cards",
+      "fix": "Vary column widths or drop the icon tiles"
+    },
+    {
+      "gate": "42",
+      "grade": "WARN",
+      "tier": "reflex",
+      "file": "public/pages/default/index.html",
+      "line": 12,
+      "evidence": "default nav shape: 5 links + CTA + 1px hairline",
+      "fix": "Give the nav a shape of its own (layout.md, navs)"
+    },
+    {
+      "gate": "46a",
+      "grade": "WARN",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 26,
+      "evidence": "metric \"Trusted by 50,000+\": verify the user supplied this number",
+      "fix": "Confirm the metric or drop the slot"
+    },
+    {
+      "gate": "58",
+      "grade": "WARN",
+      "tier": "floor",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[1440px] 89 words on one screen (from y=1850)",
+      "fix": "Close to the 80-word screen budget"
+    },
+    {
+      "gate": "74",
+      "grade": "WARN",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 3,
+      "evidence": "default Tailwind palette #0f172a on --ink",
+      "fix": "Mix the colour for this page in OKLCH; a stock swatch is the AI look"
+    },
+    {
+      "gate": "74",
+      "grade": "WARN",
+      "tier": "reflex",
+      "file": "public/pages/default/style.css",
+      "line": 4,
+      "evidence": "default Tailwind palette #64748b on --muted",
+      "fix": "Mix the colour for this page in OKLCH; a stock swatch is the AI look"
+    },
+    {
+      "gate": "F1",
+      "grade": "WARN",
+      "tier": "finish",
+      "file": "public/pages/default/index.html",
+      "line": 116,
+      "evidence": "straight quote in prose x1 (first: ders \"It changed ever)",
+      "fix": "Use typographic quotes: \u201c \u201d \u2019"
+    },
+    {
+      "gate": "F3",
+      "grade": "WARN",
+      "tier": "finish",
+      "file": "public/pages/default/style.css",
+      "line": 47,
+      "evidence": "no text-wrap: balance on any display head (4 head rule(s), e.g. h1)",
+      "fix": "Add text-wrap: balance to h1/h2-level heads"
+    },
+    {
+      "gate": "F23",
+      "grade": "WARN",
+      "tier": "finish",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "the document lacks a meta description",
+      "fix": "Name the language, title the page in its own words, and describe it in one sentence for link previews"
+    },
+    {
+      "gate": "F24",
+      "grade": "WARN",
+      "tier": "finish",
+      "file": "public/pages/default/style.css",
+      "line": 84,
+      "evidence": "a hairline border under a wide soft shadow on .card",
+      "fix": "Commit to one: a defined edge, or elevation by shadow"
+    },
+    {
+      "gate": "F26",
+      "grade": "WARN",
+      "tier": "finish",
+      "file": "public/pages/default/index.html",
+      "line": 1,
+      "evidence": "[375px] h1 \"Build your ultimate 1440p rig\" ends on a stub; h2 \"WHAT IS IN THE BOX\" ends on a stub; h2 \"COME AND GET IT\"\u2026",
+      "fix": "text-wrap: balance on heads and pretty on body copy, or rewrite the line; a <br> goes only between phrases and is checked at 375"
+    }
+  ],
+  "settlements": {
+    "54": "The eyebrows above every heading are gone. Each Hallmark page opens on the heading itself.",
+    "38iii": "The single colored word inside the headline is gone. The whole heading is one color.",
+    "38ii": "The italic word in the headline is gone. The headings are roman.",
+    "85": "The email sign-up is gone. The stamp records the drop of #newsletter and the email field, because gate 85 names that closer on a buy page.",
+    "46a": "The line \"Trusted by 50,000+\" is gone. That count is not in the sample catalog, and the stamp records the drop.",
+    "19": "The buzzwords and the Jane Doe quote are gone. The headings those gates named are listed in the stamp as reworded.",
+    "30a": "The emoji tiles are gone. The pages use credited Wikimedia photographs in the theme slots.",
+    "2a": "The purple-to-blue gradient on the headline, the button, and the empty frame is gone. Each theme uses its own accent as solid ink.",
+    "4": "The card nested inside a card is gone. Each page keeps one containment layer.",
+    "63": "The arrow glued to \"Get started\" and the middle-dot eyebrow are gone. The actions are verb labels.",
+    "7a": "The pure white fills are gone. Paper and ink come from the theme tokens.",
+    "7b": "The white paper token is gone. Each scaffold tints the paper toward the theme.",
+    "10a": "transition: all is gone. The theme buttons list the properties they animate.",
+    "15": "The focus ring no longer animates. The scaffold ring appears at once.",
+    "34": "overflow-x: hidden is gone. The scaffold uses overflow-x: clip, and the phone layout stacks.",
+    "40": "The gradient buttons that failed contrast are gone. Labels sit on the theme's accent ink.",
+    "48": "The loose hex colors are gone. Color lives in tokens.css.",
+    "49a": "The wrapping \"Get started\" control is gone. The reserve action is a short label.",
+    "55a": "The uppercase heading at line-height 0.94 is gone. Display headings keep a line-height of at least 1.",
+    "58": "The default hero's three text blocks before the action are gone. Hallmark still leaves a note on the redesigns: one screen holds about 88 to 103 words. That note is unsettled.",
+    "67": "The tracked uppercase eyebrows and table heads are gone. Labels use the body face.",
+    "1": "Poppins is gone. Halftone uses Ultra, Arcade uses Bungee, and Hum uses Chillax, the faces the dealt themes name.",
+    "3": "The three equal icon tiles are gone.",
+    "24b": "The off-scale padding is gone. Spacing uses the scaffold's 4px tokens.",
+    "25": "The wide measure is gone. Body copy uses the scaffold's 65ch cap.",
+    "26b": "The pages now style :active and :disabled. Disabled controls set fill, ink, and cursor.",
+    "49b": "The part names that wrapped on a 320px screen stay on one line. The phone layout stacks the price under the name.",
+    "71": "The headings sit with the section they introduce, on the scaffold's section rhythm.",
+    "77": "The thin pickup block is now a row of the four stores, wide enough for the 1440px check.",
+    "78": "Section headings use the scaffold's --text-section size.",
+    "81": "The empty gradient frame is gone. Photographs sit in the theme slots.",
+    "42": "The default hairline nav is gone. Halftone and Arcade use a banner, and Hum uses a slab.",
+    "74": "The Tailwind slate tokens are gone. The themes mix their own OKLCH colors.",
+    "F1": "The straight-quote testimonial is gone with the Jane Doe line.",
+    "F3": "Headings use text-wrap: balance from the scaffold.",
+    "F23": "Each redesigned page has a meta description.",
+    "F24": "The hairline-plus-soft-shadow card is gone. Each theme commits to its own edge.",
+    "F26": "The stub lines the phone render named are no longer the opener. Headings use text-wrap: balance."
+  }
+}

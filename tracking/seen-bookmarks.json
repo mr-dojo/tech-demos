@@ -16,6 +16,13 @@
       "summary": "Codebase Atlas: force-directed explorer of the Voltline OpenUI graph"
     },
     {
+      "slug": "hallmark-voltline-makeover",
+      "name": "Hallmark",
+      "url": "https://github.com/Nutlope/hallmark",
+      "app": "apps/hallmark-voltline-makeover",
+      "summary": "Voltline gaming-PC page before and after Hallmark's deal, redesign, and browser audit"
+    },
+    {
       "slug": "openshell-agent-guardrails",
       "name": "NVIDIA OpenShell",
       "url": "https://github.com/NVIDIA/OpenShell",
@@ -24,6 +31,15 @@
     }
   ],
   "skipped": [
+    {
+      "id": "paperpilot",
+      "title": "PaperPilot (pure-Rust PDF engine with WASM + MCP)",
+      "url": "https://github.com/KrushnaVardhanReddy/PaperPilot",
+      "source": "Hacker News front page (https://news.ycombinator.com/item?id=50238739)",
+      "date": "2026-10-26",
+      "slug": "paperpilot-spec-desk",
+      "skipped": "2026-10-26"
+    },
     {
       "slug": "headroom",
       "name": "Headroom",

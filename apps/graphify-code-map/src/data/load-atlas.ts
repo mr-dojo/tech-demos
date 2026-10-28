@@ -4,7 +4,7 @@ import { buildAtlas, type Atlas } from "@/lib/model"
 import type { AnalysisFile, GraphFile, MetaFile } from "@/lib/types"
 
 export async function loadAtlas(): Promise<Atlas> {
-  const response = await fetch("/graph.json")
+  const response = await fetch(`${import.meta.env.BASE_URL}graph.json`)
   if (!response.ok) {
     throw new Error(`Could not load the graph snapshot (${response.status})`)
   }

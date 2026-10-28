@@ -1,0 +1,136 @@
+/* Hallmark · shape: Bento Grid · genre: playful · theme: Arcade (deal 2/3, by request, seed game-shop-retail-selling-253e·65bd4afd·2026-10-27·r0) · redesign: full
+ * hero: Banner · nav: banner over a retracting bar · footer: mast · imagery: photographs · signature: the price as a Silkscreen score · arcade: ember/grille · job: buy · draw: 236e17
+ * axes: dark/pixel/chromatic-ember · posture: full-palette · contrast: pass · fold: pass · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V3 · weakest: V, the photos are an arcade stick and a keyboard, captioned as stand-ins */
+/* Hallmark · dropped #newsletter, #newsletter-form, newsletter, newsletter-form, email, voices, why · gate 85 names an email sign-up on a buy page */
+/* Hallmark · reworded "Build your ultimate 1440p rig" "Everything you need" "Blazing fast" "Ready to play" "Pickup today" "Built for modern play" "What is in the box" "Come and get it" "Claim your build" "Stay in the loop" "50,000+" "$1,422." · gate 19, gate 38iii and gate 46a name the opener and the invented count */
+@import url("./tokens.css");
+@import url("./base.css");
+
+h1, .display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.02;
+  text-transform: uppercase;
+  text-shadow: -1.5px 0 0 var(--color-crt-r), 1.5px 0 0 var(--color-crt-c);
+}
+h2, h3 { font-family: var(--font-body); font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+.hero { min-height: 100dvh; display: flex; flex-direction: column; }
+.nav, .mast {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  padding-block: var(--space-md);
+}
+.nav nav, .mast nav { display: flex; flex-wrap: wrap; gap: var(--space-lg); }
+.wordmark { text-decoration: none; }
+.nav a, .mast a { text-decoration: none; }
+.hero__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: var(--gap-columns);
+  align-items: center;
+}
+.figure {
+  font-family: var(--font-outlier);
+  font-weight: 700;
+  font-size: var(--text-3xl);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-accent);
+  line-height: 1;
+}
+.figure span { color: var(--color-accent-2); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-lg); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  border: var(--rule-bar) solid var(--color-ink);
+  border-radius: var(--radius-card);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: translate var(--dur-micro) var(--ease-out), box-shadow var(--dur-micro) var(--ease-out);
+}
+.btn:hover { translate: -2px -2px; }
+.btn:active { translate: 3px 3px; box-shadow: 2px 2px 0 var(--color-accent-2); }
+.btn:disabled, button:disabled, input:disabled, select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: var(--color-muted);
+  color: var(--color-paper);
+}
+.btn--ghost { background: transparent; color: var(--color-ink); }
+.crt { position: relative; isolation: isolate; min-height: 280px; }
+.crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(to right, color-mix(in oklab, var(--color-crt-r) 5%, transparent) 0 1px, color-mix(in oklab, var(--color-crt-g) 5%, transparent) 1px 2px, color-mix(in oklab, var(--color-crt-b) 5%, transparent) 2px 3px),
+    repeating-linear-gradient(to bottom, transparent 0 2px, color-mix(in oklab, var(--color-shade) 16%, transparent) 2px 3px);
+}
+.block { padding-block: var(--section-gap-s); }
+.bento {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--gap-columns);
+}
+.well {
+  background: var(--color-paper-2);
+  border: var(--rule-bar) solid var(--color-rule);
+  border-radius: var(--radius-card);
+  padding: var(--space-lg);
+}
+.part {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-md);
+  padding-block: var(--space-sm);
+  border-bottom: var(--rule-hair) solid var(--color-rule);
+}
+.part a { font-weight: 700; text-decoration: none; white-space: nowrap; }
+.buybar {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--z-sticky);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-sm) var(--gutter);
+  background: var(--color-paper-2);
+  border-top: var(--rule-bar) solid var(--color-ink);
+}
+.form { display: grid; gap: var(--space-sm); }
+label { font-size: var(--text-sm); }
+input, select {
+  min-height: 52px;
+  padding: var(--space-sm) var(--space-md);
+  border: var(--rule-bar) solid var(--color-muted);
+  border-radius: var(--radius-card);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+figcaption { margin-top: var(--space-sm); color: var(--color-muted); font-size: var(--text-sm); }
+.foot { padding-block: var(--space-xl); }
+.foot a { color: var(--color-ink); }
+@media (max-width: 60rem) {
+  .hero { min-height: auto; }
+  .hero__grid, .bento { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 40rem) {
+  .part { grid-template-columns: minmax(0, 1fr); }
+  .well { padding: var(--space-sm); }
+  .buybar { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
+  .buybar .figure { font-size: var(--text-xl); font-variant-numeric: tabular-nums; }
+}

@@ -1,0 +1,23 @@
+{
+  "hallmark": "2.0.0",
+  "commit": "6033bab2a8051b5454552d2e8e6cb8f27c483a42",
+  "license": "MIT",
+  "repo": "https://github.com/Nutlope/hallmark",
+  "catalogThemes": 50,
+  "bookmarkCount": 48,
+  "genre": "playful",
+  "seed": "game-shop-retail-selling-253e·65bd4afd·2026-10-27·r0",
+  "salt": "65bd4afd",
+  "themes": [
+    { "slug": "halftone", "name": "Halftone", "deal": "1/3", "draw": "4ea935", "shape": "Stat-Led", "hero": "Poster" },
+    { "slug": "arcade", "name": "Arcade", "deal": "2/3", "draw": "236e17", "shape": "Bento Grid", "hero": "Banner" },
+    { "slug": "hum", "name": "Hum", "deal": "3/3", "draw": "fe46b6", "shape": "Bento Grid", "hero": "Counter" }
+  ],
+  "render": "ran",
+  "kept": "0 FAIL, 0 REFLEX, 0 WARN. NOTE 58 remains on each redesign: one screen holds about 88 to 103 words.",
+  "finishReview": "not run",
+  "signal9": "not run",
+  "humGrain": "The Hum scaffold did not include the torn-paper grain tokens, so that page uses flat paper.",
+  "fileUrlPosture": "A file-path render does not read hero posture from the stamp. The heroes were sized to the viewport, and the render passed.",
+  "sample": "Prices, part names, and Harbor shelf counts are sample catalog data from the Voltline OpenUI demo."
+}

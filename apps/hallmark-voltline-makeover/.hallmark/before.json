@@ -1,0 +1,206 @@
+{
+ "v": 1,
+ "at": "2026-10-27T22:43:33.163Z",
+ "scope": "page",
+ "summary": {
+  "fails": 57,
+  "reflex": 31,
+  "warns": 11
+ },
+ "files": {
+  "public/pages/default/index.html": {
+   "handlers": [],
+   "links": [
+    "#newsletter",
+    "#part-VL-CASE-ATX",
+    "#part-VL-COOL-AIR",
+    "#part-VL-CPU-7600",
+    "#part-VL-GPU-4070S",
+    "#part-VL-MB-B650",
+    "#part-VL-PSU-750",
+    "#part-VL-RAM-32D5",
+    "#part-VL-SSD-2T",
+    "#parts",
+    "#pickup",
+    "#reserve",
+    "#specs",
+    "#top"
+   ],
+   "fields": [
+    "email",
+    "name",
+    "store"
+   ],
+   "hooks": [
+    "reserve-submit"
+   ],
+   "ids": [
+    "buyer-name",
+    "email",
+    "newsletter",
+    "newsletter-form",
+    "part-VL-CASE-ATX",
+    "part-VL-COOL-AIR",
+    "part-VL-CPU-7600",
+    "part-VL-GPU-4070S",
+    "part-VL-MB-B650",
+    "part-VL-PSU-750",
+    "part-VL-RAM-32D5",
+    "part-VL-SSD-2T",
+    "parts",
+    "pickup",
+    "reserve",
+    "reserve-form",
+    "specs",
+    "store",
+    "top",
+    "voices",
+    "why"
+   ],
+   "scripts": []
+  }
+ },
+ "wiring": {
+  "handlers": [],
+  "links": [
+   "#newsletter",
+   "#part-VL-CASE-ATX",
+   "#part-VL-COOL-AIR",
+   "#part-VL-CPU-7600",
+   "#part-VL-GPU-4070S",
+   "#part-VL-MB-B650",
+   "#part-VL-PSU-750",
+   "#part-VL-RAM-32D5",
+   "#part-VL-SSD-2T",
+   "#parts",
+   "#pickup",
+   "#reserve",
+   "#specs",
+   "#top"
+  ],
+  "fields": [
+   "email",
+   "name",
+   "store"
+  ],
+  "hooks": [
+   "reserve-submit"
+  ],
+  "ids": [
+   "buyer-name",
+   "email",
+   "newsletter",
+   "newsletter-form",
+   "part-VL-CASE-ATX",
+   "part-VL-COOL-AIR",
+   "part-VL-CPU-7600",
+   "part-VL-GPU-4070S",
+   "part-VL-MB-B650",
+   "part-VL-PSU-750",
+   "part-VL-RAM-32D5",
+   "part-VL-SSD-2T",
+   "parts",
+   "pickup",
+   "reserve",
+   "reserve-form",
+   "specs",
+   "store",
+   "top",
+   "voices",
+   "why"
+  ]
+ },
+ "scripts": {},
+ "pages": {
+  "public/pages/default/index.html": {
+   "links": [
+    "#top",
+    "#specs",
+    "#parts",
+    "#pickup",
+    "#reserve",
+    "#part-VL-CPU-7600",
+    "#part-VL-GPU-4070S",
+    "#part-VL-MB-B650",
+    "#part-VL-RAM-32D5",
+    "#part-VL-SSD-2T",
+    "#part-VL-PSU-750",
+    "#part-VL-CASE-ATX",
+    "#part-VL-COOL-AIR"
+   ],
+   "fields": [
+    "name",
+    "store",
+    "email"
+   ],
+   "actions": [
+    "get #reserve",
+    "get #newsletter"
+   ],
+   "forms": [
+    {
+     "key": "#reserve-form",
+     "attrs": [
+      "method=get",
+      "action=#reserve"
+     ],
+     "fields": [
+      "name",
+      "store"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "input[type=text][name=name]",
+      "select[name=store]",
+      "button[type=submit]"
+     ]
+    },
+    {
+     "key": "#newsletter-form",
+     "attrs": [
+      "method=get",
+      "action=#newsletter"
+     ],
+     "fields": [
+      "email"
+     ],
+     "hidden": [],
+     "submits": 1,
+     "controls": [
+      "input[type=email][name=email]",
+      "button[type=submit]"
+     ]
+    }
+   ],
+   "hooked": [],
+   "headings": [
+    "build your ultimate 1440p rig",
+    "everything you need",
+    "blazing fast",
+    "ready to play",
+    "pickup today",
+    "built for modern play",
+    "what is in the box",
+    "come and get it",
+    "claim your build",
+    "stay in the loop"
+   ],
+   "figures": [
+    "50,000+",
+    "$1,422.",
+    "$189",
+    "$599",
+    "$149",
+    "$104",
+    "$134",
+    "$109",
+    "$99",
+    "$39"
+   ],
+   "images": [],
+   "controls": 5,
+   "words": 323
+  }
+ }
+}
