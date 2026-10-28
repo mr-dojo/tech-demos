@@ -1,5 +1,14 @@
 {
-  "proposed": [],
+  "proposed": [
+    {
+      "id": "deeptutor",
+      "title": "DeepTutor (HKUDS agentic personalized tutoring, CLI/SDK + HTTP/SSE API)",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "source": "GitHub trending daily (2,376 stars today)",
+      "date": "2026-10-28",
+      "slug": "deeptutor-build-academy"
+    }
+  ],
   "built": [
     {
       "slug": "openui-genui",
