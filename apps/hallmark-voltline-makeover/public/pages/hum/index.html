@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voltline, a 1440p build for pickup</title>
+<meta name="description" content="Eight sample catalog parts, together at $1,422, for pickup at Voltline Harbor.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=chillax@500,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <section class="hero" id="top">
+    <div class="container">
+      <header class="nav">
+        <a class="wordmark" href="#top">Voltline</a>
+        <nav aria-label="Page">
+          <a href="#specs">Specs</a>
+          <a href="#parts">Parts</a>
+          <a href="#pickup">Pickup</a>
+        </nav>
+      </header>
+    </div>
+    <div class="container hero__grid">
+      <div>
+        <h1>Pick up a 1440p build.</h1>
+        <p class="lead">Eight catalog parts, priced at $1,422.</p>
+        <p>Harbor has the processor, the card, the board, and the cooler on the shelf.</p>
+      </div>
+      <form class="form card" id="reserve-form" action="#reserve">
+        <h2 id="reserve">Reserve the build</h2>
+        <p class="lead">$1,422. This form does not send.</p>
+        <label for="buyer-name">Name</label>
+        <input id="buyer-name" name="name" type="text" autocomplete="name" required>
+        <label for="store">Store</label>
+        <select id="store" name="store">
+          <option value="store-harbor">Voltline Harbor</option>
+          <option value="store-keel">Voltline Keel Yard</option>
+          <option value="store-northspan">Voltline Northspan</option>
+          <option value="store-draft">Voltline Draft</option>
+        </select>
+        <button class="btn btn--primary" type="submit" data-testid="reserve-submit">Reserve pickup</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="block" id="specs" aria-labelledby="use-head">
+    <div class="container bento">
+      <figure>
+        <div class="photo" data-slot="desk" data-alt="This build on a desk. The library photo of a laptop edge stands in.">
+          <img src="photos/laptop.jpg" width="1280" height="853" alt="The thin edge of a silver laptop with ports on a wooden desk">
+        </div>
+        <figcaption>Library stand-in, not this tower. <a href="https://commons.wikimedia.org/wiki/File:Acer_Swift_3_rear-right_edge.jpg">Bobulous</a>, CC BY-SA 4.0, Wikimedia Commons.</figcaption>
+      </figure>
+      <div>
+        <h2 id="use-head">What the card does</h2>
+        <p class="lead">GeForce RTX 4070 Super. The sample catalog lists 132 fps at 1440p and 220 W.</p>
+        <p>Ryzen 5 7600, Harbor B650, Kiln 32GB DDR5-6000, Drift 2TB, Northspan 750W, Keel Mid Tower, Draft Tower 158.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="parts" aria-labelledby="parts-head">
+    <div class="container">
+      <h2 id="parts-head">Eight parts in the box</h2>
+      <div class="card">
+        <div class="part" id="part-VL-CPU-7600"><a href="#part-VL-CPU-7600">Ryzen 5 7600</a><span>$189</span></div>
+        <div class="part" id="part-VL-GPU-4070S"><a href="#part-VL-GPU-4070S">GeForce RTX 4070 Super</a><span>$599</span></div>
+        <div class="part" id="part-VL-MB-B650"><a href="#part-VL-MB-B650">Harbor B650 ATX</a><span>$149</span></div>
+        <div class="part" id="part-VL-RAM-32D5"><a href="#part-VL-RAM-32D5">Kiln 32GB DDR5-6000</a><span>$104</span></div>
+        <div class="part" id="part-VL-SSD-2T"><a href="#part-VL-SSD-2T">Drift 2TB NVMe</a><span>$134</span></div>
+        <div class="part" id="part-VL-PSU-750"><a href="#part-VL-PSU-750">Northspan 750W</a><span>$109</span></div>
+        <div class="part" id="part-VL-CASE-ATX"><a href="#part-VL-CASE-ATX">Keel Mid Tower</a><span>$99</span></div>
+        <div class="part" id="part-VL-COOL-AIR"><a href="#part-VL-COOL-AIR">Draft Tower 158</a><span>$39</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="pickup" aria-labelledby="pickup-head">
+    <div class="container">
+      <h2 id="pickup-head">Pick it up at Harbor</h2>
+      <p class="lead">120 Market Street, Harbor City. Open 10 AM to 8 PM.</p>
+      <p>Sample shelf counts: processor 4, graphics card 3, board 5, cooler 6. Memory, the drive, the power supply, and the case are in stock in the catalog, with no store count on file.</p>
+      <div class="stores">
+        <p class="store"><strong>Harbor</strong> 120 Market Street</p>
+        <p class="store"><strong>Keel Yard</strong> 18 Dock Road</p>
+        <p class="store"><strong>Northspan</strong> 400 Ridge Avenue</p>
+        <p class="store"><strong>Draft</strong> 9 Lamp Lane</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="statement">
+    <div class="container">
+      <h2>$1,422, ready to reserve.</h2>
+      <p><a class="btn btn--primary" href="#reserve">Reserve pickup</a></p>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="container">
+    <p>Voltline is a fictional shop. Prices and shelf counts are sample catalog data. Hallmark theme Hum, deal 3 of 3. The scaffold did not ship the torn-paper grain tokens, so this page uses the paper colour only.</p>
+  </div>
+</footer>
+<script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
+document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>
+</body>
+</html>
