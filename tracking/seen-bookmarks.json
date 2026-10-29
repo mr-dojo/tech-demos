@@ -1,14 +1,5 @@
 {
-  "proposed": [
-    {
-      "id": "deeptutor",
-      "title": "DeepTutor (HKUDS agentic personalized tutoring, CLI/SDK + HTTP/SSE API)",
-      "url": "https://github.com/HKUDS/DeepTutor",
-      "source": "GitHub trending daily (2,376 stars today)",
-      "date": "2026-10-28",
-      "slug": "deeptutor-build-academy"
-    }
-  ],
+  "proposed": [],
   "built": [
     {
       "slug": "openui-genui",
@@ -66,6 +57,16 @@
       "name": "MiniMax M3.1 Flash",
       "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
       "summary": "Skipped. MiniMax multimodal mixture-of-experts model."
+    },
+    {
+      "id": "deeptutor",
+      "title": "DeepTutor (HKUDS agentic personalized tutoring, CLI/SDK + HTTP/SSE API)",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "source": "GitHub trending daily (2,376 stars today)",
+      "date": "2026-10-28",
+      "slug": "deeptutor-build-academy",
+      "status": "skipped",
+      "skipped_at": "2026-10-29"
     }
   ]
 }
