@@ -41,7 +41,7 @@ export async function startStack(): Promise<DeskStack> {
   const model = scripted ? "voltline-desk" : process.env.BOT_MODEL?.trim() || "gpt-5.5"
 
   const child = spawn({
-    cmd: ["bun", "vendor/openbot/agent-bot/src/index.ts"],
+    cmd: [process.execPath, "vendor/openbot/agent-bot/src/index.ts"],
     cwd: APP_ROOT,
     env: {
       ...process.env,
@@ -56,10 +56,17 @@ export async function startStack(): Promise<DeskStack> {
   })
 
   const agentUrl = `http://127.0.0.1:${agentPort}/ag-ui`
+
+  const killChild = () => {
+    if (child.exitCode === null) child.kill("SIGKILL")
+  }
+  process.on("exit", killChild)
+
   try {
     await waitFor(`http://127.0.0.1:${agentPort}/health`, child)
   } catch (error) {
-    child.kill()
+    killChild()
+    process.off("exit", killChild)
     scriptedServer?.stop(true)
     throw error
   }
@@ -72,7 +79,8 @@ export async function startStack(): Promise<DeskStack> {
     threadId: "voltline-desk",
     run: agentRunner(agentUrl, token, "voltline-desk"),
     stop() {
-      child.kill()
+      killChild()
+      process.off("exit", killChild)
       scriptedServer?.stop(true)
     },
   }

@@ -1,4 +1,5 @@
 import { isLocalOnlyRequest } from "../src/lib/local-request"
+import { readJsonBody } from "../src/lib/post-gate"
 import type { DeskMode } from "../src/lib/types"
 import { ask, blankSession, decide } from "./loop"
 import type { LiveSession } from "./session"
@@ -46,34 +47,40 @@ const server = Bun.serve({
     if (request.method === "GET" && url.pathname === "/api/session") {
       return Response.json(view(session, stack))
     }
-    if (request.method === "POST" && url.pathname === "/api/reset") {
-      session = blankSession()
-      return Response.json(view(session, stack))
-    }
-    if (request.method === "POST" && url.pathname === "/api/turn") {
-      const body = (await request.json()) as { text?: string }
-      const text = body.text?.trim() ?? ""
-      if (!text) return Response.json({ error: "Say what you need." }, { status: 400 })
-      if (session.pending) return Response.json({ error: "Decide the card that is waiting first." }, { status: 409 })
-      if (turnLock) return Response.json({ error: "Mira is still on the previous step." }, { status: 409 })
-      turnLock = true
-      try {
-        session = await ask(session, text, stack.run)
-      } finally {
-        turnLock = false
+    if (request.method === "POST" && (url.pathname === "/api/reset" || url.pathname === "/api/turn" || url.pathname === "/api/decision")) {
+      const parsed = await readJsonBody(request, String(PORT))
+      if (!parsed.ok) return Response.json({ error: parsed.error }, { status: parsed.status })
+      const body = parsed.body
+      if (!body || typeof body !== "object" || Array.isArray(body)) {
+        return Response.json({ error: "The body is not a JSON object." }, { status: 400 })
       }
-      return Response.json(view(session, stack))
-    }
-    if (request.method === "POST" && url.pathname === "/api/decision") {
-      const body = (await request.json()) as { decision?: string }
-      if (body.decision !== "approve" && body.decision !== "reject") {
+      const record = body as { text?: unknown; decision?: unknown }
+
+      if (url.pathname === "/api/reset") {
+        session = blankSession()
+        return Response.json(view(session, stack))
+      }
+      if (url.pathname === "/api/turn") {
+        const text = typeof record.text === "string" ? record.text.trim() : ""
+        if (!text) return Response.json({ error: "Say what you need." }, { status: 400 })
+        if (session.pending) return Response.json({ error: "Decide the card that is waiting first." }, { status: 409 })
+        if (turnLock) return Response.json({ error: "Mira is still on the previous step." }, { status: 409 })
+        turnLock = true
+        try {
+          session = await ask(session, text, stack.run)
+        } finally {
+          turnLock = false
+        }
+        return Response.json(view(session, stack))
+      }
+      if (record.decision !== "approve" && record.decision !== "reject") {
         return Response.json({ error: "Approve or reject." }, { status: 400 })
       }
       if (!session.pending) return Response.json({ error: "Nothing is waiting." }, { status: 409 })
       if (turnLock) return Response.json({ error: "Mira is still on the previous step." }, { status: 409 })
       turnLock = true
       try {
-        session = await decide(session, body.decision, stack.run)
+        session = await decide(session, record.decision, stack.run)
       } finally {
         turnLock = false
       }

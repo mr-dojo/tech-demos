@@ -2,7 +2,7 @@
 
 Mira Calder is chief of staff to Jun Park, CEO of the fictional retailer Voltline PC. She is [CopilotKit OpenBot](https://github.com/CopilotKit/OpenBot)’s built-in `agent-bot`: an AG-UI endpoint that publishes no tools of its own. This desk registers a sample inbox and calendar. OpenBot emits a tool call and stops. Reads run immediately. A reply, a new email, an accept, a decline, or a reschedule waits on a card until Jun approves or rejects it.
 
-The mailbox and the calendar ship in this folder. Approving a reply writes the sample outbox on this machine. Nothing is emailed, and no calendar account is contacted.
+The mailbox and the calendar ship in this folder. Approving a reply writes the sample outbox in memory. A restart clears it. Nothing is emailed, and no calendar account is contacted.
 
 The vendored Bot is commit `9ff961895603b563f21ad691ab4c41c0179cd65d`, with one local change: it listens on `127.0.0.1`. See `vendor/openbot/PIN.json`.
 
