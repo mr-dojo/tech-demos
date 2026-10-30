@@ -1,14 +1,6 @@
 {
   "proposed": [
     {
-      "id": "copilotkit-openbot",
-      "title": "CopilotKit OpenBot (self-hosted AI coworkers with their own browser, AG-UI, approval gates)",
-      "url": "https://github.com/CopilotKit/OpenBot",
-      "source": "GitHub trending daily (240 stars today, Trendshift #3 repo of the day; same theme as OpenMausBot 1,190 today and nightly-labs/openbot 705 today)",
-      "date": "2026-10-29",
-      "slug": "openbot-voltline-coworker"
-    },
-    {
       "id": "lightpanda-browser",
       "title": "Lightpanda (Zig headless browser built for AI agents: CDP, native MCP, markdown dump)",
       "url": "https://github.com/lightpanda-io/browser",
@@ -45,6 +37,13 @@
       "url": "https://github.com/NVIDIA/OpenShell",
       "app": "apps/openshell-agent-guardrails",
       "summary": "Voltline store-ops GPU repricing under an OpenShell policy boundary"
+    },
+    {
+      "slug": "openbot-exec-assistant",
+      "name": "CopilotKit OpenBot",
+      "url": "https://github.com/CopilotKit/OpenBot",
+      "app": "apps/openbot-exec-assistant",
+      "summary": "Mira Calder, Voltline chief of staff: OpenBot agent-bot on a sample inbox and calendar, with approve-before-send"
     }
   ],
   "skipped": [

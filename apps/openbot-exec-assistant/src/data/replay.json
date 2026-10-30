@@ -1,0 +1,572 @@
+{
+  "recordedFrom": "OpenBot agent-bot tool loop against the voltline-desk model and the sample mailbox",
+  "agentCommit": "9ff961895603b563f21ad691ab4c41c0179cd65d",
+  "sessions": {
+    "brief": {
+      "prompt": "Catch me up before the 9:30.",
+      "recordedFrom": "OpenBot agent-bot tool loop against the voltline-desk model and the sample mailbox",
+      "agentCommit": "9ff961895603b563f21ad691ab4c41c0179cd65d",
+      "root": {
+        "kind": "user",
+        "text": "Catch me up before the 9:30.",
+        "next": {
+          "kind": "read",
+          "tool": "list_inbox",
+          "args": {
+            "unreadOnly": true
+          },
+          "next": {
+            "kind": "read",
+            "tool": "list_calendar",
+            "args": {
+              "day": "2026-10-30"
+            },
+            "next": {
+              "kind": "assistant",
+              "text": "Harborline asked for the deck before Thursday. Here is the reply I would send. It waits for you.",
+              "next": {
+                "kind": "proposal",
+                "id": "proposal-reply_email-2",
+                "tool": "reply_email",
+                "args": {
+                  "emailId": "em-harborline",
+                  "body": "Priya — the Q3 deck will be in the Harborline folder before Thursday 9:00 CT. Page one will name the Austin slip and the Northline allocation. — Jun"
+                },
+                "title": "Reply to Priya Raman",
+                "summary": "Reply saved to Priya Raman in the sample outbox.",
+                "lines": [
+                  {
+                    "label": "To",
+                    "value": "Priya Raman · priya.raman@harborline.example"
+                  },
+                  {
+                    "label": "Subject",
+                    "value": "Re: Q3 deck before Thursday's board hour"
+                  },
+                  {
+                    "label": "Draft",
+                    "value": "Priya — the Q3 deck will be in the Harborline folder before Thursday 9:00 CT. Page one will name the Austin slip and the Northline allocation. — Jun"
+                  }
+                ],
+                "approve": {
+                  "kind": "effect",
+                  "decision": "approve",
+                  "tool": "reply_email",
+                  "args": {
+                    "emailId": "em-harborline",
+                    "body": "Priya — the Q3 deck will be in the Harborline folder before Thursday 9:00 CT. Page one will name the Austin slip and the Northline allocation. — Jun"
+                  },
+                  "title": "Saved a reply to Priya Raman",
+                  "detail": "Sample outbox only",
+                  "next": {
+                    "kind": "assistant",
+                    "text": "Friday's Austin walkthrough overlaps the Northline call. I would move it to Monday at 10:00 CT.",
+                    "next": {
+                      "kind": "proposal",
+                      "id": "proposal-reschedule_event-3",
+                      "tool": "reschedule_event",
+                      "args": {
+                        "eventId": "evt-austin",
+                        "start": "2026-10-26T10:00:00-05:00",
+                        "end": "2026-10-26T10:45:00-05:00",
+                        "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+                      },
+                      "title": "Move “Austin floor walkthrough”",
+                      "summary": "Austin floor walkthrough moved on the sample calendar.",
+                      "lines": [
+                        {
+                          "label": "From",
+                          "value": "Fri, Oct 30 · 1:15 PM CT – 2:00 PM CT"
+                        },
+                        {
+                          "label": "To",
+                          "value": "Mon, Oct 26 · 10:00 AM CT – 10:45 AM CT"
+                        },
+                        {
+                          "label": "Note",
+                          "value": "Moved off Friday's Northline call. Ellis still owns the floor."
+                        }
+                      ],
+                      "approve": {
+                        "kind": "effect",
+                        "decision": "approve",
+                        "tool": "reschedule_event",
+                        "args": {
+                          "eventId": "evt-austin",
+                          "start": "2026-10-26T10:00:00-05:00",
+                          "end": "2026-10-26T10:45:00-05:00",
+                          "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+                        },
+                        "title": "Moved “Austin floor walkthrough”",
+                        "detail": "Mon, Oct 26 · 10:00 AM CT",
+                        "next": {
+                          "kind": "assistant",
+                          "text": "Harborline's reply is in the sample outbox. The Austin walkthrough is now Monday at 10:00 CT, off the Northline call. Nothing left this machine.",
+                          "done": true,
+                          "next": null
+                        }
+                      },
+                      "reject": {
+                        "kind": "effect",
+                        "decision": "reject",
+                        "tool": "reschedule_event",
+                        "args": {
+                          "eventId": "evt-austin",
+                          "start": "2026-10-26T10:00:00-05:00",
+                          "end": "2026-10-26T10:45:00-05:00",
+                          "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+                        },
+                        "title": "Rejected “Move “Austin floor walkthrough””",
+                        "detail": "Nothing changed",
+                        "next": {
+                          "kind": "assistant",
+                          "text": "Harborline's reply is in the sample outbox. The Austin walkthrough stays at 1:15, overlapping Northline. Nothing left this machine.",
+                          "done": true,
+                          "next": null
+                        }
+                      }
+                    }
+                  }
+                },
+                "reject": {
+                  "kind": "effect",
+                  "decision": "reject",
+                  "tool": "reply_email",
+                  "args": {
+                    "emailId": "em-harborline",
+                    "body": "Priya — the Q3 deck will be in the Harborline folder before Thursday 9:00 CT. Page one will name the Austin slip and the Northline allocation. — Jun"
+                  },
+                  "title": "Rejected “Reply to Priya Raman”",
+                  "detail": "Nothing changed",
+                  "next": {
+                    "kind": "assistant",
+                    "text": "Friday's Austin walkthrough overlaps the Northline call. I would move it to Monday at 10:00 CT.",
+                    "next": {
+                      "kind": "proposal",
+                      "id": "proposal-reschedule_event-3",
+                      "tool": "reschedule_event",
+                      "args": {
+                        "eventId": "evt-austin",
+                        "start": "2026-10-26T10:00:00-05:00",
+                        "end": "2026-10-26T10:45:00-05:00",
+                        "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+                      },
+                      "title": "Move “Austin floor walkthrough”",
+                      "summary": "Austin floor walkthrough moved on the sample calendar.",
+                      "lines": [
+                        {
+                          "label": "From",
+                          "value": "Fri, Oct 30 · 1:15 PM CT – 2:00 PM CT"
+                        },
+                        {
+                          "label": "To",
+                          "value": "Mon, Oct 26 · 10:00 AM CT – 10:45 AM CT"
+                        },
+                        {
+                          "label": "Note",
+                          "value": "Moved off Friday's Northline call. Ellis still owns the floor."
+                        }
+                      ],
+                      "approve": {
+                        "kind": "effect",
+                        "decision": "approve",
+                        "tool": "reschedule_event",
+                        "args": {
+                          "eventId": "evt-austin",
+                          "start": "2026-10-26T10:00:00-05:00",
+                          "end": "2026-10-26T10:45:00-05:00",
+                          "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+                        },
+                        "title": "Moved “Austin floor walkthrough”",
+                        "detail": "Mon, Oct 26 · 10:00 AM CT",
+                        "next": {
+                          "kind": "assistant",
+                          "text": "I did not reply to Harborline. The Austin walkthrough is now Monday at 10:00 CT, off the Northline call. Nothing left this machine.",
+                          "done": true,
+                          "next": null
+                        }
+                      },
+                      "reject": {
+                        "kind": "effect",
+                        "decision": "reject",
+                        "tool": "reschedule_event",
+                        "args": {
+                          "eventId": "evt-austin",
+                          "start": "2026-10-26T10:00:00-05:00",
+                          "end": "2026-10-26T10:45:00-05:00",
+                          "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+                        },
+                        "title": "Rejected “Move “Austin floor walkthrough””",
+                        "detail": "Nothing changed",
+                        "next": {
+                          "kind": "assistant",
+                          "text": "I did not reply to Harborline. The Austin walkthrough stays at 1:15, overlapping Northline. Nothing left this machine.",
+                          "done": true,
+                          "next": null
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "reply": {
+      "prompt": "Reply to Harborline about the deck, and hold it for my approval.",
+      "recordedFrom": "OpenBot agent-bot tool loop against the voltline-desk model and the sample mailbox",
+      "agentCommit": "9ff961895603b563f21ad691ab4c41c0179cd65d",
+      "root": {
+        "kind": "user",
+        "text": "Reply to Harborline about the deck, and hold it for my approval.",
+        "next": {
+          "kind": "read",
+          "tool": "read_email",
+          "args": {
+            "id": "em-harborline"
+          },
+          "next": {
+            "kind": "assistant",
+            "text": "Draft for Priya Raman. Nothing goes out until you approve it.",
+            "next": {
+              "kind": "proposal",
+              "id": "proposal-reply_email-1",
+              "tool": "reply_email",
+              "args": {
+                "emailId": "em-harborline",
+                "body": "Priya — the Q3 deck will be in the Harborline folder before Thursday 9:00 CT. Page one will name the Austin slip and the Northline allocation. — Jun"
+              },
+              "title": "Reply to Priya Raman",
+              "summary": "Reply saved to Priya Raman in the sample outbox.",
+              "lines": [
+                {
+                  "label": "To",
+                  "value": "Priya Raman · priya.raman@harborline.example"
+                },
+                {
+                  "label": "Subject",
+                  "value": "Re: Q3 deck before Thursday's board hour"
+                },
+                {
+                  "label": "Draft",
+                  "value": "Priya — the Q3 deck will be in the Harborline folder before Thursday 9:00 CT. Page one will name the Austin slip and the Northline allocation. — Jun"
+                }
+              ],
+              "approve": {
+                "kind": "effect",
+                "decision": "approve",
+                "tool": "reply_email",
+                "args": {
+                  "emailId": "em-harborline",
+                  "body": "Priya — the Q3 deck will be in the Harborline folder before Thursday 9:00 CT. Page one will name the Austin slip and the Northline allocation. — Jun"
+                },
+                "title": "Saved a reply to Priya Raman",
+                "detail": "Sample outbox only",
+                "next": {
+                  "kind": "assistant",
+                  "text": "Harborline's reply is in the sample outbox. Nothing left this machine.",
+                  "done": true,
+                  "next": null
+                }
+              },
+              "reject": {
+                "kind": "effect",
+                "decision": "reject",
+                "tool": "reply_email",
+                "args": {
+                  "emailId": "em-harborline",
+                  "body": "Priya — the Q3 deck will be in the Harborline folder before Thursday 9:00 CT. Page one will name the Austin slip and the Northline allocation. — Jun"
+                },
+                "title": "Rejected “Reply to Priya Raman”",
+                "detail": "Nothing changed",
+                "next": {
+                  "kind": "assistant",
+                  "text": "I did not reply to Harborline. Nothing left this machine.",
+                  "done": true,
+                  "next": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "clash": {
+      "prompt": "The Austin walkthrough clashes with the foundry call. Propose a new time.",
+      "recordedFrom": "OpenBot agent-bot tool loop against the voltline-desk model and the sample mailbox",
+      "agentCommit": "9ff961895603b563f21ad691ab4c41c0179cd65d",
+      "root": {
+        "kind": "user",
+        "text": "The Austin walkthrough clashes with the foundry call. Propose a new time.",
+        "next": {
+          "kind": "read",
+          "tool": "list_calendar",
+          "args": {
+            "day": "2026-10-30"
+          },
+          "next": {
+            "kind": "assistant",
+            "text": "I would move the Austin walkthrough to Monday at 10:00 CT, clear of the Northline call.",
+            "next": {
+              "kind": "proposal",
+              "id": "proposal-reschedule_event-1",
+              "tool": "reschedule_event",
+              "args": {
+                "eventId": "evt-austin",
+                "start": "2026-10-26T10:00:00-05:00",
+                "end": "2026-10-26T10:45:00-05:00",
+                "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+              },
+              "title": "Move “Austin floor walkthrough”",
+              "summary": "Austin floor walkthrough moved on the sample calendar.",
+              "lines": [
+                {
+                  "label": "From",
+                  "value": "Fri, Oct 30 · 1:15 PM CT – 2:00 PM CT"
+                },
+                {
+                  "label": "To",
+                  "value": "Mon, Oct 26 · 10:00 AM CT – 10:45 AM CT"
+                },
+                {
+                  "label": "Note",
+                  "value": "Moved off Friday's Northline call. Ellis still owns the floor."
+                }
+              ],
+              "approve": {
+                "kind": "effect",
+                "decision": "approve",
+                "tool": "reschedule_event",
+                "args": {
+                  "eventId": "evt-austin",
+                  "start": "2026-10-26T10:00:00-05:00",
+                  "end": "2026-10-26T10:45:00-05:00",
+                  "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+                },
+                "title": "Moved “Austin floor walkthrough”",
+                "detail": "Mon, Oct 26 · 10:00 AM CT",
+                "next": {
+                  "kind": "assistant",
+                  "text": "The Austin walkthrough is now Monday at 10:00 CT. Nothing left this machine.",
+                  "done": true,
+                  "next": null
+                }
+              },
+              "reject": {
+                "kind": "effect",
+                "decision": "reject",
+                "tool": "reschedule_event",
+                "args": {
+                  "eventId": "evt-austin",
+                  "start": "2026-10-26T10:00:00-05:00",
+                  "end": "2026-10-26T10:45:00-05:00",
+                  "note": "Moved off Friday's Northline call. Ellis still owns the floor."
+                },
+                "title": "Rejected “Move “Austin floor walkthrough””",
+                "detail": "Nothing changed",
+                "next": {
+                  "kind": "assistant",
+                  "text": "I left the Austin walkthrough where it is. Nothing left this machine.",
+                  "done": true,
+                  "next": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "rsvp": {
+      "prompt": "Accept the retail interview and decline the late dinner.",
+      "recordedFrom": "OpenBot agent-bot tool loop against the voltline-desk model and the sample mailbox",
+      "agentCommit": "9ff961895603b563f21ad691ab4c41c0179cd65d",
+      "root": {
+        "kind": "user",
+        "text": "Accept the retail interview and decline the late dinner.",
+        "next": {
+          "kind": "read",
+          "tool": "list_calendar",
+          "args": {
+            "day": "2026-10-30"
+          },
+          "next": {
+            "kind": "assistant",
+            "text": "The Head of Retail finalist is tentative at 11:00. I would accept that hold.",
+            "next": {
+              "kind": "proposal",
+              "id": "proposal-accept_event-1",
+              "tool": "accept_event",
+              "args": {
+                "eventId": "evt-interview"
+              },
+              "title": "Accept “Head of Retail interview”",
+              "summary": "Head of Retail interview marked accepted on the sample calendar.",
+              "lines": [
+                {
+                  "label": "When",
+                  "value": "Fri, Oct 30 · 11:00 AM CT – 11:45 AM CT"
+                },
+                {
+                  "label": "Where",
+                  "value": "HQ glass room"
+                },
+                {
+                  "label": "Change",
+                  "value": "tentative → confirmed"
+                }
+              ],
+              "approve": {
+                "kind": "effect",
+                "decision": "approve",
+                "tool": "accept_event",
+                "args": {
+                  "eventId": "evt-interview"
+                },
+                "title": "Accepted “Head of Retail interview”",
+                "detail": "Sample calendar only",
+                "next": {
+                  "kind": "assistant",
+                  "text": "Samir offered to move dinner. I would decline tonight.",
+                  "next": {
+                    "kind": "proposal",
+                    "id": "proposal-decline_event-2",
+                    "tool": "decline_event",
+                    "args": {
+                      "eventId": "evt-dinner",
+                      "note": "Taking a morning next week instead."
+                    },
+                    "title": "Decline “Dinner with Samir”",
+                    "summary": "Dinner with Samir marked declined on the sample calendar.",
+                    "lines": [
+                      {
+                        "label": "When",
+                        "value": "Fri, Oct 30 · 7:00 PM CT – 8:30 PM CT"
+                      },
+                      {
+                        "label": "Change",
+                        "value": "tentative → declined"
+                      },
+                      {
+                        "label": "Note",
+                        "value": "Taking a morning next week instead."
+                      }
+                    ],
+                    "approve": {
+                      "kind": "effect",
+                      "decision": "approve",
+                      "tool": "decline_event",
+                      "args": {
+                        "eventId": "evt-dinner",
+                        "note": "Taking a morning next week instead."
+                      },
+                      "title": "Declined “Dinner with Samir”",
+                      "detail": "Sample calendar only",
+                      "next": {
+                        "kind": "assistant",
+                        "text": "The retail interview is accepted. Dinner with Samir is declined. Nothing left this machine.",
+                        "done": true,
+                        "next": null
+                      }
+                    },
+                    "reject": {
+                      "kind": "effect",
+                      "decision": "reject",
+                      "tool": "decline_event",
+                      "args": {
+                        "eventId": "evt-dinner",
+                        "note": "Taking a morning next week instead."
+                      },
+                      "title": "Rejected “Decline “Dinner with Samir””",
+                      "detail": "Nothing changed",
+                      "next": {
+                        "kind": "assistant",
+                        "text": "The retail interview is accepted. Dinner with Samir stays on the calendar. Nothing left this machine.",
+                        "done": true,
+                        "next": null
+                      }
+                    }
+                  }
+                }
+              },
+              "reject": {
+                "kind": "effect",
+                "decision": "reject",
+                "tool": "accept_event",
+                "args": {
+                  "eventId": "evt-interview"
+                },
+                "title": "Rejected “Accept “Head of Retail interview””",
+                "detail": "Nothing changed",
+                "next": {
+                  "kind": "assistant",
+                  "text": "Samir offered to move dinner. I would decline tonight.",
+                  "next": {
+                    "kind": "proposal",
+                    "id": "proposal-decline_event-2",
+                    "tool": "decline_event",
+                    "args": {
+                      "eventId": "evt-dinner",
+                      "note": "Taking a morning next week instead."
+                    },
+                    "title": "Decline “Dinner with Samir”",
+                    "summary": "Dinner with Samir marked declined on the sample calendar.",
+                    "lines": [
+                      {
+                        "label": "When",
+                        "value": "Fri, Oct 30 · 7:00 PM CT – 8:30 PM CT"
+                      },
+                      {
+                        "label": "Change",
+                        "value": "tentative → declined"
+                      },
+                      {
+                        "label": "Note",
+                        "value": "Taking a morning next week instead."
+                      }
+                    ],
+                    "approve": {
+                      "kind": "effect",
+                      "decision": "approve",
+                      "tool": "decline_event",
+                      "args": {
+                        "eventId": "evt-dinner",
+                        "note": "Taking a morning next week instead."
+                      },
+                      "title": "Declined “Dinner with Samir”",
+                      "detail": "Sample calendar only",
+                      "next": {
+                        "kind": "assistant",
+                        "text": "The interview hold stays tentative. Dinner with Samir is declined. Nothing left this machine.",
+                        "done": true,
+                        "next": null
+                      }
+                    },
+                    "reject": {
+                      "kind": "effect",
+                      "decision": "reject",
+                      "tool": "decline_event",
+                      "args": {
+                        "eventId": "evt-dinner",
+                        "note": "Taking a morning next week instead."
+                      },
+                      "title": "Rejected “Decline “Dinner with Samir””",
+                      "detail": "Nothing changed",
+                      "next": {
+                        "kind": "assistant",
+                        "text": "The interview hold stays tentative. Dinner with Samir stays on the calendar. Nothing left this machine.",
+                        "done": true,
+                        "next": null
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

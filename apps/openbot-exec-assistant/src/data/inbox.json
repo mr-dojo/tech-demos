@@ -1,0 +1,102 @@
+{
+  "executive": {
+    "name": "Jun Park",
+    "title": "CEO",
+    "email": "jun.park@voltline.test"
+  },
+  "coworker": {
+    "name": "Mira Calder",
+    "title": "Chief of Staff"
+  },
+  "today": "2026-10-30",
+  "emails": [
+    {
+      "id": "em-harborline",
+      "from": { "name": "Priya Raman", "email": "priya.raman@harborline.example" },
+      "to": "jun.park@voltline.test",
+      "subject": "Q3 deck before Thursday's board hour",
+      "preview": "Harborline needs the deck in the data room before Thursday 9:00 CT.",
+      "body": "Jun — Thursday's board hour is still 9:00 CT. Please drop the Q3 deck in the Harborline data room before then, and put the Austin opening slip and the Northline allocation on page one. I don't need a new narrative, just the numbers you already have.\n\nPriya Raman\nHarborline Capital",
+      "receivedAt": "2026-10-30T07:12:00-05:00",
+      "unread": true,
+      "labels": ["Board", "Needs reply"]
+    },
+    {
+      "id": "em-austin",
+      "from": { "name": "Ellis Cho", "email": "ellis.cho@voltline.test" },
+      "to": "jun.park@voltline.test",
+      "subject": "Austin walkthrough clashes with the foundry call",
+      "preview": "The floor is free Monday morning if we move today's 1:15.",
+      "body": "Jun — the Austin floor walk is still on your Friday at 1:15, and Northline is on the same hour. I can hold the store at Monday 10:00 CT instead. The fixtures will be in place either way. Tell me which hour you want and I'll move the crew.\n\nEllis Cho\nVP, Stores",
+      "receivedAt": "2026-10-30T07:28:00-05:00",
+      "unread": true,
+      "labels": ["Stores"]
+    },
+    {
+      "id": "em-foundry",
+      "from": { "name": "Henrik Dahl", "email": "henrik.dahl@northline.example" },
+      "to": "jun.park@voltline.test",
+      "subject": "November GPU allocation, held not cut",
+      "preview": "Northline is holding 1,200 boards. They are not cancelled.",
+      "body": "Jun — confirming what I'll say on the 1:00 CT call. November's 1,200 boards are held, not cancelled. We can ship 800 in the first week if Voltline names a dock by Tuesday. The rest follows the week after. No price change.\n\nHenrik Dahl\nNorthline Foundry",
+      "receivedAt": "2026-10-30T06:54:00-05:00",
+      "unread": true,
+      "labels": ["Supply"]
+    },
+    {
+      "id": "em-interview",
+      "from": { "name": "Naomi Ivers", "email": "naomi.ivers@voltline.test" },
+      "to": "jun.park@voltline.test",
+      "subject": "Hold for the Head of Retail finalist",
+      "preview": "11:00 today is still tentative until you accept.",
+      "body": "Jun — the Head of Retail finalist is on your calendar at 11:00 CT as a tentative hold. People has the scorecard. Accept the hold if you're in, or decline and I'll send the panel a new hour. The candidate is already in Austin.\n\nNaomi Ivers\nPeople",
+      "receivedAt": "2026-10-29T18:05:00-05:00",
+      "unread": true,
+      "labels": ["People"]
+    },
+    {
+      "id": "em-dinner",
+      "from": { "name": "Samir Qureshi", "email": "samir.qureshi@example.com" },
+      "to": "jun.park@voltline.test",
+      "subject": "Tonight, or a morning next week?",
+      "preview": "Dinner at 7 is easy to move. A morning would be better.",
+      "body": "Jun — I still have dinner at 7:00 CT tonight. Looking at your Friday, that is a late one on top of the board prep. I can take a morning next week instead and leave tonight clear. Your call.\n\nSamir",
+      "receivedAt": "2026-10-30T08:02:00-05:00",
+      "unread": true,
+      "labels": ["Personal"]
+    },
+    {
+      "id": "em-legal",
+      "from": { "name": "Adele March", "email": "adele.march@voltline.test" },
+      "to": "jun.park@voltline.test",
+      "subject": "Wordmark filing, no action today",
+      "preview": "Counsel files Monday. Nothing for you to sign today.",
+      "body": "Jun — the Voltline wordmark filing goes in Monday. Counsel has the specimen. There is nothing for you to sign today. I'll bring the receipt to the Thursday dry run.\n\nAdele March\nLegal",
+      "receivedAt": "2026-10-29T16:40:00-05:00",
+      "unread": false,
+      "labels": ["Legal"]
+    },
+    {
+      "id": "em-press",
+      "from": { "name": "Lila Ortega", "email": "lila.ortega@voltline.test" },
+      "to": "jun.park@voltline.test",
+      "subject": "Embargo check at 3:30",
+      "preview": "The note stays inside until Monday 6:00 CT.",
+      "body": "Jun — the launch note is still under embargo until Monday 6:00 CT. The 3:30 check is only to confirm the quote on page two. Nothing goes out today.\n\nLila Ortega\nPress desk",
+      "receivedAt": "2026-10-30T08:16:00-05:00",
+      "unread": false,
+      "labels": ["Press"]
+    },
+    {
+      "id": "em-visitors",
+      "from": { "name": "Ren Park", "email": "ren.park@voltline.test" },
+      "to": "jun.park@voltline.test",
+      "subject": "Friday visitor list",
+      "preview": "Harborline's associate and the retail finalist are on the list.",
+      "body": "Jun — today's visitor list is Priya Raman's associate (Harborline) at 9:20 and the retail finalist at 10:45. Both are badged for the glass room. No one else.\n\nRen Park\nWorkplace",
+      "receivedAt": "2026-10-30T07:48:00-05:00",
+      "unread": false,
+      "labels": ["HQ"]
+    }
+  ]
+}

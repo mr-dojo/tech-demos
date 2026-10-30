@@ -1,0 +1,114 @@
+{
+  "events": [
+    {
+      "id": "evt-mon-stand",
+      "title": "Product standup",
+      "start": "2026-10-26T09:00:00-05:00",
+      "end": "2026-10-26T09:30:00-05:00",
+      "location": "HQ glass room",
+      "attendees": ["Amina Sol", "Lila Ortega"],
+      "status": "confirmed",
+      "notes": "Launch risks only. No new work."
+    },
+    {
+      "id": "evt-mon-supplier",
+      "title": "Supplier office hour",
+      "start": "2026-10-26T14:00:00-05:00",
+      "end": "2026-10-26T15:00:00-05:00",
+      "location": "Phone",
+      "attendees": ["Henrik Dahl"],
+      "status": "confirmed",
+      "notes": "Dock question for the November boards."
+    },
+    {
+      "id": "evt-tue-stores",
+      "title": "Store review",
+      "start": "2026-10-27T10:00:00-05:00",
+      "end": "2026-10-27T12:00:00-05:00",
+      "location": "HQ glass room",
+      "attendees": ["Ellis Cho"],
+      "status": "confirmed",
+      "notes": "Austin fixtures and the weekend traffic."
+    },
+    {
+      "id": "evt-wed-design",
+      "title": "Design critique",
+      "start": "2026-10-28T11:00:00-05:00",
+      "end": "2026-10-28T12:30:00-05:00",
+      "location": "Studio",
+      "attendees": ["Lila Ortega"],
+      "status": "confirmed",
+      "notes": "Launch note, page two quote."
+    },
+    {
+      "id": "evt-thu-board",
+      "title": "Board dry run",
+      "start": "2026-10-29T13:00:00-05:00",
+      "end": "2026-10-29T16:00:00-05:00",
+      "location": "HQ glass room",
+      "attendees": ["Amina Sol", "Adele March", "Priya Raman"],
+      "status": "confirmed",
+      "notes": "Deck in the data room before this."
+    },
+    {
+      "id": "evt-board-prep",
+      "title": "Board prep with Amina",
+      "start": "2026-10-30T09:30:00-05:00",
+      "end": "2026-10-30T10:15:00-05:00",
+      "location": "HQ glass room",
+      "attendees": ["Amina Sol"],
+      "status": "confirmed",
+      "notes": "Page one: Austin slip and Northline allocation."
+    },
+    {
+      "id": "evt-interview",
+      "title": "Head of Retail interview",
+      "start": "2026-10-30T11:00:00-05:00",
+      "end": "2026-10-30T11:45:00-05:00",
+      "location": "HQ glass room",
+      "attendees": ["Naomi Ivers"],
+      "status": "tentative",
+      "notes": "Finalist is already in Austin. Hold is not accepted yet."
+    },
+    {
+      "id": "evt-foundry",
+      "title": "Northline allocation call",
+      "start": "2026-10-30T13:00:00-05:00",
+      "end": "2026-10-30T13:45:00-05:00",
+      "location": "Phone",
+      "attendees": ["Henrik Dahl", "Amina Sol"],
+      "status": "confirmed",
+      "notes": "1,200 boards held. Dock by Tuesday."
+    },
+    {
+      "id": "evt-austin",
+      "title": "Austin floor walkthrough",
+      "start": "2026-10-30T13:15:00-05:00",
+      "end": "2026-10-30T14:00:00-05:00",
+      "location": "Austin store",
+      "attendees": ["Ellis Cho"],
+      "status": "confirmed",
+      "notes": "Overlaps the Northline call."
+    },
+    {
+      "id": "evt-press",
+      "title": "Embargo check",
+      "start": "2026-10-30T15:30:00-05:00",
+      "end": "2026-10-30T16:00:00-05:00",
+      "location": "HQ glass room",
+      "attendees": ["Lila Ortega"],
+      "status": "confirmed",
+      "notes": "Quote check only. Nothing goes out."
+    },
+    {
+      "id": "evt-dinner",
+      "title": "Dinner with Samir",
+      "start": "2026-10-30T19:00:00-05:00",
+      "end": "2026-10-30T20:30:00-05:00",
+      "location": "Offsite",
+      "attendees": ["Samir Qureshi"],
+      "status": "tentative",
+      "notes": "Samir offered a morning next week instead."
+    }
+  ]
+}

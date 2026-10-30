@@ -1,0 +1,21 @@
+{
+  "repository": "https://github.com/CopilotKit/OpenBot",
+  "license": "MIT",
+  "commit": "9ff961895603b563f21ad691ab4c41c0179cd65d",
+  "committedAt": "2026-10-30T08:33:00-03:00",
+  "subject": "Give Bots the whole standard catalog but four (#875)",
+  "files": [
+    "agent-bot/src/index.ts",
+    "agent-bot/src/history.ts",
+    "shared/agent-authorisation.ts",
+    "shared/listen-port.ts",
+    "shared/model-providers.ts",
+    "shared/model-providers.json",
+    "shared/bot-prompt.ts",
+    "shared/research.ts",
+    "shared/user-content.ts",
+    "shared/connect-prompt.ts",
+    "LICENSE"
+  ],
+  "localDelta": "agent-bot/src/index.ts passes hostname 127.0.0.1 to Bun.serve. No other lines differ from the pinned commit."
+}
