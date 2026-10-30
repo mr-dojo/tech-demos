@@ -19,7 +19,7 @@ cd apps/openbot-exec-assistant
 bun install && bun run dev
 ```
 
-Open http://127.0.0.1:5173 . The banner says **Live · OpenBot**. `bun run dev` starts:
+Open http://127.0.0.1:5173 . The banner says **Live · OpenBot**. A plain `curl` POST needs `Origin: http://127.0.0.1:5173` (and `Content-Type: application/json`); the desk refuses any other origin. `bun run dev` starts:
 
 - the desk API on `127.0.0.1:4310` (loopback only)
 - OpenBot `agent-bot` on `127.0.0.1:4200`
