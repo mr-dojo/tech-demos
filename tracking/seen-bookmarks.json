@@ -7,6 +7,14 @@
       "source": "GitHub trending daily (559 stars today, 37.9k total; 1.0.2 released 2026-10-23)",
       "date": "2026-10-30",
       "slug": "lightpanda-price-scout"
+    },
+    {
+      "id": "vercel-agent-desktop",
+      "title": "Vercel Labs agent-desktop (computer use via OS accessibility trees: CLI + C library, MCP, macOS/Windows/Linux)",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "source": "GitHub trending daily (2,243 stars today, 8.2k total; v1.0.2 released 2026-10-30)",
+      "date": "2026-11-02",
+      "slug": "agent-desktop-back-office"
     }
   ],
   "built": [
