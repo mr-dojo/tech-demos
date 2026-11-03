@@ -15,6 +15,14 @@
       "source": "GitHub trending daily (2,243 stars today, 8.2k total; v1.0.2 released 2026-10-30)",
       "date": "2026-11-02",
       "slug": "agent-desktop-back-office"
+    },
+    {
+      "id": "nvidia-auto-ontology",
+      "title": "NVIDIA Auto Ontology (semantic ontology/context layer for agentic analytics: NL-to-SQL with certified definitions, lineage, provenance; MCP/CLI/API)",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "source": "Hacker News front page (175 points, 57 comments) + GitHub (1,895 stars)",
+      "date": "2026-11-03",
+      "slug": "auto-ontology-sales-desk"
     }
   ],
   "built": [
