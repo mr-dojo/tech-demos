@@ -23,6 +23,14 @@
       "source": "Hacker News front page (175 points, 57 comments) + GitHub (1,895 stars)",
       "date": "2026-11-03",
       "slug": "auto-ontology-sales-desk"
+    },
+    {
+      "id": "claude-mem",
+      "title": "claude-mem (persistent cross-session memory for coding agents: captures sessions, compresses with AI, injects context back; npm SDK, local worker API + web viewer)",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "source": "GitHub trending daily (1,165 stars today, 112.5k total; v15.9.0 released 2026-11-02; trending two days running)",
+      "date": "2026-11-04",
+      "slug": "claude-mem-build-desk"
     }
   ],
   "built": [
