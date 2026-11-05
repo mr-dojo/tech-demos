@@ -31,6 +31,14 @@
       "source": "GitHub trending daily (1,165 stars today, 112.5k total; v15.9.0 released 2026-11-02; trending two days running)",
       "date": "2026-11-04",
       "slug": "claude-mem-build-desk"
+    },
+    {
+      "id": "openai-images-2-6",
+      "title": "OpenAI Images 2.6 (GPT-Image-2.6 Flare/Sunburst: 50% faster gen, native GIF + SVG + image markup in the API)",
+      "url": "https://openai.com/index/introducing-images-2-6/",
+      "source": "futuretools.io (Matt's Pick) + Hacker News front page (341 points, 203 comments); API docs developers.openai.com",
+      "date": "2026-11-05",
+      "slug": "images26-voltline-gifs"
     }
   ],
   "built": [
