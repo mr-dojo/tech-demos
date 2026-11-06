@@ -39,6 +39,14 @@
       "source": "futuretools.io (Matt's Pick) + Hacker News front page (341 points, 203 comments); API docs developers.openai.com",
       "date": "2026-11-05",
       "slug": "images26-voltline-gifs"
+    },
+    {
+      "id": "linum-pjit-2b",
+      "title": "Linum P-JiT 2B (pixel-space text-to-image model, Apache 2.0 weights, trained for ~$21K)",
+      "url": "https://www.linum.ai/field-notes/pjit-21k",
+      "source": "Show HN front page (255 points, 23 comments)",
+      "date": "2026-11-06",
+      "slug": "pjit-voltline-studio"
     }
   ],
   "built": [
