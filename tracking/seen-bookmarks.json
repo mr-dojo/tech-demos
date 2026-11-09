@@ -47,6 +47,14 @@
       "source": "Show HN front page (255 points, 23 comments)",
       "date": "2026-11-06",
       "slug": "pjit-voltline-studio"
+    },
+    {
+      "id": "llama-modchip",
+      "title": "llama-modchip (CPU-only inference: 284B DeepSeek-V4-Flash on 64GB RAM, 30B MoEs on 16-32GB, llama.cpp-based, Apache 2.0)",
+      "url": "https://github.com/synchopate/llama-modchip",
+      "source": "Hacker News front page (442 points, 196 comments) + GitHub (683 stars)",
+      "date": "2026-11-09",
+      "slug": "modchip-voltline-local-desk"
     }
   ],
   "built": [
