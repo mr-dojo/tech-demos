@@ -39,6 +39,14 @@
       "source": "GitHub trending daily (3,111 stars today, 21.7k total; v0.7.12 released 2026-11-10)",
       "date": "2026-11-10",
       "slug": "astryx-voltline-builder"
+    },
+    {
+      "id": "modern-web-guidance",
+      "title": "Modern Web Guidance (Chrome/Edge/Firefox/MDN agent skills + CLI: search/retrieve guides, legacy-scan a codebase for outdated web patterns; Apache 2.0)",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance",
+      "source": "Show HN front page (401 points, 132 comments, https://news.ycombinator.com/item?id=50443812) + GitHub trending daily (modern-web-guidance-src, 133 stars today); main repo 3,993 stars",
+      "date": "2026-11-11",
+      "slug": "modern-web-voltline-refit"
     }
   ],
   "built": [
