@@ -47,6 +47,14 @@
       "source": "Show HN front page (401 points, 132 comments, https://news.ycombinator.com/item?id=50443812) + GitHub trending daily (modern-web-guidance-src, 133 stars today); main repo 3,993 stars",
       "date": "2026-11-11",
       "slug": "modern-web-voltline-refit"
+    },
+    {
+      "id": "gemini-decisions-api",
+      "title": "Gemini Decisions API (gemini-decision-1: closed-set yes/no, choice and rubric-score decisions over text/image/audio/video/PDF in one pass, 150-250 ms, $0.10/1M input, zero output tokens; free AI Studio tier)",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "source": "HN front page (486 points, 148 comments, https://news.ycombinator.com/item?id=50456791)",
+      "date": "2026-11-12",
+      "slug": "decisions-voltline-returns"
     }
   ],
   "built": [
