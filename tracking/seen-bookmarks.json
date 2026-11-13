@@ -55,6 +55,14 @@
       "source": "HN front page (486 points, 148 comments, https://news.ycombinator.com/item?id=50456791)",
       "date": "2026-11-12",
       "slug": "decisions-voltline-returns"
+    },
+    {
+      "id": "openai-codex-security",
+      "title": "OpenAI Codex Security (CLI + TypeScript SDK: scan repos or diffs for vulnerabilities, validate findings, generate and verify patches, export SARIF/JSON; Apache 2.0)",
+      "url": "https://github.com/openai/codex-security",
+      "source": "GitHub trending daily (754 stars today, 12.9k total)",
+      "date": "2026-11-13",
+      "slug": "codex-security-voltline-audit"
     }
   ],
   "built": [
