@@ -63,6 +63,14 @@
       "source": "GitHub trending daily (754 stars today, 12.9k total)",
       "date": "2026-11-13",
       "slug": "codex-security-voltline-audit"
+    },
+    {
+      "id": "univer-office-sdk",
+      "title": "Univer Office SDK (open-source spreadsheet/doc/slide engine for people and AI agents: editing, formula calc, collaboration, file import/export; Apache 2.0)",
+      "url": "https://github.com/dream-num/univer",
+      "source": "GitHub trending daily (1,878 stars today, 27.5k total; v1.5.2 released 2026-11-16)",
+      "date": "2026-11-16",
+      "slug": "univer-voltline-quote-sheet"
     }
   ],
   "built": [
