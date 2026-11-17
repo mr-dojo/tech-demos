@@ -71,6 +71,14 @@
       "source": "GitHub trending daily (1,878 stars today, 27.5k total; v1.5.2 released 2026-11-16)",
       "date": "2026-11-16",
       "slug": "univer-voltline-quote-sheet"
+    },
+    {
+      "id": "ag-ui-protocol",
+      "title": "AG-UI (Agent-User Interaction Protocol: open event-stream protocol + TS/Python SDKs for streaming agent messages, tool calls, shared state and human-in-the-loop into frontends; MIT)",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "source": "GitHub trending (daily)",
+      "date": "2026-11-17",
+      "slug": "agui-voltline-build-desk"
     }
   ],
   "built": [
