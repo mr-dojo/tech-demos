@@ -79,6 +79,13 @@
       "source": "GitHub trending (daily)",
       "date": "2026-11-17",
       "slug": "agui-voltline-build-desk"
+    },
+    {
+      "id": "nvidia-skillevaluator",
+      "title": "NVIDIA SkillEvaluator (multi-tier evaluator for AI agent skills/plugins: 500+ static quality/security rules with no LLM key, semantic overlap detection, synthetic eval sets, live with/without-skill lift; CLI + CI templates; Apache 2.0)",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "source": "github-trending",
+      "date": "2026-11-18"
     }
   ],
   "built": [
