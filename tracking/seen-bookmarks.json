@@ -86,6 +86,13 @@
       "url": "https://github.com/NVIDIA/SkillEvaluator",
       "source": "github-trending",
       "date": "2026-11-18"
+    },
+    {
+      "id": "gemini-4-neon",
+      "title": "Gemini 4 Neon (Google frontier model: gemini-4-neon, 1M context, four thinking levels low/medium/high/xhigh, native PDF/XLSX/image/video input, structured output; $3/$15 per 1M tokens, paid Gemini API tier)",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "source": "hacker-news+futuretools",
+      "date": "2026-11-19"
     }
   ],
   "built": [
