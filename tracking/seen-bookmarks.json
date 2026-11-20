@@ -93,6 +93,14 @@
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
       "source": "hacker-news+futuretools",
       "date": "2026-11-19"
+    },
+    {
+      "id": "gemini-tool-retrieval",
+      "title": "Gemini API Tool Retrieval (preview, Interactions API: tool_search + defer_loading)",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "source": "futuretools.io AI News (2026-11-19); Google blog launch 2026-11-19",
+      "date": "2026-11-20",
+      "slug": "apps/toolsearch-voltline-agent-desk"
     }
   ],
   "built": [
