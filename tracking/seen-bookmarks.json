@@ -101,6 +101,13 @@
       "source": "futuretools.io AI News (2026-11-19); Google blog launch 2026-11-19",
       "date": "2026-11-20",
       "slug": "apps/toolsearch-voltline-agent-desk"
+    },
+    {
+      "id": "inkling-2-mini",
+      "title": "Inkling 2 Mini (Thinking Machines open-weights multimodal looped transformer, 26.4B/3.4B active, Apache 2.0, runs local via Ollama/llama.cpp)",
+      "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+      "source": "futuretools.io (Nov 20) + Hacker News front page ('A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth', 613 pts / 253 comments)",
+      "date": "2026-11-23"
     }
   ],
   "built": [
