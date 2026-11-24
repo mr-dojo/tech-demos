@@ -108,6 +108,14 @@
       "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
       "source": "futuretools.io (Nov 20) + Hacker News front page ('A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth', 613 pts / 253 comments)",
       "date": "2026-11-23"
+    },
+    {
+      "id": "declare-ui-language",
+      "title": "Declare (David Temkin's compiler-checked UI DSL for people and AI: layout, motion, state, theming and drawing in the language, logic in TypeScript; in-browser compiler, no build step, agent skill; MIT)",
+      "url": "https://github.com/davidtemkin/declarelang",
+      "source": "Hacker News front page (70 points, 49 comments, https://news.ycombinator.com/item?id=50622854); repo 58 stars",
+      "date": "2026-11-24",
+      "slug": "declare-voltline-build-board"
     }
   ],
   "built": [
