@@ -116,6 +116,14 @@
       "source": "Hacker News front page (70 points, 49 comments, https://news.ycombinator.com/item?id=50622854); repo 58 stars",
       "date": "2026-11-24",
       "slug": "declare-voltline-build-board"
+    },
+    {
+      "id": "ternary-bonsai-2-5-27b",
+      "title": "Ternary Bonsai 2.5 27B (PrismML 1.76-bit agentic/tool-calling model, 5.9 GB GGUF, Apache-2.0, llama.cpp/MLX)",
+      "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
+      "source": "Hacker News front page (492 points, 150 comments) https://news.ycombinator.com/item?id=50633922",
+      "date": "2026-11-25",
+      "slug": "bonsai-voltline-bench-agent"
     }
   ],
   "built": [
