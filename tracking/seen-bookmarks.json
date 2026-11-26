@@ -124,6 +124,14 @@
       "source": "Hacker News front page (492 points, 150 comments) https://news.ycombinator.com/item?id=50633922",
       "date": "2026-11-25",
       "slug": "bonsai-voltline-bench-agent"
+    },
+    {
+      "id": "firecrawl-local",
+      "title": "Firecrawl Local (one Rust binary: scrape/crawl/map websites to clean markdown on your own machine, serves the Firecrawl v2 API on localhost:3002, MCP server for coding agents; Cloud adds structured JSON, search, Alexandria)",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "source": "GitHub trending daily (1,042 stars today, 210.6k total; also trending 2026-11-24 with 990 stars today)",
+      "date": "2026-11-26",
+      "slug": "firecrawl-voltline-spec-scout"
     }
   ],
   "built": [
