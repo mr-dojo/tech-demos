@@ -132,6 +132,14 @@
       "source": "GitHub trending daily (1,042 stars today, 210.6k total; also trending 2026-11-24 with 990 stars today)",
       "date": "2026-11-26",
       "slug": "firecrawl-voltline-spec-scout"
+    },
+    {
+      "id": "diagram-design",
+      "title": "diagram-design (agent skill: editorial diagrams as one self-contained HTML + SVG file, 52 diagram types, brand onboarding, Mermaid/draw.io import, PNG/SVG export; MIT)",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "source": "GitHub trending daily (731 stars today, 74.3k total; trending Nov 19, Nov 26 and Nov 27)",
+      "date": "2026-11-27",
+      "slug": "diagram-voltline-blueprints"
     }
   ],
   "built": [
